@@ -57,8 +57,7 @@ header h1 {
     border-radius: 8px;
     margin-bottom: 15px;
     overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);}
 .menu-item img {
     width: 100%;
     display: block;
@@ -127,21 +126,39 @@ footer {
     color: #333;
 }
 
+.animate__fadeInDown {
+  animation-duration: 4s !important;
+}
+
+.animate__fadeIn {
+  animation-duration: 4s !important;
+}
+
+#item1{
+    animation: fadeInLeft 1s ;
+}
+#item2{
+    animation: fadeInRight 1s ;
+}
+#item3{
+    animation: fadeInLeft 1s ;
+}
     </style>
 </head>
-<body class="animate__animated animate__fadeIn">
+<body>
 
 <header>
 
     <img src="css/img/oro.png" alt="#" id="headerTitle1"><!-- HIDDEN -->
     <hr id="titleline" class="animate__animated animate__fadeInDown">
    <p id="headertitle2" class="animate__animated animate__fadeInDown">Menù</p>
+
 </header>
 
 <div class="menu-container">
     <br>
     <!-- Elemento del menu 1 -->
-    <div class="menu-item">
+    <div class="menu-item" id="item1">
         <img src="css/img/pastaEvongole.jpg" alt="Spaghetti alle Vongole">
         <div class="content">
             <h2 class="itemstext">Spaghetti alle Vongole</h2>
@@ -152,7 +169,7 @@ footer {
     </div>
 
     <!-- Elemento del menu 2 -->
-    <div class="menu-item">
+    <div class="menu-item" id="item2">
         <img src="css/img/carbonara.jpg" alt="Pasta Carbonara">
         <div class="content">
             <h2 class="itemstext">Carbonara</h2>
@@ -163,7 +180,7 @@ footer {
     </div>
 
     <!-- Elemento del menu 3 -->
-    <div class="menu-item">
+    <div class="menu-item" id="item3">
         <img src="css/img/tiramisu.jpg" alt="Tiramisù">
         <div class="content">
             <h2 class="itemstext">Tiramisù</h2>
@@ -175,12 +192,9 @@ footer {
 </div>
 
 <footer>
+    <!-- Final Texts -->
     <p><a href="css/qrContatto.html#containeritems1" class="contatti">Contatto</a> ∙ <a href="css/qrContatto.html#containeritems3" class="contatti">E-mail</a> ∙ <a href="css/qrContatto.html#containeritems2" class="contatti">Posizione</a> </p>
-    <p>&copy; 2025 Fontana Bosco Agriturismo - Tutti i diritti riservati</p> 
+    <p>&copy; 2025 La Selva - Tutti i diritti riservati</p> 
 </footer>
-
-
-
-
 </body>
 </html>
