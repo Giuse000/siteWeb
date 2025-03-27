@@ -13,6 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Imperial+Script&family=Ms+Madi&family=Playwrite+HR+Lijeva:wght@100..400&family=The+Nautigal:wght@400;700&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Imperial+Script&family=Ms+Madi&family=Outfit:wght@100..900&family=Playwrite+HR+Lijeva:wght@100..400&family=The+Nautigal:wght@400;700&display=swap" rel="stylesheet">
 
 
@@ -20,132 +21,13 @@
 
     <link rel="icon" href="css/img/logo.png" type="image.png">
     <title>Ristorante | Menu</title>
-    <style>
-
-@font-face {font-family: 'Handelson';src: url('./css/fonts/zhandelson-three.otf') format('truetype'); /* Cambia il formato se necessario */font-weight: normal;font-style: normal;}
-        body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f8f8f8;
-    color: #333;
-}
-header {
-    background-image:url(css/img/oro.png);
-    animation: fadeInDown 2s;
-    border-bottom-right-radius: 30px;
-    border-bottom-left-radius: 30px;
-    border-bottom-style:double;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 500px,auto;
-    background-color: rgb(233,214,158);
-    text-align: center;
-    height:220px, auto;
-    background-size: cover;
-}
-
-header h1 {
-    margin: 0;
-    font-size: 1.8em;
-}
-.menu-container {
-    padding: 10px;
-}
-.menu-item {
-    background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    margin-bottom: 15px;
-    overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);}
-.menu-item img {
-    width: 100%;
-    display: block;
-    
-}
-.menu-item .content {
-    padding: 10px;
-    text-align: center;
-}
-.menu-item h2 {
-    margin: 10px 0;
-    font-size: 1.4em;
-}
-.menu-item p {
-    margin: 0;
-    font-size: 0.9em;
-    color: #666;
-}
-.menu-item button {
-    background-color: #d35400;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    margin-top: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1em;
-}
-.menu-item button:hover {
-    background-color: #e67e22;
-}
-footer {
-    background-color: #d35400;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    font-size: 0.9em;
-}
-#headerTitle1{
-    width: 100px;
-    height: 100px;
-    visibility: hidden;
-    padding: 0;
-    margin: 0;
-}
-#headertitle2{
-    padding-top: 0px;
-    font-family: "Merriweather Sans", sans-serif;
-    letter-spacing: 2px;
-    color: #000000;
-    animation: fadeInDown 4s;
-
-}
-#titleline{
-    border: 0; /* Rimuove il bordo predefinito */
-    border-top: 1px solid #000000; /* Aggiunge una linea sottile (1px) di colore grigio */
-    padding: 0px;
-    margin: 20px auto;
-    margin-top: 130px;
-    width: 5%;
-    animation: fadeIn 4s;
-}
-
-.itemstext{
-    font-family:Outfit, sans-serif;
-}
-.contatti{
-    color: #333;
-}
-
-#item1{
-    animation: fadeInLeft 1s ;
-}
-#item2{
-    animation: fadeInRight 1s ;
-}
-#item3{
-    animation: fadeInLeft 1s ;
-}
-    </style>
 </head>
 <body>
 
-<header>
+<header id="header1">
 
     <img src="css/img/oro.png" alt="#" id="headerTitle1"><!-- HIDDEN -->
-    <hr id="titleline" class="an">
+    <hr id="titleline" class="animate__animated animate__fadeInDown">
    <p id="headertitle2" class="animate__animated animate__fadeInDown">Menù</p>
 
 </header>
@@ -188,8 +70,10 @@ footer {
 
 <footer>
     <!-- Final Texts -->
-    <p><a href="css/qrContatto.html#containeritems1" class="contatti">Contatto</a> ∙ <a href="css/qrContatto.html#containeritems3" class="contatti">E-mail</a> ∙ <a href="css/qrContatto.html#containeritems2" class="contatti">Posizione</a> </p>
-    <p>&copy; 2025 La Vineria - Tutti i diritti riservati</p> 
+    <p><a href="css/qrContatto.html" class="contatti">Contatto</a> ∙ <a href="../css/qrContatto.html#containeritems3" class="contatti">E-mail</a> ∙ <a href="../css/qrContatto.html#containeritems2" class="contatti">Posizione</a> </p>
+    <p>&copy; 2025 La Selva - Tutti i diritti riservati</p> 
 </footer>
 </body>
 </html>
+
+
