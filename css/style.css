@@ -186,6 +186,7 @@ footer {
     }
 }
 
+
 #menuD a{
     -webkit-tap-highlight-color: transparent; /* Per dispositivi touch */
     user-select: none; /* Impedisce la selezione del testo */
@@ -342,7 +343,7 @@ footer {
 
 #imgDiv2 img {
     width: 100vw; /* Ogni immagine occupa tutta la larghezza dello schermo */
-    height: 50vh; /* Adatta l'altezza automaticamente */
+    height: 30vh; /* Adatta l'altezza automaticamente */
     object-fit:cover; /* Assicura che le immagini si adattino senza distorsioni */
 }
 
@@ -393,6 +394,8 @@ footer {
     text-align: center;
     padding: 0;
     margin: 0;
+    padding-left: 14%;
+    padding-right: 10%;
     font-family: 'Sumera';
     font-weight: 600;
     text-align: center;
@@ -443,7 +446,8 @@ footer {
     width: 80%;
     font-family: 'Sumera';
     font-weight: 600;
-    padding-left: 9%;
+    padding-left: 14%;
+    padding-right: 10%;
     padding-bottom: 7%;
     letter-spacing: 1px;
     font-size: 19px;
@@ -491,7 +495,8 @@ footer {
     width: 80%;
     font-family: 'Sumera';
     font-weight: 600;
-    padding-left: 9%;
+    padding-left: 14%;
+    padding-right: 10%;
     letter-spacing: 1px;
     font-size: 19px;
     padding-bottom: 7%;
