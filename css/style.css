@@ -159,7 +159,7 @@ footer {
 
 #buttonMenu.fixed{
     width:100%;
-    height: 10%;
+    height: 7%;
     z-index: 10;
     background-color: #fffffff4;
     margin: 0;
@@ -174,10 +174,16 @@ footer {
 }
 
 #buttonMenu.fixed #headertitle2b{
-    margin: 2%;
+    margin: 1%;
 }
 #buttonMenu.fixed #headertitle2{
     font-size: 20px;
+}
+
+@media (orientation: landscape){
+    #buttonMenu.fixed{
+        height: 15%;
+    }
 }
 
 #menuD a{
@@ -322,7 +328,7 @@ footer {
 #imgDiv1 {
     overflow: hidden;
     width: 100vw; /* Occupa tutta la larghezza dello schermo */
-    height: 30vh; /* Altezza adattabile */
+    height: 30vh,; /* Altezza adattabile */
     background-color: #f5f5f5;
     display: flex;
     position: relative;
@@ -330,14 +336,14 @@ footer {
 
 #imgDiv2 {
     display: flex;
-    width: 600vw; /* Larghezza totale: 6 immagini, ciascuna 100vw */
+    width: 900vw; /* Larghezza totale: 6 immagini, ciascuna 100vw */
     animation: scrollSteps 72s linear infinite; /* Tempo totale per ciclo */
 }
 
 #imgDiv2 img {
     width: 100vw; /* Ogni immagine occupa tutta la larghezza dello schermo */
-    height: 30vh; /* Adatta l'altezza automaticamente */
-    object-fit: cover; /* Assicura che le immagini si adattino senza distorsioni */
+    height: 50vh; /* Adatta l'altezza automaticamente */
+    object-fit:cover; /* Assicura che le immagini si adattino senza distorsioni */
 }
 
 @keyframes scrollSteps {
@@ -351,11 +357,11 @@ footer {
 
 #s1H1{
     font-family:'Sumera';
+    text-align: center;
     font-size:370%;
     font-weight:600;
     padding: 0;
     margin: 0;
-    padding-left: 26%;
     padding-top: 8%;
     text-shadow: #000000;
     text-shadow:         
@@ -368,11 +374,11 @@ footer {
 }
 
 #s1hr1{
-    width: 5%;
+    width: 15px;
     border-radius: 20px;
     padding: 0;
     margin: 0;
-    margin-left: 47%;
+    margin-left: 50%;
     margin-bottom: 2%;
     margin-top: 1%;
     border: none;
@@ -387,10 +393,9 @@ footer {
     text-align: center;
     padding: 0;
     margin: 0;
-    width: 80%;
     font-family: 'Sumera';
     font-weight: 600;
-    padding-left: 9%;
+    text-align: center;
     padding-bottom: 7%;
     letter-spacing: 1px;
     font-size: 19px;
@@ -400,10 +405,10 @@ footer {
 #s2H1{
     font-family:'Sumera';
     font-size:370%;
+    text-align: center;
     font-weight:600;
     padding: 0;
     margin: 0;
-    padding-left: 22%;
     padding-top: 7%;
     text-shadow: #000000;
     text-shadow:         
@@ -416,11 +421,11 @@ footer {
 }
 
 #s1hr2{
-    width: 5%;
+    width: 15px;
     border-radius: 20px;
     padding: 0;
     margin: 0;
-    margin-left: 47%;
+    margin-left: 50%;
     margin-bottom: 2%;
     margin-top: 1%;
     border: none;
@@ -447,11 +452,11 @@ footer {
 
 #s3H1{
     font-family:'Sumera';
+    text-align: center;
     font-size:370%;
     font-weight:600;
     padding: 0;
     margin: 0;
-    padding-left: 34%;
     padding-top: 7%;
     text-shadow: #000000;
     text-shadow:         
@@ -464,11 +469,11 @@ footer {
 }
 
 #s1hr3{
-    width: 5%;
+    width: 15px;
     border-radius: 20px;
     padding: 0;
     margin: 0;
-    margin-left: 47%;
+    margin-left: 50%;
     margin-bottom: 2%;
     margin-top: 1%;
     border: none;
@@ -504,12 +509,10 @@ footer {
 
 #section1{
     background-color: rgb(255, 255, 255);
-    border-radius: 20px;
 }
 
 #section2{
     background-color: rgb(233,214,158);
-    border-radius: 20px;
 }
 
 
