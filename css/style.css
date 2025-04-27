@@ -32,6 +32,7 @@ footer {
     text-align: center;
     padding: 10px;
     font-size: 0.9em;
+    background-color: rgb(233,214,158)
 }
 #headerTitle1{
     width: 100px;
@@ -79,9 +80,10 @@ footer {
     all: unset;
     visibility: hidden;
     margin-top: 17px;
-    left: 37%;
+    left: 0vw;
+    right: 0vw;
     border-width: 1px;
-    width: 25%;
+    width: 100vw;
     height: 13%,auto;
     position: absolute;
     font-family: "Merriweather Sans", sans-serif;
@@ -89,8 +91,8 @@ footer {
     letter-spacing: 1px;
     border-style: solid;
     background-color:rgba(233, 214, 158, 0.826) ;
-    border-bottom-right-radius: 20px;
-    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
     border: none;
     box-shadow: 1px 3px 10px;
     z-index: 10;
@@ -290,7 +292,7 @@ footer {
 }
 
 #imgDiv2 img {
-    width: 300px;
+    width: 210px;
     height:200px;
     object-fit:cover; /* Assicura che le immagini si adattino senza distorsioni */
 }
@@ -318,7 +320,7 @@ footer {
     2px 2px 0px rgba(0, 0, 0, 0.6), 
     5px 5px 0px rgba(0, 0, 0, 0.4);;
     color: #88be00;
-    letter-spacing: 1px;
+    letter-spacing: 7px;
     animation: fadeIn 4s;
 }
 
@@ -344,12 +346,12 @@ footer {
     margin: 0;
     padding-left: 14%;
     padding-right: 10%;
-    font-family: 'Sumera';
-    font-weight: 600;
+    font-family: "Inter", sans-serif;
     text-align: center;
     padding-bottom: 7%;
     letter-spacing: 1px;
-    font-size: 19px;
+    color: rgb(26, 26, 26);
+    font-size: 16px;
 }
 
 
@@ -367,7 +369,7 @@ footer {
     2px 2px 0px rgba(0, 0, 0, 0.6), 
     5px 5px 0px rgba(0, 0, 0, 0.4);;
     color: #d3a304;
-    letter-spacing: 1px;
+    letter-spacing: 4px;
     animation: fadeIn 4s;
 }
 
@@ -381,9 +383,8 @@ footer {
     margin-top: 1%;
     border: none;
     border-bottom: 1px solid rgb(0, 0, 0); 
-    color: white;
     animation: slideIn 5s ease-in-out forwards;
-    border-color: #0a0a0adf;
+    border-color: #ffffffdf;
 }
 
 #s2p{
@@ -392,14 +393,13 @@ footer {
     padding: 0;
     margin: 0;
     width: 80%;
-    font-family: 'Sumera';
-    font-weight: 600;
+    font-family: "Inter", sans-serif;
     padding-left: 14%;
     padding-right: 10%;
     padding-bottom: 7%;
     letter-spacing: 1px;
-    font-size: 19px;
-    color: rgb(0, 0, 0);
+    font-size: 16px;
+    color:rgb(26, 26, 26);;
 }
 
 
@@ -417,7 +417,7 @@ footer {
     2px 2px 0px rgba(0, 0, 0, 0.6), 
     5px 5px 0px rgba(0, 0, 0, 0.4);;
     color: #d35304;
-    letter-spacing: 1px;
+    letter-spacing: 5px;
     animation: fadeIn 4s;
 }
 
@@ -442,12 +442,11 @@ footer {
     padding: 0;
     margin: 0;
     width: 80%;
-    font-family: 'Sumera';
-    font-weight: 600;
+    font-family: "Inter", sans-serif;
     padding-left: 14%;
     padding-right: 10%;
     letter-spacing: 1px;
-    font-size: 19px;
+    font-size: 16px;
     padding-bottom: 7%;
 }
 @keyframes slideIn2 {
@@ -481,6 +480,14 @@ footer {
     background-repeat: repeat-x;
     background-position: center;
     animation: zoomBackground  10s linear infinite;
+}
+
+#section1Title{
+    background-color: rgb(255, 255, 255);
+}
+
+#section3{
+    background-color: rgb(255, 255, 255);
 }
 
 

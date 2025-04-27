@@ -1,0 +1,235 @@
+    /* Reset base */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      @keyframes zoomLoop {
+        0%, 100% {
+          transform: translate(-50%, -50%) scale(1);
+        }
+        50% {
+          transform: translate(-50%, -50%) scale(1.1);
+        }
+    }
+
+      video {
+        position:fixed;
+        top: 50%;
+        left: 50%;
+        min-width: 100vw;
+        min-height: 100vh;
+        width: 100vw;
+        height: 100vh;
+        z-index: -1;
+        transform: translate(-50%, -50%);
+        object-fit: cover;
+      }
+
+      #SC0{
+         background-color: rgba(0,0,0,0.4);
+      }
+
+      #SC1{
+        background-color: #353535b5;
+        padding-bottom:11% ;
+        border-bottom-style: solid;
+        border-color: #dddddd44;
+        border-width: 1px;
+      }
+
+      #SC2{
+        background-color: #353535b5;
+        padding-bottom:11% ;
+        border-bottom-style: solid;
+        border-color: #dddddd44;
+        border-width: 1px;
+      }
+
+      #SC3{
+        background-color: #353535b5;
+      }
+
+      body {
+        background: #f9f9f9;
+        color: #333;
+      }
+  
+      /* Navbar */
+      .navbar {
+        width: 100%;
+        background-color: #ffffff00;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem 2rem;
+        border-bottom: 1px solid #e0e0e027;
+        position: fixed;
+        top: 0;
+        z-index: 999;
+        animation: fadeInDown  2000ms;
+      }
+  
+      .logo {
+        letter-spacing: 1px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #ffffff;
+      }
+  
+      .menu-btn {
+        font-size: 1.5rem;
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: #ffffff;
+      }
+  
+      .menu {
+        display: none;
+        position: absolute;
+        top: 60px;
+        right: 2rem;
+        background: white;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+      }
+  
+      .menu a {
+        display: block;
+        padding: 1rem;
+        text-decoration: none;
+        color: #333;
+        border-bottom: 1px solid #eee;
+      }
+  
+      .menu a:last-child {
+        border-bottom: none;
+      }
+  
+      .menu a:hover {
+        background: #f1f1f1;
+      }
+  
+      /* Hero / Homepage */
+      .hero {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+      }
+  
+      .hero h1 {
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        padding-bottom: 0%;
+        padding-left: 7%;
+        padding-right: 7%;
+        font-size: 9.0rem;
+        margin: 0;
+        color: #e5e5e5ed;
+        animation: fadeIn 1995ms;
+      }
+  
+      #hero1{
+        text-align: center;
+        display: grid;
+        grid-auto-flow: column;
+        justify-content: center; 
+        padding-top: 3%;
+        gap: 5%;
+      }
+  
+      #services{
+        text-align: center;
+        display: grid;
+        grid-auto-flow: column;
+        justify-content: center; 
+        padding-top: 3%;
+        gap: 5%;
+      }
+  
+      #hero1 article{
+        display: inline;
+      }
+  
+      #hero1 img{
+        width: 25vw;
+        height: 35vh;
+        border-radius: 5%;
+        border-bottom-left-radius: 1%;
+        border-bottom-right-radius: 1%;
+      }
+  
+      .itemDiv{
+        box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.236);  
+        display: inline-block;
+        border-radius: 5%;
+      }
+  
+      #item1{
+        width: 25vw;
+        height: 57vh;
+      }
+  
+      #item2{
+        width: 25vw;
+        height: 57vh;
+      }
+  
+      #item3{
+        width: 25vw;
+        height: 57vh;
+      }
+  
+      #section1H{
+        padding-top: 20vh; 
+        font-size: 50px;
+        text-align: center;
+        color: #ddd;
+      }
+  
+      #Ap1{
+        all: unset;
+        display: block;
+        padding-top: 4%;
+        padding-left: 5%;
+        padding-right: 5%;
+        font-size: 16px;
+        font-weight: 500;
+        color: #ddd;
+      }
+  
+      #section2H{
+        padding-top: 15vh;
+        font-size: 50px;
+        padding-top: 20vh; 
+        color: #ddd;
+        text-align: center;
+      }
+  
+      #section3H{
+        padding-top: 20vh;
+        font-size: 50px;
+        color: #ddd;
+        text-align: center;
+      }
+  
+      html {
+      scroll-behavior: smooth;
+    }
+  
+
+
+
+
+
+
+
+
+
+    

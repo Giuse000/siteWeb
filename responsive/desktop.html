@@ -1,16 +1,123 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="../css/style2.css">
-    <link rel="icon" href="../css/img/logo.png" type="image.png">
-    <title>Ristorante | Menu</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="deskCss/desk.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <title>Matese</title>
 </head>
 <body>
+    <div id="SC0">
+        <div class="video-wrapper">
+    <video autoplay muted loop playsinline id="bgVideo"><source src="deskCss/vid/carneV.mp4" type="video/mp4"></video>
 
-    <section> <div></div></section>
-    
+    <script>
+        const video = document.getElementById("bgVideo");
+        video.playbackRate = 0.65; // Più basso = più lento. Valori tipici: 0.25 - 0.5 - 0.75 - 1
+      </script>
+
+<h1 style="width: 0;height: 0;visibility: hidden;" id="section0H">homebutt</h1>
+  <header class="navbar">
+    <div class="logo" id="home">FONTANA BOSCO</div>
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    <div class="menu" id="dropdownMenu">
+      <a href="#section0H">Home</a>
+      <a href="#section1H">Chi siamo</a>
+      <a href="#section2H">Servizi</a>
+      <a href="#section3H">Contatti</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h1>"Il profumo del tartufo &egrave; <br> l'anima segreta della terra."</h1>
+  </section>
+  
+</div>
+</div>
+
+  <!-- HOME END -->
+
+  <div id="SC1">
+  <h1 id="section1H">Chi Siamo</h1>
+
+  <section id="hero1">
+
+    <div class="itemDiv" id="item1">
+    <article><img src="../css/img/img1.jpg" alt="#" width="200" height="200"><p id="Ap1">Con Fontana Bosco, anche la cucina diventa un viaggio autentico nella natura. I nostri eventi gastronomici uniscono creatività, tradizione e spettacolarità, con piatti preparati dal vivo utilizzando ingredienti freschi e locali. Tra suggestivi effetti scenografici e profumi avvolgenti, vivrai un’esperienza che celebra la bellezza dei sapori naturali e la passione per il territorio.</p></article>
+    </div>
+
+    <div class="itemDiv" id="item2">
+    <article><img src="../css/img/img2.jpg" alt="#" width="200" height="200"><p id="Ap1">Ogni piatto di Fontana Bosco racconta una storia fatta di gusto, ricerca e amore per la natura. I nostri percorsi culinari ti condurranno tra sapori autentici e accostamenti raffinati, in un viaggio emozionale tra paesaggi mozzafiato e atmosfere intime. Scoprirai il piacere di assaporare la qualità più vera, in perfetta armonia con l’ambiente che ci circonda.</p></article>
+    </div> 
+
+    <div class="itemDiv" id="item3">
+    <article><img src="../css/img/img3.jpg" alt="#" width="200" height="200"><p id="Ap1">Con Fontana Bosco, l’arte della cucina incontra l’autenticità della natura in ambienti esclusivi e curati nei minimi dettagli. Offriamo esperienze gastronomiche uniche, dove tecnica, creatività ed emozione si fondono in piatti che raccontano il territorio. Ogni incontro diventa un momento speciale per riscoprire i sapori più puri, accompagnato da atmosfere calde e suggestive.</p></article> 
+    </div>
+
+  </section>
+</div>
+
+<!-- CHI SIAMO END -->
+
+    <div id="SC2">
+
+  <h1 id="section2H">Servizi</h1>
+
+<section id="services" style="display: grid;text-align: center; grid-auto-flow: column; justify-content: center; padding-top: 3%; gap: 5%;">
+  <div class="itemDiv" style="width: 25vw;text-align: center;">
+    <img src="../css/img/img4.jpg" alt="#" width="200" height="200" style=" width:25vw; height: 35vh; border-radius: 5%; border-bottom-left-radius: 1%; border-bottom-right-radius: 1%;">
+    <h2 style="padding-top: 5%; padding-bottom:3% ;color: #ddd;">Piatti Pescherecci</h2>
+    <p style="padding-bottom: 7%;padding-left: 5%;padding-right: 5%;color: #ddd;">Scopri il gusto autentico del mare con i nostri piatti di pesce fresco, preparati con ingredienti locali e tecniche tradizionali per esaltare ogni sapore.</p>
+  </div>
+
+  <div class="itemDiv" style="width: 25vw;text-align: center;">
+    <img src="../css/img/img5.jpg" alt="#" width="200" height="200" style=" width:25vw; height: 35vh; border-radius: 5%; border-bottom-left-radius: 1%; border-bottom-right-radius: 1%;">
+    <h2 style="padding-top: 5%; padding-bottom:3% ;color: #ddd;">Grigliate e Specialità di Carne</h2>
+    <p style="padding-bottom: 7%;padding-left: 5%;padding-right: 5%;color: #ddd;">Proponiamo grigliate miste, carni selezionate e preparazioni rustiche, ideali per vivere un’esperienza autentica tra sapori decisi e atmosfera conviviale.</p>
+  </div>
+
+  <div class="itemDiv" style="width: 25vw; text-align: center;">
+    <img src="../css/img/img6.jpg" alt="#" width="200" height="200" style=" width:25vw; height: 35vh; border-radius: 5%; border-bottom-left-radius: 1%; border-bottom-right-radius: 1%;">
+    <h2 style="padding-top: 5%; padding-bottom:2% ;color: #ddd;">Fritti Gourmet e Sfizi</h2>
+    <p style="padding-bottom: 7%;padding-left: 5%;padding-right: 5%;  color: #ddd;">Gusta le nostre specialità fritte, preparate artigianalmente: croccanti, dorate e irresistibili, perfette per iniziare un pranzo o per un aperitivo rustico.</p>
+  </div>
+</section>
+
+</div>
+
+<!-- SERVIZI END -->
+ 
+    <div id="SC3">
+
+<h1 id="section3H">Contatti</h1>
+
+<section id="contacts" style="padding: 4% 5%; text-align: center;padding-top: 1%;">
+  <p style="font-size: 1.1rem; max-width: 700px; margin: 0 auto 2rem auto;  color: #ddd;">
+    Per ricevere maggiori informazioni, prenotare un tavolo o organizzare un evento con noi, non esitare a contattarci. Siamo sempre disponibili per aiutarti a vivere un'esperienza unica tra sapori autentici e natura.
+  </p>
+
+  <div style="display: flex; flex-direction: column; gap: 1rem; align-items: center; color: #ddd;">
+    <p><strong>Email:</strong> fontanabosco2013@libero.it</p>
+    <p><strong>Telefono:</strong> +39 339 361 3037</p>
+    <p><strong>Posizione:</strong> via villa santa croce 81013 Piana di Caiazzo, Italy</p>
+  </div>
+
+  <img src="../css/img/mappa.png" alt="posizione" style="width: 100%; max-width: 800px; border-radius: 10px; margin-top: 1rem;">
+</section>
+</div>
+
+<footer style="text-align: center; padding: 2rem; background-color: #3d3d3db5; color: #ddd; font-size: 0.9rem;">
+  © 2025 Tutti i diritti riservati – Fontana Bosco 
+</footer>
+
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('dropdownMenu');
+      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
+
 </body>
 </html>
