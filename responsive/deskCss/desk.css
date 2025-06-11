@@ -163,6 +163,7 @@
         border-radius: 5%;
         border-bottom-left-radius: 1%;
         border-bottom-right-radius: 1%;
+        max-width: 100%;
       }
   
       .itemDiv{
@@ -173,17 +174,17 @@
   
       #item1{
         width: 25vw;
-        height: 57vh;
+        height: 55vh, auto;
       }
   
       #item2{
         width: 25vw;
-        height: 57vh;
+        height: 55vh, auto;
       }
   
       #item3{
         width: 25vw;
-        height: 57vh;
+        height: 55vh, auto;
       }
   
       #section1H{
@@ -198,6 +199,7 @@
         display: block;
         padding-top: 4%;
         padding-left: 5%;
+        padding-bottom: 5%;
         padding-right: 5%;
         font-size: 16px;
         font-weight: 500;
@@ -222,6 +224,12 @@
       html {
       scroll-behavior: smooth;
     }
+
+    @media (max-width: 1500px) {
+      #hero1 img{
+      }
+    }
+    @media (max-width: 1023px) {}
   
 
 

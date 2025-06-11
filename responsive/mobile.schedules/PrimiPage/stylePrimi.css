@@ -19,7 +19,7 @@
     font-size: 280%;
     padding: 0;
     margin: 0;
-    padding-top: 12%;
+    padding-top: 15%;
     animation: fadeInDown 2s;
 }
 
@@ -35,17 +35,11 @@
     border-radius: 50%;
 }
 
-#svg1{
-    width: 120%;
-    height: 150%;
-    z-index: 7;
-}
-
 .menuBarB{
     all: unset;
     padding-left: 2%;
-    width: 16%;
-    height: 35px;
+    width: 20%;
+    height: 36px;
     border-bottom-right-radius: 20px;
     float: left;
     position: fixed;
@@ -55,7 +49,7 @@
 
 #menuBarDiv{
     width: 100%;
-    height: 32px;
+    height: 42px;
     border-bottom-style: ridge;
     border-width: 2px;
     border-color: rgba(230, 196, 93, 0.826);
@@ -86,6 +80,11 @@
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     max-width: 768px;
+    animation:backInUp 1500ms;
+}
+
+.itemstext{
+    font-family: 'Sumera';
 }
 
 @media (min-width: 768px) { /* Quando lo schermo è più largo di 768px */
@@ -97,7 +96,6 @@
 
 .menu-item img {
     width: 100%;
-    max-height:300px;
     display: block;
     
 }
@@ -107,7 +105,7 @@
 }
 .menu-item h2 {
     margin: 10px 0;
-    font-size: 1.4em;
+    font-size: 1.8em;
 }
 .menu-item p {
     margin: 0;
@@ -151,12 +149,28 @@
 
 #iconClose{
     width: 57px;
-    margin-top: -20px;
-    margin-left: 276%;
+    margin-top: -10px;
+    margin-left: 200%;
     height: 40px;
     z-index: 9;
     display: none;
-    transition: left 1s ease-in-out;
+    animation: fadeIn 1s
+}
+
+#menuTendina a{
+    -webkit-tap-highlight-color: transparent; /* Per dispositivi touch */
+    user-select: none; /* Impedisce la selezione del testo */
+    outline: none; /* Rimuove il bordo di focus */
+}
+
+#toggleButton{
+        -webkit-tap-highlight-color: transparent; /* Per dispositivi touch */
+        user-select: none; /* Impedisce la selezione del testo */
+        outline: none; /* Rimuove il bordo di focus */
+}
+
+#menuTendina.hidden{
+    visibility: hidden;
 }
 
 #menuTendina{
@@ -172,8 +186,14 @@
 .tH1{
     padding: 0;
     margin: 0;
-    padding-right: 15%;
+    padding-right: 22%;
     text-shadow: 2px 3px 2px black;
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 200;
+    font-size: 25px;
 }
 
 #tendinaH1{
@@ -189,12 +209,19 @@
     border-color: black;
     padding: 0;
     margin-top: 4%;
+    transform: translateX(-15px);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 
+#menuTendina.open .tH1 {
+    opacity: 1;
+    transform: translateX(0);
+}
 
-
-
-
+#menuTendina.open .hr {
+    opacity: 1;
+    transform: translateX(0px);
+}
 
 @media (min-width: 348px) { /* Quando lo schermo è più largo di 348px */
 
@@ -203,3 +230,5 @@
         height:51px;
     }
 }
+
+
