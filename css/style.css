@@ -6,13 +6,16 @@
     background-color: #000000;
     color: #333;
 }
+html {
+  scroll-behavior: smooth;
+}
+
 @font-face {font-family: 'Borscena';src: url('../css/fonts/BorscenaPersonalUse-Regular.ttf') format('truetype'); /* Cambia il formato se necessario */font-weight: normal;font-style: normal;}
 @font-face {font-family: 'Sumera';src: url('../css/fonts/SumeraDitaPersonalUse-Regular.ttf') format('truetype'); /* Cambia il formato se necessario */font-weight: normal;font-style: normal;}
 @font-face {font-family: 'Comen';src: url('../css/fonts/Comen.ttf') format('truetype'); /* Cambia il formato se necessario */font-weight: normal;font-style: normal;}
 @font-face {font-family: 'Mothiva';src: url('../css/fonts/Mothiva-Regular.otf') format('truetype'); /* Cambia il formato se necessario */font-weight: normal;font-style: normal;}
 @font-face {font-family: 'Philo';src: url('../css/fonts/Philosopher-Bold.ttf') format('truetype'); /* Cambia il formato se necessario */font-weight: normal;font-style: normal;}
 
-   
 #hero1{
     text-align: center;
     position: relative;
@@ -29,6 +32,136 @@
 #section1{
     width: 100vw;
     height: 10vh;
+}
+
+/* HAMBURGER BUTTON */
+#hamburger {
+  position: fixed;
+  z-index: 1001;
+  cursor: pointer;
+  width: 30px;
+  height: 25px;
+}
+
+.line {
+  width: 100%;
+  height: 3px;
+  background-color: white;
+  margin: 6px 0;
+  border-radius: 2px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* SIDE MENU */
+#sideMenu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  height: 100vh;
+  width: 65vw;
+  max-width: 280px;
+  background-color: #111;
+  color: white;
+  padding: 60px 5px;
+  transition: right 0.4s ease-in-out;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.5);
+   z-index: 1001;
+}
+
+#sideMenu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#sideMenu ul li {
+   margin: 20px 0;
+   margin-bottom: 5px;
+   padding-left: 3%;
+   margin-top: 15px;
+}
+
+#sideMenu ul li a {
+  text-decoration: none;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+#sideMenu ul li a:hover {
+  color:  rgb(96, 0, 21);
+}
+
+/* ATTIVO */
+#sideMenu.active {
+  right: 0;
+}
+
+#sideMenu ul li:last-child {
+  border-bottom: none;
+}
+
+#menuOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 999;
+  display: none;
+}
+
+#menuOverlay.active {
+  display: block;
+}
+
+#menuLogoV {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: rgb(96, 0, 21);
+  font-family:'Times New Roman', Times, serif;
+  user-select: none;
+  opacity: 0;  /* Inizialmente invisibile per animazione */
+  transform: translateY(-10px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  pointer-events: none; /* Non cliccabile */
+}
+
+#sideMenu.active #menuLogoV {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.3s;
+}
+
+#menuPrenota{
+  position: absolute;
+  top: 92vh;
+  left: 40px;
+  font-size: 1.5rem;
+  color: rgb(255, 255, 255);
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  user-select: none;
+  opacity: 0;  /* Inizialmente invisibile per animazione */
+  transform: translateY(10px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  border-top-style: solid;
+  border-bottom-style: solid;
+  border-color: rgba(255, 255, 255, 0.146);
+  border-width: 1px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+#sideMenu.active #menuPrenota {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.3s;
 }
 
 .line {
@@ -153,7 +286,7 @@
 .modal {
     display: none;
     position: fixed;
-    z-index: 100;
+    z-index: 2000;
     left: 0;
     top: 0;
     width: 100%;
@@ -670,7 +803,7 @@
 /* FOOTER */
 
 .footer-container {
-  background-color: #111;
+  background-color: #11111100;
   padding: 5vh 5vw;
   padding-top: 3vh;
   display: flex;
@@ -740,10 +873,11 @@
   width: 100%;
   font-size: 0.85rem;
   margin-top: 1rem;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0);
+  border-radius: 3px;
   overflow: hidden;
-  box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.34), -1px -1px 1px rgba(255, 255, 255, 0.277);
+  border-left-style: none;
+  border-right-style: none;
 }
 
 .schedule-row {
@@ -751,11 +885,11 @@
   grid-template-columns: 1fr 1.2fr 1.2fr;
   padding: 0.6rem 0.8rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  background-color: rgba(255, 255, 255, 0.03);
+  background-color: rgba(255, 255, 255, 0);
 }
 
 .schedule-row.header {
-  background-color: rgba(107, 0, 0, 0.519);
+  background-color: rgba(255, 255, 255, 0);
   font-weight: bold;
   color: #ffaa33;
 }
