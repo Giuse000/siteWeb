@@ -6,10 +6,9 @@
     background-color: #000000;
     color: #333;
 }
-html, body {
-  scroll-behavior: auto !important;
+html {
+  scroll-behavior: smooth;
 }
-
 
 @font-face {font-family: 'Borscena';src: url('../css/fonts/BorscenaPersonalUse-Regular.ttf') format('truetype'); /* Cambia il formato se necessario */font-weight: normal;font-style: normal;}
 @font-face {font-family: 'Sumera';src: url('../css/fonts/SumeraDitaPersonalUse-Regular.ttf') format('truetype'); /* Cambia il formato se necessario */font-weight: normal;font-style: normal;}
@@ -37,11 +36,18 @@ html, body {
 
 /* HAMBURGER BUTTON */
 #hamburger {
+  padding: 0;
+  margin: 0;
   position: fixed;
-  z-index: 1001;
+  z-index: 100;
   cursor: pointer;
-  width: 30px;
-  height: 25px;
+  width: 25vw;
+  height: 10vh;
+  margin-left: 75vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .line {
@@ -235,31 +241,28 @@ html, body {
 .line {
     width: 9vw;
     max-width: 39px;
-    margin-top: 7%;
     height: 1px;
     border-style: solid;
     border-color: white;
     background-color: white;
     border-radius: 1px;
     border-width: 0px;
-    z-index: 12;
+    z-index: 2000;
     position: fixed;
-    margin-left: 88vw;
+    justify-content:space-around;
 }
 
 #l1{
-    margin-top: 28px;
-    margin-left: 86vw;
+  margin-top: 28px;
 }
 
 #l2{
-    margin-top: 39px;
-    margin-left: 84vw;
+    margin-left: -15px;
 }
 
 #l3{
-    margin-top: 50px;
-    margin-left: 86vw;
+    margin-bottom: 28px;
+    
 }
 
 #text1{
