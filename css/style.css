@@ -289,6 +289,8 @@
   width: 65vw;
   max-width: 220px;
   height: 25vh;
+  max-height: 208px;
+  min-height: 208px;
   background-image: url(../css/img/champagne.jpg);
   background-size: cover;
   border-style: solid;
@@ -351,6 +353,8 @@
   width: 65vw;
   max-width: 220px;
   height: 25vh;
+  max-height: 208px;
+  min-height: 208px;
   background-image: url(../css/img/beer.jpg);
   background-size: cover;
   background-position: center;
@@ -376,6 +380,8 @@
   width: 65vw;
   max-width: 220px;
   height: 25vh;
+  max-height: 208px;
+  min-height: 208px;
   background-image: url(../css/img/dessert.jpg);
   background-size: cover;
   background-position: center;
@@ -558,6 +564,107 @@
   flex-direction: column;
   gap: 10vh;
 }
+
+/* TABLET: da 768px a 1024px */
+@media (min-width: 768px) and (max-width: 1024px) {
+  #text1 {
+    font-size: 3.8rem;
+    top: 60vh;
+  }
+
+  #button {
+    width: 40%;
+    font-size: 1rem;
+  }
+
+  #imgCircle, #imgCircle2, #imgCircle3 {
+    width: 50vw;
+    height: 30vh;
+  }
+
+  .carousel-img {
+    height: 45vh;
+  }
+
+  .location-caption {
+    font-size: 1rem;
+  }
+}
+
+/* DESKTOP: da 1025px in su */
+@media (min-width: 1025px) {
+  #text1 {
+    font-size: 4rem;
+    top: 55vh;
+  }
+
+  #button {
+    width: 30%;
+    font-size: 1.1rem;
+  }
+
+  #imgCircle, #imgCircle2, #imgCircle3 {
+    width: 30vw;
+    height: 30vh;
+  }
+
+  .carousel-img {
+    height: 50vh;
+  }
+
+  .location-caption {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+
+  #section2, #section3 {
+    padding: 2rem 8rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .location-info {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+}
+
+@media screen and (max-height: 800px) {
+  #text1 {
+    font-size: 4.2rem;
+    top: 65vh;
+  }
+}
+
+@media screen and (max-height: 720px) {
+  #text1 {
+    font-size: 3.8rem;
+    top: 63vh;
+  }
+}
+
+@media screen and (max-height: 650px) {
+  #text1 {
+    font-size: 3.4rem;
+    top: 60vh;
+  }
+}
+
+@media screen and (max-height: 580px) {
+  #text1 {
+    font-size: 3.0rem;
+    top: 58vh;
+  }
+}
+
+@media screen and (max-height: 500px) {
+  #text1 {
+    font-size: 2.6rem;
+    top: 55vh;
+  }
+}
+
 
 
 
