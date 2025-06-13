@@ -5,6 +5,48 @@ AOS.init({
   once: false
 });
 
+//Scroll
+function smoothScrollSlow(targetSelector, duration = 3000) {
+  const target = document.querySelector(targetSelector);
+  if (!target) return;
+
+  const startY = window.pageYOffset;
+  const targetY = target.getBoundingClientRect().top + startY;
+  const distance = targetY - startY;
+  let startTime = null;
+
+  function step(timestamp) {
+    if (!startTime) startTime = timestamp;
+    const elapsed = timestamp - startTime;
+
+    // progress in range 0-1
+    const progress = Math.min(elapsed / duration, 1);
+
+    // posizione attuale: calcolo linear (puoi sostituire con easing se vuoi)
+    const currentY = startY + distance * progress;
+
+    window.scrollTo(0, currentY);
+
+    if (progress < 1) {
+      window.requestAnimationFrame(step);
+    }
+  }
+
+  window.requestAnimationFrame(step);
+}
+
+document.querySelectorAll('#sideMenu a').forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    closeMenu();
+
+    const href = link.getAttribute('href');
+    smoothScrollSlow(href, 1500);
+  });
+});
+
+
+
 // SideMenu
   function toggleMenu() {
     document.getElementById('sideMenu').classList.toggle('active');

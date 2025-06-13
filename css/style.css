@@ -6,9 +6,10 @@
     background-color: #000000;
     color: #333;
 }
-html {
-  scroll-behavior: smooth;
+html, body {
+  scroll-behavior: auto !important;
 }
+
 
 @font-face {font-family: 'Borscena';src: url('../css/fonts/BorscenaPersonalUse-Regular.ttf') format('truetype'); /* Cambia il formato se necessario */font-weight: normal;font-style: normal;}
 @font-face {font-family: 'Sumera';src: url('../css/fonts/SumeraDitaPersonalUse-Regular.ttf') format('truetype'); /* Cambia il formato se necessario */font-weight: normal;font-style: normal;}
