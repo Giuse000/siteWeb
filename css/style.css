@@ -70,7 +70,7 @@
     position: absolute;
     top: 68vh; /* modifica per spostarlo più in alto o basso */
     z-index: 10;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 #logo-container{
@@ -135,13 +135,13 @@
     color: white;
     border-style:solid;
     border-radius: 5%;
-    border-color: rgba(204, 122, 0, 0.744);
+    border-color: rgb(206, 136, 31);
     border-width: 3px;
     background-color: rgba(245, 222, 179, 0);
     width: 51%;
     max-width: 185px;
     height: 6%;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 1.1rem;
     font-weight:600;
     letter-spacing: 1px;
@@ -165,7 +165,7 @@
 
     /* Contenuto popup */
 .modal-content {
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 20px;
     background-color: #fefefe;
     margin: 15% auto;
@@ -184,26 +184,26 @@
     border-radius: 6px;
     border: none;
     cursor: pointer;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-weight: bold;
 }
 
 .whatsapp-btn {
     background-color: #25D366;
     color: white;
-    box-shadow: 2px 3px 1px rgba(0, 0, 0, 0.455);
+    box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.455);
 }
 
 .call-btn {
     background-color: #007BFF;
     color: white;
-        box-shadow: 2px 3px 1px rgba(0, 0, 0, 0.455);
+    box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.455);
 }
 
 .close-btn {
     background-color: #dc3545;
     color: white;
-        box-shadow: 2px 3px 1px rgba(0, 0, 0, 0.455);
+    box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.455);
 }
 
 
@@ -296,7 +296,7 @@
   border-style: solid;
   border-radius: 50%;
   border-width: 1px;
-  border-color: white;
+  border-color: rgba(255, 255, 255, 0.533);
 }
 
 #chef-text{
@@ -361,7 +361,7 @@
   border-style: solid;
   border-radius: 50%;
   border-width: 1px;
-  border-color: white;
+  border-color: rgba(255, 255, 255, 0.533);
 }
 
 #citazione2 {
@@ -388,7 +388,7 @@
   border-style: solid;
   border-radius: 50%;
   border-width: 1px;
-  border-color: white;
+  border-color: rgba(255, 255, 255, 0.533);
 }
 
 #footer{
@@ -633,35 +633,35 @@
 @media screen and (max-height: 800px) {
   #text1 {
     font-size: 4.2rem;
-    top: 65vh;
+    top: 67vh;
   }
 }
 
 @media screen and (max-height: 720px) {
   #text1 {
     font-size: 3.8rem;
-    top: 63vh;
+     top: 67vh;
   }
 }
 
 @media screen and (max-height: 650px) {
   #text1 {
     font-size: 3.4rem;
-    top: 60vh;
+    top: 67vh;
   }
 }
 
 @media screen and (max-height: 580px) {
   #text1 {
     font-size: 3.0rem;
-    top: 58vh;
+     top: 67vh;
   }
 }
 
 @media screen and (max-height: 500px) {
   #text1 {
     font-size: 2.6rem;
-    top: 55vh;
+    top: 67vh;
   }
 }
 
