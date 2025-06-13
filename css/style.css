@@ -52,6 +52,7 @@ html {
   transition: all 0.3s ease-in-out;
 }
 
+
 /* SIDE MENU */
 #sideMenu {
   position: fixed;
@@ -81,6 +82,34 @@ html {
    margin-top: 15px;
 }
 
+#sideMenu ul li {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* Quando il menu è attivo */
+#sideMenu.active ul li {
+  opacity: 1;
+  transform: translateX(0);
+}
+#sideMenu.active ul li {
+  transition-delay: 0.2s;
+}
+
+#sideMenu.active ul li:nth-child(1) {
+  transition-delay: 0.50s;
+}
+#sideMenu.active ul li:nth-child(3) {
+  transition-delay: 0.80s;
+}
+#sideMenu.active ul li:nth-child(5) {
+  transition-delay: 1.20s;
+}
+#sideMenu.active ul li:nth-child(7) {
+  transition-delay: 1.50s;
+}
+
 #sideMenu ul li a {
   text-decoration: none;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -88,6 +117,41 @@ html {
   font-size: 1.5rem;
   font-weight: 500;
   transition: color 0.3s;
+}
+
+.liLine{
+  width: 60%; 
+  margin: 0; 
+  padding: 0;
+  border: none;
+  border-bottom-style: solid;
+  border-color: rgba(255, 255, 255, 0.116); 
+  border-width: 1px;
+  height: 1px;  
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+#sideMenu.active ul .liLine:nth-of-type(1) {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.10s;
+}
+#sideMenu.active ul .liLine:nth-of-type(2) {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.30s;
+}
+#sideMenu.active ul .liLine:nth-of-type(3) {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.60s;
+}
+#sideMenu.active ul .liLine:nth-of-type(4) {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.90s;
 }
 
 #sideMenu ul li a:hover {
@@ -156,12 +220,15 @@ html {
   border-width: 1px;
   padding-top: 3px;
   padding-bottom: 3px;
+  opacity: 0;  /* Inizialmente invisibile per animazione */
+  transform: translateY(-10px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
 #sideMenu.active #menuPrenota {
   opacity: 1;
   transform: translateY(0);
-  transition-delay: 0.3s;
+  transition-delay: 1.90s;
 }
 
 .line {
