@@ -420,11 +420,12 @@ html {
 #imgCircle{
   margin-top: 12%;
   margin-bottom: 5%;
-  width: 65vw;
-  max-width: 220px;
-  height: 25vh;
-  max-height: 208px;
-  min-height: 208px;
+  width: 53vw;
+  height: 22vh;
+  max-width: 171px;
+  min-width: 171px;
+  max-height: 183px;
+  min-height: 183px;
   background-image: url(../css/img/champagne.jpg);
   background-size: cover;
   border-style: solid;
@@ -484,11 +485,12 @@ html {
 #imgCircle2{
   margin-top: 12%;
   margin-bottom: 5%;
-  width: 65vw;
-  max-width: 220px;
-  height: 25vh;
-  max-height: 208px;
-  min-height: 208px;
+  width: 53vw;
+  height: 22vh;
+  max-width: 171px;
+  min-width: 171px;
+  max-height: 183px;
+  min-height: 183px;
   background-image: url(../css/img/beer.jpg);
   background-size: cover;
   background-position: center;
@@ -511,11 +513,12 @@ html {
 #imgCircle3{
   margin-top: 12%;
   margin-bottom: 5%;
-  width: 65vw;
-  max-width: 220px;
-  height: 25vh;
-  max-height: 208px;
-  min-height: 208px;
+  width: 53vw;
+  height: 22vh;
+  max-width: 171px;
+  min-width: 171px;
+  max-height: 183px;
+  min-height: 183px;
   background-image: url(../css/img/dessert.jpg);
   background-size: cover;
   background-position: center;

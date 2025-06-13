@@ -5,37 +5,35 @@ AOS.init({
   once: false
 });
 
-// Swiper
-new Swiper('.my-carousel', {
-  slidesPerView: 1.5,
-  spaceBetween: 10,
-  loop: true,
-  loopedSlides: 3,            // importantissimo, almeno slidesPerView arrotondato
-  centeredSlides: true,
-  autoplay: {
-    delay: 3000,
-    disableOnInteraction: false
-  },
-  watchSlidesProgress: true,  // aiuta con le slide parziali e scaling
-  watchSlidesVisibility: true,
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true
-  },
-  navigation: false,
-  breakpoints: {
-    768: {
-      slidesPerView: 2.5,
-      loopedSlides: 4
-    },
-    1024: {
-      slidesPerView: 3.5,
-      loopedSlides: 5
-    }
+// SideMenu
+  function toggleMenu() {
+    document.getElementById('sideMenu').classList.toggle('active');
+    document.getElementById('menuOverlay').classList.toggle('active');
   }
-});
 
+  function closeMenu() {
+    document.getElementById('sideMenu').classList.remove('active');
+    document.getElementById('menuOverlay').classList.remove('active');
+  }
 
+  // Chiudi anche cliccando su un link del menu
+  document.querySelectorAll('#sideMenu a').forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault(); // evita lo scroll immediato
+
+      const targetId = link.getAttribute('href');
+      const targetElement = document.querySelector(targetId);
+
+      closeMenu();
+
+      // Aspetta che il menu si chiuda, poi fai lo scroll
+      setTimeout(() => {
+        if (targetElement) {
+          targetElement.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 400); // 400ms = durata della transizione del menu
+    });
+  });
 
 
 
@@ -104,4 +102,33 @@ window.onclick = function(event) {
 }
 
 
+// Swiper
+new Swiper('.my-carousel', {
+  slidesPerView: 1.5,
+  spaceBetween: 10,
+  loop: true,
+  loopedSlides: 3,            // importantissimo, almeno slidesPerView arrotondato
+  centeredSlides: true,
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false
+  },
+  watchSlidesProgress: true,  // aiuta con le slide parziali e scaling
+  watchSlidesVisibility: true,
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true
+  },
+  navigation: false,
+  breakpoints: {
+    768: {
+      slidesPerView: 2.5,
+      loopedSlides: 4
+    },
+    1024: {
+      slidesPerView: 3.5,
+      loopedSlides: 5
+    }
+  }
+});
 
