@@ -257,4 +257,18 @@
   pointer-events: auto;
 }
 
+#paccheriS{
+    padding: 10px;
+}
+
+@media (max-width: 270px){
+    #paccheriT{
+    font-size: 1.0em;
+}
+#paccheriS{
+    padding: 2px;
+}
+}
+
+
 
