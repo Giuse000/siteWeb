@@ -385,14 +385,13 @@ footer {
 
 #s3p{
     animation: fadeIn 3s; 
-    text-align: center;
     padding: 0;
     margin: 0;
     padding-left: 14%;
     padding-right: 10%;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     text-align: center;
-    padding-bottom: 7%;
+    padding-bottom: 2%;
     color: rgb(26, 26, 26);
     font-size: 16px;
 }
@@ -439,6 +438,22 @@ footer {
 #section3{
     padding-top: 30px;
     background-color: rgb(255, 255, 255);
+}
+
+#prenotaB{
+    text-decoration: none;
+    border-radius: 5%;
+    font-size: 1.0rem;
+    padding: 10px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+    border-top-style: solid;
+    letter-spacing: 0px;
+    border-width: 1px;
+    border-bottom-style: solid;
+    border-color: #3333337c;
+    background-color: rgba(255, 255, 255, 0);
+
 }
 
 
