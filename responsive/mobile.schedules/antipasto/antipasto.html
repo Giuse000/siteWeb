@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Imperial+Script&family=Lora:ital,wght@0,400..700;1,400..700&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Ms+Madi&family=Outfit:wght@100..900&family=Playwrite+HR+Lijeva:wght@100..400&family=The+Nautigal:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Imperial+Script&family=Ms+Madi&family=Playwrite+HR+Lijeva:wght@100..400&family=The+Nautigal:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="../antipasto/antipasto.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Imperial+Script&family=Ms+Madi&family=Outfit:wght@100..900&family=Playwrite+HR+Lijeva:wght@100..400&family=The+Nautigal:wght@400;700&display=swap" rel="stylesheet">
+    
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+
+    <link rel="icon" href="../../../css/img/logo.png" type="image.png">
+
+    <title>Ristorante | Primi</title>
+
+<div class="menu-button" id="menuBarDiv">
+         <button id="toggleButton" class="menuBarB">
+
+            <svg id="iconOpen" viewBox="0 0 35 35" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000" stroke-width="0.0002"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill="#000000" fill-rule="evenodd" d="M19 4a1 1 0 01-1 1H2a1 1 0 010-2h16a1 1 0 011 1zm0 6a1 1 0 01-1 1H2a1 1 0 110-2h16a1 1 0 011 1zm-1 7a1 1 0 100-2H2a1 1 0 100 2h16z"></path> </g></svg>
+            <svg id="iconClose" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="none" transform="rotate(180)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2 10h16m0 0l-7-7m7 7l-7 7"></path> </g></svg>
+        </button>
+
+</div>
+
+<div id="menuTendina">
+    <h1 id="tendinaH1"  class="tH1"><a href="../../mobile.html">HOME</a></h1> <hr>
+    <h1 class="tH1"><a href="./antipasto.html">MEN&Ugrave;</a></h1><hr>
+    <h1 class="tH1"><a href="../contatti/contatti.html">CONTATTI</a></h1><hr>
+</div>
+
+<script>
+    const menu = document.getElementById("menuTendina");
+    const button = document.getElementById("toggleButton");
+    const iconOpen = document.getElementById("iconOpen");
+    const iconClose = document.getElementById("iconClose");
+
+    button.addEventListener("click", () => {
+        menu.classList.toggle("open"); 
+
+        if (menu.classList.contains("open")) {
+            iconOpen.style.display = "none";
+            iconClose.style.display = "block";
+        } else {
+            iconOpen.style.display = "block";
+            iconClose.style.display = "none";
+        }
+    });
+</script>
+
+
+<script>
+    document.addEventListener("click", (event) => {
+        const menu = document.getElementById("menuTendina");
+        const button = document.getElementById("toggleButton");
+        const iconOpen = document.getElementById("iconOpen");
+        const iconClose = document.getElementById("iconClose");
+
+        // Controlla se il click è fuori dal menu e dal pulsante
+        if (!menu.contains(event.target) && !button.contains(event.target)) {
+            menu.classList.remove("open");
+            iconOpen.style.display = "block";
+            iconClose.style.display = "none";
+        }
+    });
+</script>
+
+
+
+
+    <h1 id="title1">Men&ugrave;</h1>
+    <hr id="titleHr">
+    <button id="tornaSu">↑</button>
+    <script>
+  const bottone = document.getElementById('tornaSu');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 200) {
+      bottone.classList.add('visibile');
+    } else {
+      bottone.classList.remove('visibile');
+    }
+  });
+
+  bottone.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+</script>
+</head>
+<body>
+
+    <div class="menu-container">
+        <br>
+        <!-- Elemento del menu 1 -->
+        <div class="menu-item" id="item1">
+            <div class="content">
+                <h2 class="itemstext" style="background-image: url(../antipasto/img/imgAnti1.jpg);background-size: 100%;background-position: center;background-repeat: no-repeat;">Antipasto <span style="font-size: 0.9em;">Centrale</span></h2>
+
+                <p><b><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" d="M15.5 24V.5h.5A4.5 4.5 0 0 1 20.5 5v9.5H20a2.5 2.5 0 0 0-2.5 2.5M7 24V9.5m0 0A3.5 3.5 0 0 0 10.5 6V0M7 9.5A3.5 3.5 0 0 1 3.5 6V0M7 0v7.5"/></svg> <span style="color: orange;font-size: 1.1em;">Affettati misti:</span></b> <br>
+                    ∙ Capocollo piccante <br> ∙ Lonzino stagionato <br>∙ Prosciutto crudo <br>∙ Formaggio di pecora dolce e piccante <br> </p>
+                    <br><br>
+                <p><b><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" d="M15.5 24V.5h.5A4.5 4.5 0 0 1 20.5 5v9.5H20a2.5 2.5 0 0 0-2.5 2.5M7 24V9.5m0 0A3.5 3.5 0 0 0 10.5 6V0M7 9.5A3.5 3.5 0 0 1 3.5 6V0M7 0v7.5"/></svg><span style="color: orange;font-size: 1.1em;"> Fritti Misti:</span> </b> <br> 
+                    ∙ Montanara con sugo di pomodoro e grana a scaglie <br> ∙ Melanzane panate e fritte <br> ∙ Rustico all'ortolana <br> ∙ Peperonata</p>
+                    <br><br>
+
+
+                <h2 class="itemstext" style="background-image: url(../antipasto/img/imgPrimo1.jpg);background-size: 70%;background-position: right;background-repeat: no-repeat;">Primo</h2> <br>
+                <p><b><span style="color: rgb(0, 0, 0);font-size: 1.1em;"><span style="color: rgba(255, 166, 0, 0.646);font-size: 1.0em;">&#9135;&#9135;&#9135; </span> <span style="padding: 10px;"> Paccheri alla siciliana </span> <span style="color: rgba(255, 166, 0, 0.646);font-size: 1.0em;"> &#9135;&#9135;&#9135;</span></span></b>
+                    <br><br><br>
+
+                <h2 class="itemstext" style="background-image: url(../antipasto/img/imgSecondo1.jpg);background-size: 100%;background-position: center;">Secondo</h2> <br>
+                <p style="padding-left: 20vw;padding-right: 20vw;font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;font-weight: bold;"><span style="color: rgb(0, 0, 0);font-size: 1.0em;"> Tagliata di maialino  con rucola, grana  e glassa di aceto balsamico </span></p>
+                <br><br>
+
+                <h2 class="itemstext" style="background-image: url(../antipasto/img/imgBevande1.jpg);background-size: 50%;background-repeat: no-repeat;background-position-x: center;background-position-y: center;">Bevande</h2> <br>
+                <p style="padding-left: 20vw;padding-right: 20vw;font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;font-weight: bold;"><span style="color: rgb(0, 0, 0);font-size: 1.0em;"> Acqua - vino - caff&egrave; e digestivo <i>INCLUSE</i></span></p>
+                <br><br>
+                    
+                <p style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif"><button> <b>35,00€ </b> <br><span style="font-size: 0.8rem;">( A PERSONA )</span></button></p>
+
+
+                <h1 id="title1" style="font-size: 1.9rem;padding-left: 0%;">Men&ugrave; <br> Bambino</h1>
+                <hr id="titleHr" style="margin-right: 60vw;">
+
+                <br>
+
+                <h2 class="itemstext" style="background-image: url(../antipasto/img/imgPrimo1.jpg);background-size: 70%;background-position: right;background-repeat: no-repeat;">Primo</h2> <br>
+                <p><b><span style="color: rgb(0, 0, 0);font-size: 1.1em;"><span style="color: rgba(255, 166, 0, 0.646);font-size: 1.0em;">&#9135;&#9135;&#9135; </span> <span style="padding: 10px;"> Pennette al sugo </span> <span style="color: rgba(255, 166, 0, 0.646);font-size: 1.0em;"> &#9135;&#9135;&#9135;</span></span></b>
+                    <br><br><br>
+
+                <h2 class="itemstext" style="background-image: url(../antipasto/img/imgSecondo1.jpg);background-size: 100%;background-position: center;">Secondo</h2> <br>
+                <p style="padding-left: 20vw;padding-right: 20vw;font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;font-weight: bold;"><span style="color: rgb(0, 0, 0);font-size: 1.0em;"> Cotoletta di pollo con patatine fritte </span></p>
+                <br><br>
+
+                <h2 class="itemstext" style="background-image: url(../antipasto/img/imgBevande1.jpg);background-size: 50%;background-repeat: no-repeat;background-position-x: center;background-position-y: center;">Bevande</h2> <br>
+                <p style="padding-left: 20vw;padding-right: 20vw;font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;font-weight: bold;"><span style="color: rgb(0, 0, 0);font-size: 1.0em;"> Acqua e Coca Cola <i>INCLUSE</i></span></p>
+                    <br><br>
+                    
+                 <p style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif"><button> <b>20,00€ </b> <br><span style="font-size: 0.8rem;">( A BAMBINO )</span></button></p>
+                    <br><br>
+            </div>
+        </div>
+
+    </div>
+
+    
+    
+</body>
+</html>
