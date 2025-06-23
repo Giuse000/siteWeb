@@ -282,19 +282,14 @@
 .persT{
     display: inline-block;
     font-size: 0.7rem;
-    float: right;
     padding-left: 2px;
     color: rgb(0, 0, 0);
-    padding-top: 4px;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .costT{
     display: inline-block;
-    text-align: right;
-    float: right;
     font-size: 0.9rem;
-    padding-top: 5px;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
