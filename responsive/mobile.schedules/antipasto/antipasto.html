@@ -15,6 +15,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="../antipasto/antipasto.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Imperial+Script&family=Ms+Madi&family=Outfit:wght@100..900&family=Playwrite+HR+Lijeva:wght@100..400&family=The+Nautigal:wght@400;700&display=swap" rel="stylesheet">
     
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
@@ -102,11 +103,59 @@
 </head>
 <body>
 
+
+
+    <!-- Pulsante Toggle -->
+  <div class="menu-toggle" id="toggleMenu">
+    <span class="arrow"><i class="fas fa-chevron-left" style="font-size: 1.5rem;padding-left: 5px;"></i></span>
+  </div>
+
+  <!-- Menu laterale -->
+  <div class="side-menu" id="sideMenu">
+    <a href="#title1">Antipasti</a>
+    <a href="#secondo">Primi</a>
+    <a href="#terzo">Secondo</a>
+    <a href="#terzo">Contorni</a>
+    <a href="#terzo"><i>Sfizi</i></a>
+    <a href="#terzo"><i>Dolci</i></a>
+    <a href="#terzo"><i>Frutta</i></a>
+    <a href="#terzo"><i>Bevande</i></a>
+  </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggleBtn = document.getElementById('toggleMenu');
+    const menu = document.getElementById('sideMenu');
+
+    toggleBtn.addEventListener('click', (e) => {
+      e.stopPropagation(); // impedisce la chiusura immediata
+      menu.classList.toggle('open');
+      toggleBtn.classList.toggle('open');
+    });
+
+    // Chiudi il menu se clic fuori
+    document.addEventListener('click', (e) => {
+      const isClickInsideMenu = menu.contains(e.target);
+      const isClickOnButton = toggleBtn.contains(e.target);
+
+      if (!isClickInsideMenu && !isClickOnButton) {
+        menu.classList.remove('open');
+        toggleBtn.classList.remove('open');
+      }
+    });
+  });
+</script>
+
+
+
+
+
     <div class="menu-container">
         <br>
 
-<div id="item1">
-                <p style="display: inline-block;   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; color: orange;font-size: 1.5em;width: 100vw;display: block;padding-bottom: 8px;"><b> ANTIPASTI </b></p>
+<div id="item">
+                <p style="display: inline-block;   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; color: orange;font-size: 1.5em;width: 100%;display: block; text-align: center; animation:fadeInDown 2s;" id="antipasto"><b> ANTIPASTI </b></p>
+                <hr style="width: 30px;padding: 0;margin-bottom: 8px;border: none;border-top-style: solid;border-width: 1px;margin-top: 4px;" id="hrAnti">
 
 
                 <p style="display: inline-block;"class="plate"><b> Antipasto della casa </b></p>
@@ -121,7 +170,8 @@
 
 
 
-                <p style="display: inline-block;  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; color: orange;font-size: 1.5em;width: 100vw;display: block;padding-bottom: 8px;"><b> SPECIAL <br> TARTUFO </b></p>
+                <p style="display: inline-block;  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; color: orange;font-size: 1.5em;width: 100%;display: block;padding-bottom: 8px;text-align: center;animation: fadeInDown 3s;"><b> SPECIAL <br> TARTUFO <i style="font-size: 0.5em;"><br>( ANTIPASTI )</i> </b></p>
+                <hr style="width: 30px;padding: 0;margin-bottom: 8px;border: none;border-top-style: solid;border-width: 1px;margin-top: 2px;margin-bottom: 20px;" id="hrAnti">
 
 
                 <p style="display: inline-block;"class="plate2"> Bruschette al tartufo nero </p>  <br>
@@ -144,6 +194,48 @@
                   <p class="costT2"><span style="color: rgba(255, 166, 0, 0.646);font-size: 1.0em;">&#9135;</span>12€ <span style="color: rgba(255, 166, 0, 0.646);font-size: 1.0em;">&#9135; </span></p></p>
 
 </div>
+<br><br><br>
+<div class="item">
+
+                  <p style="display: inline-block;  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; color: orange;font-size: 1.5em;width: 100%;display: block;padding-bottom: 8px;text-align: center;animation: fadeInDown 3s;"><b> PRIMI </b></p>
+                <hr style="width: 30px;padding: 0;margin-bottom: 8px;border: none;border-top-style: solid;border-width: 1px;margin-top: 2px;margin-bottom: 20px;" id="hrAnti">
+
+
+                <p style="display: inline-block;"class="plate2"> Gnocchi alla sorrentina 
+                  <p class="costT2"><span style="color: rgba(255, 166, 0, 0.646);font-size: 1.0em;">&#9135; </span> 8€ <span style="color: rgba(255, 166, 0, 0.646);font-size: 1.0em;">&#9135; </span> </p></p>
+                <p style="display: inline-block;"class="plate2"> Risotto ai funghi porcini 
+                  <p class="costT2"><span style="color: rgba(255, 166, 0, 0.646);font-size: 1.0em;">&#9135; </span> 13€ <span style="color: rgba(255, 166, 0, 0.646);font-size: 1.0em;">&#9135; </span></p> </p>
+                <p style="display: inline-block;"class="plate2">  Pappardelle al rag&ugrave; di cinghiale
+                  <p class="costT2"><span style="color: rgba(255, 166, 0, 0.646);font-size: 1.0em;">&#9135; </span> 12€ <span style="color: rgba(255, 166, 0, 0.646);font-size: 1.0em;">&#9135; </span></p></p>
+                <p style="display: inline-block;"class="plate2">  Strascinati con salsiccia, pomodorini e funghi misti
+                  <p class="costT2"><span style="color: rgba(255, 166, 0, 0.646);font-size: 1.0em;">&#9135; </span> 9€ <span style="color: rgba(255, 166, 0, 0.646);font-size: 1.0em;">&#9135; </span></p></p>
+                <p style="display: inline-block;"class="plate2">  Fusilli con speck e noci
+                  <p class="costT2"><span style="color: rgba(255, 166, 0, 0.646);font-size: 1.0em;">&#9135; </span> 9€ <span style="color: rgba(255, 166, 0, 0.646);font-size: 1.0em;">&#9135; </span></p></p>
+
+</div>
+<br><br>
+<div class="item">
+
+                  <p style="display: inline-block;  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; color: orange;font-size: 1.5em;width: 100%;display: block;padding-bottom: 8px;text-align: center;animation: fadeInDown 3s;"><b> SPECIAL <br> TARTUFO <i style="font-size: 0.5em;"><br>( PRIMI )</i> </b></p>
+                <hr style="width: 30px;padding: 0;margin-bottom: 8px;border: none;border-top-style: solid;border-width: 1px;margin-top: 2px;margin-bottom: 20px;" id="hrAnti">
+
+
+                <p style="display: inline-block;"class="plate2"> Tagliolini freschi al tartufo 
+                  <p class="costT2"><span style="color: rgba(255, 166, 0, 0.646);font-size: 1.0em;">&#9135; </span> 15€ <span style="color: rgba(255, 166, 0, 0.646);font-size: 1.0em;">&#9135; </span> </p></p>
+                <p style="display: inline-block;"class="plate2"> Risotto al tartufo nero
+                  <p class="costT2"><span style="color: rgba(255, 166, 0, 0.646);font-size: 1.0em;">&#9135; </span> 16€ <span style="color: rgba(255, 166, 0, 0.646);font-size: 1.0em;">&#9135; </span></p> </p>
+                <p style="display: inline-block;"class="plate2">  Ravioli ripieni di ricotta di bufala e tartufo nero su letto di zafferano nostrano
+                  <p class="costT2"><span style="color: rgba(255, 166, 0, 0.646);font-size: 1.0em;">&#9135; </span> 18€ <span style="color: rgba(255, 166, 0, 0.646);font-size: 1.0em;">&#9135; </span></p></p>
+                <p style="display: inline-block;"class="plate2">  Gnocchi ripieni di provola con crema di broccoli e scaglie di tartufo nero
+                  <p class="costT2"><span style="color: rgba(255, 166, 0, 0.646);font-size: 1.0em;">&#9135; </span> 18€ <span style="color: rgba(255, 166, 0, 0.646);font-size: 1.0em;">&#9135; </span></p></p>
+                <p style="display: inline-block;"class="plate2">  Gnocchi con crema di zucca e tartufo nero
+                  <p class="costT2"><span style="color: rgba(255, 166, 0, 0.646);font-size: 1.0em;">&#9135; </span> 15€ <span style="color: rgba(255, 166, 0, 0.646);font-size: 1.0em;">&#9135; </span></p></p>
+                <p style="display: inline-block;"class="plate2">  Spaghetti alla carbonara con tartufo nero
+                  <p class="costT2"><span style="color: rgba(255, 166, 0, 0.646);font-size: 1.0em;">&#9135; </span> 18€ <span style="color: rgba(255, 166, 0, 0.646);font-size: 1.0em;">&#9135; </span></p></p>
+                <p style="display: inline-block;"class="plate2">  Penne alla Norcina con tartufo nero
+                  <p class="costT2"><span style="color: rgba(255, 166, 0, 0.646);font-size: 1.0em;">&#9135; </span> 15€ <span style="color: rgba(255, 166, 0, 0.646);font-size: 1.0em;">&#9135; </span></p></p>
+
+</div>
 
 
 
@@ -151,7 +243,7 @@
 
 
 
-<div id="item2">
+<div class="item">
                 <h2 class="itemstext" style="background-image: url(../antipasto/img/imgAnti1.jpg);background-size: 100%;background-position: center;background-repeat: no-repeat;">Antipasto <span style="font-size: 0.9em;">Centrale</span></h2>
 
                 <p style="text-align: center;"><b> <span style="color: orange;font-size: 1.1em;"> <i style="text-align: center;">Tartufata</i></span>:</b></p>
