@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Imperial+Script&family=Lora:ital,wght@0,400..700;1,400..700&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Ms+Madi&family=Outfit:wght@100..900&family=Playwrite+HR+Lijeva:wght@100..400&family=The+Nautigal:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Imperial+Script&family=Ms+Madi&family=Playwrite+HR+Lijeva:wght@100..400&family=The+Nautigal:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="../contatti/contatti.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Imperial+Script&family=Ms+Madi&family=Outfit:wght@100..900&family=Playwrite+HR+Lijeva:wght@100..400&family=The+Nautigal:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="icon" href="../../../css/img/logo.png" type="image.png">
+
+    <title>Ristorante | Primi</title>
+
+<div class="menu-button" id="menuBarDiv">
+         <button id="toggleButton" class="menuBarB">
+
+            <svg id="iconOpen" viewBox="0 0 35 35" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000" stroke-width="0.0002"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill="#000000" fill-rule="evenodd" d="M19 4a1 1 0 01-1 1H2a1 1 0 010-2h16a1 1 0 011 1zm0 6a1 1 0 01-1 1H2a1 1 0 110-2h16a1 1 0 011 1zm-1 7a1 1 0 100-2H2a1 1 0 100 2h16z"></path> </g></svg>
+            <svg id="iconClose" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="none" transform="rotate(180)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2 10h16m0 0l-7-7m7 7l-7 7"></path> </g></svg>
+        </button>
+
+</div>
+
+<div id="menuTendina">
+    <h1 id="tendinaH1"  class="tH1"><a href="../../mobile.html">HOME</a></h1> <hr>
+    <h1 class="tH1"><a href="../antipasto/antipasto.html">MEN&Ugrave;</a></h1><hr>
+    <h1 class="tH1"><a href="./contatti.html">CONTATTI</a></h1><hr>
+</div>
+
+<script>
+    const menu = document.getElementById("menuTendina");
+    const button = document.getElementById("toggleButton");
+    const iconOpen = document.getElementById("iconOpen");
+    const iconClose = document.getElementById("iconClose");
+
+    button.addEventListener("click", () => {
+        menu.classList.toggle("open"); 
+
+        if (menu.classList.contains("open")) {
+            iconOpen.style.display = "none";
+            iconClose.style.display = "block";
+        } else {
+            iconOpen.style.display = "block";
+            iconClose.style.display = "none";
+        }
+    });
+</script>
+
+
+<script>
+    document.addEventListener("click", (event) => {
+        const menu = document.getElementById("menuTendina");
+        const button = document.getElementById("toggleButton");
+        const iconOpen = document.getElementById("iconOpen");
+        const iconClose = document.getElementById("iconClose");
+
+        // Controlla se il click è fuori dal menu e dal pulsante
+        if (!menu.contains(event.target) && !button.contains(event.target)) {
+            menu.classList.remove("open");
+            iconOpen.style.display = "block";
+            iconClose.style.display = "none";
+        }
+    });
+</script>
+</head>
+<body>
+
+  <div class="container">
+
+        <h1>Contattaci</h1>
+
+    <div class="info-block">
+      <i class="fas fa-clock"></i>
+      <div class="info-content">
+        <div class="label">Orari</div>
+        <div class="value"><i style="font-size: 18px;color: #007bff;"><b>Sempre Aperto <i style="font-size: 12px;color: rgba(0, 0, 0, 0.692);">( solo s&ugrave; prenotazione )</i></b></i></div>
+      </div>
+    </div>
+
+    <div class="info-block">
+      <i class="fas fa-envelope"></i>
+      <div class="info-content">
+        <div class="label">Email</div>
+        <div class="value">fontanabosco2013@libero.it</div>
+      </div>
+    </div>
+
+    <div class="info-block">
+      <i class="fas fa-phone-alt"></i>
+      <div class="info-content">
+        <div class="label">Telefono</div>
+        <div class="value">+39 339 361 3037</div>
+      </div>
+    </div>
+
+    <div class="info-block">
+      <i class="fas fa-map-marker-alt"></i>
+      <div class="info-content">
+        <div class="label">Posizione</div>
+    <div class="value"> <a style="all: unset;" href="https://www.google.it/maps/place/AGRITURISMO+FONTANA+BOSCO/@41.1887461,14.3248267,17z/data=!3m1!4b1!4m6!3m5!1s0x133a5957ee27680f:0x252c7bd9ff8a1bb0!8m2!3d41.1887421!4d14.3274016!16s%2Fg%2F11g0ss79k4?hl=it&entry=ttu&g_ep=EgoyMDI1MDYxNi4wIKXMDSoASAFQAw%3D%3D">Via Villa Santa Croce, Piana di Caiazzo, Italy, 81013 | Fontana Bosco</a></div>
+      </div>
+    </div>
+
+        <div class="mappa">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3002.514925266548!2d14.324826676432048!3d41.18874610829243!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x133a5957ee27680f%3A0x252c7bd9ff8a1bb0!2sAGRITURISMO%20FONTANA%20BOSCO!5e0!3m2!1sit!2sit!4v1750347971118!5m2!1sit!2sit" 
+        allowfullscreen="" 
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </div>
+    
+</body>
+</html>
