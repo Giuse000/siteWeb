@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Imperial+Script&family=Ms+Madi&family=Playwrite+HR+Lijeva:wght@100..400&family=The+Nautigal:wght@400;700&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="../antipasto/antipasto.css">
+    <link rel="stylesheet" href="../laptop.schedules/menu.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Imperial+Script&family=Ms+Madi&family=Outfit:wght@100..900&family=Playwrite+HR+Lijeva:wght@100..400&family=The+Nautigal:wght@400;700&display=swap" rel="stylesheet">
@@ -24,59 +24,21 @@
 
     <title>Ristorante | Primi</title>
 
-<div class="menu-button" id="menuBarDiv">
-         <button id="toggleButton" class="menuBarB">
+    <h1 style="width: 0;height: 0;visibility: hidden;" id="section0H">homebutt</h1>
+  <header class="navbar">
+    <div class="logo" id="home">FONTANA BOSCO</div>
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    <div class="menu" id="dropdownMenu">
+      <a href="../desktop.html">Home</a>
+    </div>
+  </header>
 
-            <svg id="iconOpen" viewBox="0 0 35 35" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000" stroke-width="0.0002"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill="#000000" fill-rule="evenodd" d="M19 4a1 1 0 01-1 1H2a1 1 0 010-2h16a1 1 0 011 1zm0 6a1 1 0 01-1 1H2a1 1 0 110-2h16a1 1 0 011 1zm-1 7a1 1 0 100-2H2a1 1 0 100 2h16z"></path> </g></svg>
-            <svg id="iconClose" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="none" transform="rotate(180)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2 10h16m0 0l-7-7m7 7l-7 7"></path> </g></svg>
-        </button>
-
-</div>
-
-<div id="menuTendina">
-    <h1 id="tendinaH1"  class="tH1"><a href="../../mobile.html">HOME</a></h1> <hr>
-    <h1 class="tH1"><a href="./antipasto.html">MEN&Ugrave;</a></h1><hr>
-    <h1 class="tH1"><a href="../contatti/contatti.html">CONTATTI</a></h1><hr>
-</div>
-
-<script>
-    const menu = document.getElementById("menuTendina");
-    const button = document.getElementById("toggleButton");
-    const iconOpen = document.getElementById("iconOpen");
-    const iconClose = document.getElementById("iconClose");
-
-    button.addEventListener("click", () => {
-        menu.classList.toggle("open"); 
-
-        if (menu.classList.contains("open")) {
-            iconOpen.style.display = "none";
-            iconClose.style.display = "block";
-        } else {
-            iconOpen.style.display = "block";
-            iconClose.style.display = "none";
-        }
-    });
-</script>
-
-
-<script>
-    document.addEventListener("click", (event) => {
-        const menu = document.getElementById("menuTendina");
-        const button = document.getElementById("toggleButton");
-        const iconOpen = document.getElementById("iconOpen");
-        const iconClose = document.getElementById("iconClose");
-
-        // Controlla se il click è fuori dal menu e dal pulsante
-        if (!menu.contains(event.target) && !button.contains(event.target)) {
-            menu.classList.remove("open");
-            iconOpen.style.display = "block";
-            iconClose.style.display = "none";
-        }
-    });
-</script>
-
-
-
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('dropdownMenu');
+      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
 
     <h1 id="title1">Men&ugrave;</h1>
     <hr id="titleHr">
@@ -154,24 +116,26 @@
         <br>
 
 <div id="item">
-                <p style="display: inline-block;   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; color: orange;font-size: 1.5em;width: 100%;display: block; text-align: center; animation:fadeInDown 2s;padding-top: 15px;" id="antipasto"><b> ANTIPASTI </b></p>
-                <hr style="width: 30px;padding: 0;margin-bottom: 8px;border: none;border-top-style: solid;border-width: 1px;margin-top: 4px;" id="hrAnti">
+                <p style="display: inline-block;   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; color: orange;font-size: 1.5em;width: 100%;display: block; text-align: center; animation:fadeInDown 2s;padding-top: 15px;" id="antipasto" class="plateTitle"><b> ANTIPASTI </b></p>
+                <hr style="width: 30px;padding: 0;margin-bottom: 8px;border: none;border-top-style: solid;border-width: 2px;margin-top: 4px;" id="hrAnti">
 
 
-                <p style="display: inline-block;"class="plate"><b> Antipasto della casa </b></p>
-                 <p class="costT"> 12€ </p>
-                  <p class="persT"><i>(a persona)</i></p>
-                <p class="plateD"> <i>salumi, formaggi, tegamini caldi prodotti della stagione, fritturine etc.</i></p>
+                <div style="text-align: center;justify-content: center;">
+                    <p style="display: inline-block;padding-bottom: 5px;"class="plate"><b> Antipasto della casa </b></p> <br>
+                    <p class="plateD"> <i>salumi, formaggi, tegamini caldi prodotti della stagione, fritturine etc.</i></p>
+                    <p class="costT2"><span style="color: rgba(255, 166, 0, 0.646);font-size: 1.0em;">&#9135; </span> 12€ <i style="font-size: 0.7em; color: gray;">(a persona)</i> <span style="color: rgba(255, 166, 0, 0.646);font-size: 1.0em;">&#9135; </span></p></p>
+                </div>
 
-                <p style="display: inline-block;" class="plate"><b> Antipasto della casa completo</b></p>
-                  <p class="costT">15€ </p> 
-                    <p class="persT"><i>(a persona)</i></p>
-                <p class="plateD"> <i>bruschetta al tartufo nero, salumi, formaggi, tegamini caldi con prodotti della stagione, fritturine etc.</i></p> <br><br>
+                <div style="text-align: center;justify-content: center;">
+                    <p style="display: inline-block;padding-bottom: 5px;"class="plate"><b> Antipasto della casa completo </b></p> <br>
+                    <p class="plateD"> <i>bruschetta al tartufo nero, salumi, formaggi, tegamini caldi con prodotti della stagione, fritturine etc.</i></p>
+                    <p class="costT2"><span style="color: rgba(255, 166, 0, 0.646);font-size: 1.0em;">&#9135; </span> 15€ <i style="font-size: 0.7em; color: gray;">(a persona)</i> <span style="color: rgba(255, 166, 0, 0.646);font-size: 1.0em;">&#9135; </span></p></p>
+                </div>
 
 
-
-                <p style="display: inline-block;  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; color: orange;font-size: 1.5em;width: 100%;display: block;padding-bottom: 8px;text-align: center;animation: fadeInDown 3s;padding-top: 15px;"><b> SPECIAL <br> TARTUFO <i style="font-size: 0.5em;"><br>( ANTIPASTI )</i> </b></p>
-                <hr style="width: 30px;padding: 0;margin-bottom: 8px;border: none;border-top-style: solid;border-width: 1px;margin-top: 2px;margin-bottom: 20px;" id="hrAnti">
+                 <br><br><br><br>
+                <p style="display: inline-block;  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; color: orange;font-size: 1.5em;width: 100%;display: block;padding-bottom: 8px;text-align: center;animation: fadeInDown 3s;padding-top: 15px;" class="plateTitle"><b> SPECIAL <br> TARTUFO <i style="font-size: 0.5em;"><br>( ANTIPASTI )</i> </b></p>
+                <hr style="width: 30px;padding: 0;margin-bottom: 8px;border: none;border-top-style: solid;border-width: 2px;margin-top: 2px;margin-bottom: 20px;" id="hrAnti">
 
 
                 <p style="display: inline-block;"class="plate2"> Bruschette al tartufo nero </p>  <br>
@@ -197,8 +161,8 @@
 <br><br><br>
 <div class="item">
 
-                  <p style="display: inline-block;  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; color: orange;font-size: 1.5em;width: 100%;display: block;padding-bottom: 8px;text-align: center;animation: fadeInDown 3s;padding-top: 15px;"><b> PRIMI </b></p>
-                <hr style="width: 30px;padding: 0;margin-bottom: 8px;border: none;border-top-style: solid;border-width: 1px;margin-top: 2px;margin-bottom: 20px;" id="hrAnti">
+                  <p style="display: inline-block;  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; color: orange;font-size: 1.5em;width: 100%;display: block;padding-bottom: 8px;text-align: center;animation: fadeInDown 3s;padding-top: 15px;" class="plateTitle"><b> PRIMI </b></p>
+                <hr style="width: 30px;padding: 0;margin-bottom: 8px;border: none;border-top-style: solid;border-width: 2px;margin-top: 2px;margin-bottom: 20px;" id="hrAnti">
 
 
                 <p style="display: inline-block;"class="plate2"> Gnocchi alla sorrentina 
@@ -216,8 +180,8 @@
 <br><br>
 <div class="item">
 
-                  <p style="display: inline-block;  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; color: orange;font-size: 1.5em;width: 100%;display: block;padding-bottom: 8px;text-align: center;animation: fadeInDown 3s;padding-top: 15px;"><b> SPECIAL <br> TARTUFO <i style="font-size: 0.5em;"><br>( PRIMI )</i> </b></p>
-                <hr style="width: 30px;padding: 0;margin-bottom: 8px;border: none;border-top-style: solid;border-width: 1px;margin-top: 2px;margin-bottom: 20px;" id="hrAnti">
+                  <p style="display: inline-block;  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; color: orange;font-size: 1.5em;width: 100%;display: block;padding-bottom: 8px;text-align: center;animation: fadeInDown 3s;padding-top: 15px;"class="plateTitle"><b> SPECIAL <br> TARTUFO <i style="font-size: 0.5em;"><br>( PRIMI )</i> </b></p>
+                <hr style="width: 30px;padding: 0;margin-bottom: 8px;border: none;border-top-style: solid;border-width: 2px;margin-top: 2px;margin-bottom: 20px;" id="hrAnti">
 
 
                 <p style="display: inline-block;"class="plate2"> Tagliolini freschi al tartufo 
@@ -239,8 +203,8 @@
 
 <div class="item">
 
-                  <p style="display: inline-block;  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; color: orange;font-size: 1.5em;width: 100%;display: block;padding-bottom: 8px;text-align: center;animation: fadeInDown 3s;padding-top: 15px;"><b> SECONDI </b></p>
-                <hr style="width: 30px;padding: 0;margin-bottom: 8px;border: none;border-top-style: solid;border-width: 1px;margin-top: 2px;margin-bottom: 20px;" id="hrAnti">
+                  <p style="display: inline-block;  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; color: orange;font-size: 1.5em;width: 100%;display: block;padding-bottom: 8px;text-align: center;animation: fadeInDown 3s;padding-top: 15px;"class="plateTitle"><b> SECONDI </b></p>
+                <hr style="width: 30px;padding: 0;margin-bottom: 8px;border: none;border-top-style: solid;border-width: 2px;margin-top: 2px;margin-bottom: 20px;" id="hrAnti">
 
 
                 <p style="display: inline-block;"class="plate2"> Salsiccia paesana ai ferri
@@ -262,8 +226,8 @@
 <br><br>
 <div class="item">
 
-                  <p style="display: inline-block;  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; color: orange;font-size: 1.5em;width: 100%;display: block;padding-bottom: 8px;text-align: center;animation: fadeInDown 3s;padding-top: 15px;"><b> SPECIAL <br> TARTUFO <i style="font-size: 0.5em;"><br>( SECONDI )</i> </b></p>
-                <hr style="width: 30px;padding: 0;margin-bottom: 8px;border: none;border-top-style: solid;border-width: 1px;margin-top: 2px;margin-bottom: 20px;" id="hrAnti">
+                  <p style="display: inline-block;  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; color: orange;font-size: 1.5em;width: 100%;display: block;padding-bottom: 8px;text-align: center;animation: fadeInDown 3s;padding-top: 15px;"class="plateTitle"><b> SPECIAL <br> TARTUFO <i style="font-size: 0.5em;"><br>( SECONDI )</i> </b></p>
+                <hr style="width: 30px;padding: 0;margin-bottom: 8px;border: none;border-top-style: solid;border-width: 2px;margin-top: 2px;margin-bottom: 20px;" id="hrAnti">
 
 
                 <p style="display: inline-block;"class="plate2"> Tagliata di manzo al tartufo nero 
@@ -294,8 +258,8 @@
 
 <div class="item">
 
-                  <p style="display: inline-block;  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; color: orange;font-size: 1.5em;width: 100%;display: block;padding-bottom: 8px;text-align: center;animation: fadeInDown 3s;padding-top: 15px;"><b> CONTORNI </b></p>
-                <hr style="width: 30px;padding: 0;margin-bottom: 8px;border: none;border-top-style: solid;border-width: 1px;margin-top: 2px;margin-bottom: 20px;" id="hrAnti">
+                  <p style="display: inline-block;  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; color: orange;font-size: 1.5em;width: 100%;display: block;padding-bottom: 8px;text-align: center;animation: fadeInDown 3s;padding-top: 15px;"class="plateTitle"><b> CONTORNI </b></p>
+                <hr style="width: 30px;padding: 0;margin-bottom: 8px;border: none;border-top-style: solid;border-width: 2px;margin-top: 2px;margin-bottom: 20px;" id="hrAnti">
 
 
                 <p style="display: inline-block;"class="plate2"id="sfiziColl"> Insalata mista
@@ -312,8 +276,8 @@
 
 <div class="item">
 
-                  <p style="display: inline-block;  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; color: orange;font-size: 1.5em;width: 100%;display: block;padding-bottom: 8px;text-align: center;animation: fadeInDown 3s;padding-top: 15px;"><b> SFIZI </b></p>
-                <hr style="width: 30px;padding: 0;margin-bottom: 8px;border: none;border-top-style: solid;border-width: 1px;margin-top: 2px;margin-bottom: 20px;" id="hrAnti">
+                  <p style="display: inline-block;  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; color: orange;font-size: 1.5em;width: 100%;display: block;padding-bottom: 8px;text-align: center;animation: fadeInDown 3s;padding-top: 15px;"class="plateTitle"><b> SFIZI </b></p>
+                <hr style="width: 30px;padding: 0;margin-bottom: 8px;border: none;border-top-style: solid;border-width: 2px;margin-top: 2px;margin-bottom: 20px;" id="hrAnti">
 
 
                 <p style="display: inline-block;"class="plate2"> Crocch&egrave;
@@ -334,8 +298,8 @@
 
 <div class="item">
 
-                  <p style="display: inline-block;  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; color: orange;font-size: 1.5em;width: 100%;display: block;padding-bottom: 8px;text-align: center;animation: fadeInDown 3s;padding-top: 15px;"><b> DOLCI </b></p>
-                <hr style="width: 30px;padding: 0;margin-bottom: 8px;border: none;border-top-style: solid;border-width: 1px;margin-top: 2px;margin-bottom: 20px;" id="hrAnti">
+                  <p style="display: inline-block;  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; color: orange;font-size: 1.5em;width: 100%;display: block;padding-bottom: 8px;text-align: center;animation: fadeInDown 3s;padding-top: 15px;"class="plateTitle"><b> DOLCI </b></p>
+                <hr style="width: 30px;padding: 0;margin-bottom: 8px;border: none;border-top-style: solid;border-width: 2px;margin-top: 2px;margin-bottom: 20px;" id="hrAnti">
 
 
                 <p style="display: inline-block;"class="plate2"> Dolce della casa
@@ -347,8 +311,8 @@
 
 <div class="item">
 
-                  <p style="display: inline-block;  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; color: orange;font-size: 1.5em;width: 100%;display: block;padding-bottom: 8px;text-align: center;animation: fadeInDown 3s;padding-top: 15px;"><b> DOLCI<i style="font-size: 0.5em;"><br>( SPECIAL TARTUFO )</i> </b></p>
-                <hr style="width: 30px;padding: 0;margin-bottom: 8px;border: none;border-top-style: solid;border-width: 1px;margin-top: 2px;margin-bottom: 20px;" id="hrAnti">
+                  <p style="display: inline-block;  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; color: orange;font-size: 1.5em;width: 100%;display: block;padding-bottom: 8px;text-align: center;animation: fadeInDown 3s;padding-top: 15px;"class="plateTitle"><b> DOLCI<i style="font-size: 0.5em;"><br>( SPECIAL TARTUFO )</i> </b></p>
+                <hr style="width: 30px;padding: 0;margin-bottom: 8px;border: none;border-top-style: solid;border-width: 2px;margin-top: 2px;margin-bottom: 20px;" id="hrAnti">
 
 
                 <p style="display: inline-block;"class="plate2"> Zuppetta all'alchermes crema di mascarpone e scaglie di tartufo nero 
@@ -366,8 +330,8 @@
 
 <div class="item">
 
-                  <p style="display: inline-block;  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; color: orange;font-size: 1.5em;width: 100%;display: block;padding-bottom: 8px;text-align: center;animation: fadeInDown 3s;padding-top: 15px;"><b> FRUTTA </b></p>
-                <hr style="width: 30px;padding: 0;margin-bottom: 8px;border: none;border-top-style: solid;border-width: 1px;margin-top: 2px;margin-bottom: 20px;" id="hrAnti">
+                  <p style="display: inline-block;  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; color: orange;font-size: 1.5em;width: 100%;display: block;padding-bottom: 8px;text-align: center;animation: fadeInDown 3s;padding-top: 15px;"class="plateTitle"><b> FRUTTA </b></p>
+                <hr style="width: 30px;padding: 0;margin-bottom: 8px;border: none;border-top-style: solid;border-width: 2px;margin-top: 2px;margin-bottom: 20px;" id="hrAnti">
 
 
                 <p style="display: inline-block;"class="plate2"> Carpaccio di anguria con tartufo nero
@@ -379,7 +343,7 @@
 
 <br>
 
-                <p style="display: inline-block;  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; color: orange;font-size: 1.5em;width: 100%;display: block;padding-bottom: 8px;text-align: center;animation: fadeInDown 3s;padding-top: 15px;"><b> FRUTTA <i style="font-size: 0.5em;"><br>( SPECIAL TARTUFO )</i> </b></p>
+                <p style="display: inline-block;  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; color: orange;font-size: 1.5em;width: 100%;display: block;padding-bottom: 8px;text-align: center;animation: fadeInDown 3s;padding-top: 15px;"class="plateTitle"><b> FRUTTA <i style="font-size: 0.5em;"><br>( SPECIAL TARTUFO )</i> </b></p>
                 <p style="display: inline-block;"class="plate2">  Carpaccio di anguria con tartufo nero
                   <p class="costT2"><span style="color: rgba(255, 166, 0, 0.646);font-size: 1.0em;">&#9135; </span> 8€ <span style="color: rgba(255, 166, 0, 0.646);font-size: 1.0em;">&#9135; </span></p></p>
                 <p style="display: inline-block;"class="plate2">  Melone al tartufo nero
@@ -392,8 +356,8 @@
 
 <div class="item">
 
-                <p id="bevandeColl" style="display: inline-block;  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; color: orange;font-size: 1.5em;width: 100%;display: block;padding-bottom: 8px;text-align: center;animation: fadeInDown 3s;padding-top: 15px;"><b> BEVANDE </b></p>
-                <hr style="width: 30px;padding: 0;margin-bottom: 8px;border: none;border-top-style: solid;border-width: 1px;margin-top: 2px;margin-bottom: 20px;" id="hrAnti">
+                <p id="bevandeColl" style="display: inline-block;  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; color: orange;font-size: 1.5em;width: 100%;display: block;padding-bottom: 8px;text-align: center;animation: fadeInDown 3s;padding-top: 15px;"class="plateTitle"><b> BEVANDE </b></p>
+                <hr style="width: 30px;padding: 0;margin-bottom: 8px;border: none;border-top-style: solid;border-width: 2px;margin-top: 2px;margin-bottom: 20px;" id="hrAnti">
 
 
                 <p style="display: inline-block;"class="plate2"> Acqua <i style="font-size: 0.7em;"><br>1 lt (minerale o naturale)</i> 
