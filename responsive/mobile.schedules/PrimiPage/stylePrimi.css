@@ -1,0 +1,234 @@
+@font-face {font-family: 'Handelson';src: url('../../../css/fonts/zhandelson-three.otf') format('truetype'); /* Cambia il formato se necessario */font-weight: normal;font-style: normal;}
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    color: #333;
+}
+@font-face {font-family: 'Borscena';src: url('../../../css/fonts/BorscenaPersonalUse-Regular.ttf') format('truetype'); /* Cambia il formato se necessario */font-weight: normal;font-style: normal;}
+@font-face {font-family: 'Sumera';src: url('../../../css/fonts/SumeraDitaPersonalUse-Regular.ttf') format('truetype'); /* Cambia il formato se necessario */font-weight: normal;font-style: normal;}
+@font-face {font-family: 'Comen';src: url('../../../css/fonts/Comen.ttf') format('truetype'); /* Cambia il formato se necessario */font-weight: normal;font-style: normal;}
+@font-face {font-family: 'Mothiva';src: url('../../../css/fonts/Mothiva-Regular.otf') format('truetype'); /* Cambia il formato se necessario */font-weight: normal;font-style: normal;}
+@font-face {font-family: 'Philo';src: url('../../../css/fonts/Philosopher-Bold.ttf') format('truetype'); /* Cambia il formato se necessario */font-weight: normal;font-style: normal;}
+
+
+#title1{
+    text-align: center;
+    font-family: 'Philo';
+    font-size: 280%;
+    padding: 0;
+    margin: 0;
+    padding-top: 15%;
+    animation: fadeInDown 2s;
+}
+
+#titleHr{
+    width: 30%;
+    animation: slideIn 3s;
+    border: none;
+    border-bottom-style: ridge;
+    border-width: 2px;
+    padding: 0;
+    margin-top: 2%;
+    border-color: rgba(0, 0, 0, 0.733);
+    border-radius: 50%;
+}
+
+.menuBarB{
+    all: unset;
+    padding-left: 2%;
+    width: 20%;
+    height: 36px;
+    border-bottom-right-radius: 20px;
+    float: left;
+    position: fixed;
+    cursor: pointer;
+    z-index: 7;
+}
+
+#menuBarDiv{
+    width: 100%;
+    height: 42px;
+    border-bottom-style: ridge;
+    border-width: 2px;
+    border-color: rgba(230, 196, 93, 0.826);
+    background-color: rgba(230, 196, 93, 0.826);
+    animation: fadeInDown 500ms;
+    position: fixed;
+    z-index: 6;
+}
+
+@keyframes slideIn {
+    from {
+      transform: scaleX(0);
+    }
+    to {
+      transform: scaleX(1);
+    }
+  }
+
+  .menu-container {
+    padding: 10px;
+    z-index: -10;
+}
+.menu-item {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 768px;
+    animation:backInUp 1500ms;
+}
+
+.itemstext{
+    font-family: 'Sumera';
+}
+
+@media (min-width: 768px) { /* Quando lo schermo è più largo di 768px */
+    .menu-item {
+        margin-left: 30%;
+        margin-right: 30%;
+    }
+}
+
+.menu-item img {
+    width: 100%;
+    display: block;
+    
+}
+.menu-item .content {
+    padding: 10px;
+    text-align: center;
+}
+.menu-item h2 {
+    margin: 10px 0;
+    font-size: 1.8em;
+}
+.menu-item p {
+    margin: 0;
+    font-size: 0.9em;
+    color: #666;
+}
+.menu-item button {
+    background-color: #d35400;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+.menu-item button:hover {
+    background-color: #e67e22;
+}
+
+#menuTendina {
+    position: fixed;
+    top: 0;
+    visibility: hidden;
+    left: -50%; /* Nasconde il menu fuori dallo schermo */
+    width: 50%; /* Occupa metà schermo */
+    height: 100vh;
+    background-color: rgb(221, 198, 131);
+    color: white;
+    padding: 20px;
+    box-shadow: 5px 0 10px rgba(0, 0, 0, 0.3);
+    transition: left 0.3s ease-in-out;
+}
+
+#menuTendina.open {
+    visibility: visible;
+    z-index: 5;
+    left: 0;
+}
+
+
+#iconClose{
+    width: 57px;
+    margin-top: -10px;
+    margin-left: 200%;
+    height: 40px;
+    z-index: 9;
+    display: none;
+    animation: fadeIn 1s
+}
+
+#menuTendina a{
+    -webkit-tap-highlight-color: transparent; /* Per dispositivi touch */
+    user-select: none; /* Impedisce la selezione del testo */
+    outline: none; /* Rimuove il bordo di focus */
+}
+
+#toggleButton{
+        -webkit-tap-highlight-color: transparent; /* Per dispositivi touch */
+        user-select: none; /* Impedisce la selezione del testo */
+        outline: none; /* Rimuove il bordo di focus */
+}
+
+#menuTendina.hidden{
+    visibility: hidden;
+}
+
+#menuTendina{
+    display: block;
+    text-align: center;
+}
+
+#menuTendina a{
+    all: unset;
+    display: block;
+}
+
+.tH1{
+    padding: 0;
+    margin: 0;
+    padding-right: 22%;
+    text-shadow: 2px 3px 2px black;
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 200;
+    font-size: 25px;
+}
+
+#tendinaH1{
+    padding-top: 15%;
+}
+
+#menuTendina hr{
+    width: 120%;
+    height: 0px;
+    margin-inline-start: -20%;
+    display: block;
+    border-top-style: ridge;
+    border-color: black;
+    padding: 0;
+    margin-top: 4%;
+    transform: translateX(-15px);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+#menuTendina.open .tH1 {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+#menuTendina.open .hr {
+    opacity: 1;
+    transform: translateX(0px);
+}
+
+@media (min-width: 348px) { /* Quando lo schermo è più largo di 348px */
+
+    #iconOpen{
+        width: 51px;
+        height:51px;
+    }
+}
+
+

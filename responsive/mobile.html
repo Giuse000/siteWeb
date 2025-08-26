@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,9 +15,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Imperial+Script&family=Ms+Madi&family=Outfit:wght@100..900&family=Playwrite+HR+Lijeva:wght@100..400&family=The+Nautigal:wght@400;700&display=swap" rel="stylesheet">
-   
-    
+
 <!-- MONTSERRAT GOOGLE FONTS -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -38,147 +41,257 @@
 
 
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    
 
     <link rel="icon" href="../css/img/headerLogo.png" type="image.png">
-    <title>Fontana Bosco | Men&ugrave;</title>
+    <title>Ristorante | Home</title>
 
 </head>
-
-
-
 <body>
 
-<header id="header1">
-</header>
-
-<div id="buttonMenu">
-
-    <div id="menuBar">
-        <img src="../css/img/headerLogo.png" alt="#" id="logo">
-
-    <button id="headertitle2b" onclick="toggleMenu()" >
-
-        <p id="headertitle2" class="animate__animated animate__fadeInDown">☰</p>
-        
-    <div id="menuD">
-        <section>
-        <article><a href="./mobile.html">Home <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 576 512"><path d="M575.8 255.5c0 18-15 32.1-32 32.1l-32 0 .7 160.2c0 2.7-.2 5.4-.5 8.1l0 16.2c0 22.1-17.9 40-40 40l-16 0c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1L416 512l-24 0c-22.1 0-40-17.9-40-40l0-24 0-64c0-17.7-14.3-32-32-32l-64 0c-17.7 0-32 14.3-32 32l0 64 0 24c0 22.1-17.9 40-40 40l-24 0-31.9 0c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2l-16 0c-22.1 0-40-17.9-40-40l0-112c0-.9 0-1.9 .1-2.8l0-69.7-32 0c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z"/></svg></a> </article>
-        <article> <a href="mobile.schedules/antipasto/antipasto.html">Men&ugrave; <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 448 512"><path d="M416 0C400 0 288 32 288 176l0 112c0 35.3 28.7 64 64 64l32 0 0 128c0 17.7 14.3 32 32 32s32-14.3 32-32l0-128 0-112 0-208c0-17.7-14.3-32-32-32zM64 16C64 7.8 57.9 1 49.7 .1S34.2 4.6 32.4 12.5L2.1 148.8C.7 155.1 0 161.5 0 167.9c0 45.9 35.1 83.6 80 87.7L80 480c0 17.7 14.3 32 32 32s32-14.3 32-32l0-224.4c44.9-4.1 80-41.8 80-87.7c0-6.4-.7-12.8-2.1-19.1L191.6 12.5c-1.8-8-9.3-13.3-17.4-12.4S160 7.8 160 16l0 134.2c0 5.4-4.4 9.8-9.8 9.8c-5.1 0-9.3-3.9-9.8-9L127.9 14.6C127.2 6.3 120.3 0 112 0s-15.2 6.3-15.9 14.6L83.7 151c-.5 5.1-4.7 9-9.8 9c-5.4 0-9.8-4.4-9.8-9.8L64 16zm48.3 152l-.3 0-.3 0 .3-.7 .3 .7z"/></svg></a></article>
-        <article><a href="mobile.schedules/contatti/contatti.html">Contatti <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 512 512"><path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"/></svg></a></article>    
-    </section>
-    </div>
-
-    </button>
-    </div>
-
+<!-- MENU HAMBURGER -->
+<div id="hamburger" onclick="toggleMenu()">
+  <div class="line" id="l1"></div>
+  <div class="line" id="l2"></div>
+  <div class="line" id="l3"></div>
 </div>
 
-<script>
-    function toggleMenu() {
-        const button = document.querySelector("#headertitle2b");
-        const menu = document.getElementById("menuD");
-        const line = document.getElementById("titleline");
+<!-- MENU A TENDINA -->
+<div id="sideMenu">
+  <div id="menuLogoV">V</div>
+  <ul>
+    <li><a href="#hero1">HOME</a></li> 
+    <hr class="liLine" style="width: 19vw;">
+    <li><a href="#section2">FILOSOFIA</a></li>
+    <hr class="liLine"style="width: 24vw;">
+    <li><a href="#section3">LOCATION</a></li>
+    <hr class="liLine"style="width: 29vw;">
+    <li><a href="#LAST">CONTATTI</a></li>
+    <hr class="liLine"style="width: 31vw;">
+  </ul>
 
-        button.classList.toggle("active");
-        menu.classList.toggle("hidden");
-        line.classList.toggle("hidden");
-    }
-</script>
-
-<script>
-    // Ottieni il riferimento all'header
-    const menu = document.getElementById('buttonMenu');
-
-    // La posizione in cui vogliamo che il menu diventi fisso
-    const menuOffset = menu.offsetTop;
-
-    window.onscroll = function() {
-        if (window.pageYOffset > menuOffset) {
-            menu.classList.add('fixed'); // Aggiungi la classe "fixed" quando scrolliamo oltre il menu
-            menu.classList.remove('unfixed');
-        } else {
-            menu.classList.remove('fixed'); // Rimuovi la classe "fixed" quando il menu è nella sua posizione originale
-            menu.classList.add('unfixed');
-        }
-    };
-
-</script>
-
-<script>
-function toggleMenu() {
-    const button = document.getElementById("headertitle2b");
-    const menu = document.getElementById("menuD");
-    const line = document.getElementById("titleline");
-
-    button.classList.toggle("active");
-    menu.classList.toggle("hidden");
-    line.classList.toggle("hidden");
-}
-
-document.addEventListener("click", function (event) {
-    const button = document.getElementById("headertitle2b");
-    const menu = document.getElementById("menuD");
-
-    // Controlla se il clic NON è sul menu o sul pulsante
-    if (!menu.contains(event.target) && !button.contains(event.target)) {
-        menu.classList.add("hidden"); // Nasconde il menu
-        button.classList.remove("active"); // Rimuove lo stato attivo del bottone
-    }
-});
-</script>
-<!--------------------------------------------------------------------------------->
-
-<div  id="section1">
-    <div id="imgDiv1">
-        <div id="imgDiv2">
-        <img src="../css/img/1.jpg" alt="Immagine 1">
-        <img src="../css/img/2.jpg" alt="Immagine 2">
-        <img src="../css/img/3.jpg" alt="Immagine 3">
-        <img src="../css/img/4.jpg" alt="Immagine 4">
-        <img src="../css/img/5.jpg" alt="Immagine 5">
-        <img src="../css/img/6.jpg" alt="Immagine 6">
-        <!-- Duplicazione per effetto infinito -->
-        <img src="../css/img/1.jpg" alt="Immagine 1">
-        <img src="../css/img/2.jpg" alt="Immagine 2">
-        <img src="../css/img/3.jpg" alt="Immagine 3">
-        <img src="../css/img/4.jpg" alt="Immagine 4">
-        <img src="../css/img/5.jpg" alt="Immagine 5">
-        <img src="../css/img/6.jpg" alt="Immagine 6">
-
-    </div>
-    </div>
-
-<div id="section1Title">
-
-<h1 id="s1H1">TARTUFO</h1> <hr id="s1hr1">
-
-<p id="s1p">Da oltre 14 anni vado personalmente in cerca dei migliori tartufi, seguendo il ritmo delle stagioni. Sono io, Carmine Perfetto, tartufaio e proprietario, a selezionare con cura ogni tartufo: da quelli estivi a quelli autunnali e invernali, per offrirvi solo il meglio del nostro territorio.</p>
-
+    <div id="menuPrenota"  onclick="openModal()">PRENOTA ORA</div>
 </div>
 
+<div id="menuOverlay" onclick="closeMenu()"></div>
+
+<div id="hero1">
+  <div id="section1">
+    <div id="logo-container">
+    <h1 id="title1"data-aos="fade-right">V<br><h1 id="title2">RESTAURANT</h1></h1>
+
+    </div>
+  </div>
+
+    <h1 id="text1" data-aos="fade-up" data-aos-anchor-placement="top-bottom">MODERN CUISINE</h1>
+    <button id="button" class="prenota-btn" onclick="openModal()" data-aos="zoom-in-up" data-aos-anchor-placement="top-bottom">PRENOTA ORA</button>
+     <div id="myModal" class="modal">
+    <div class="modal-content">
+      <h3>Come vuoi prenotare?</h3>
+      <a href="tel:+391234567890">
+        <button class="option-btn call-btn">Chiama</button>
+      </a>
+      <br>
+      <a href="https://wa.me/391234567890?text=Ciao%2C+vorrei+prenotare+un+tavolo" target="_blank" style="all: unset;">
+        <button class="option-btn whatsapp-btn">WhatsApp</button>
+      </a>
+      <br />
+      <button class="option-btn close-btn" onclick="closeModal()">Annulla</button>
+    </div>
+    </div>
 </div>
 
 <div id="section2">
-<h1 id="s2H1">ANTIPASTI </h1> <hr id="s1hr2">
-<p id="s2p">I nostri antipasti sono un viaggio di sapori autentici, preparati con ingredienti freschi e di qualità.</p>
+  <span data-aos="fade-right" style=" padding-top:10%;padding-left: 2%;">
+  <h1 id="chef-text" data-aos="fade-right">LA NOSTRA <br >FILOSOFIA</h1>   <hr data-aos="fade-right" style="padding: 0; border-color: gray; margin: 0; width: 50vw; margin-top: 2%; border-top-right-radius: 25%; border-bottom-right-radius: 25%; ">
+  </span>
+
+          <span style="display: flex; align-items: center; flex-direction: column;"data-aos="fade-right">
+              <div id="imgCircle"></div>
+          </span>
+
+            <p id="wineT"data-aos="fade-right">Vini d’eccellenza</p> <hr data-aos="fade-right" style="width: 15vw; margin-bottom: 5%;border-color: rgba(255, 255, 255, 0.217);border-width: 1px;border-style: none;border-bottom-style: solid;">
+
+            <div id="citazione"data-aos="fade-right">
+                <p id="p1">Piatti raffinati accompagnati da una selezione di vini pregiati, scelti con cura per offrire un’esperienza unica ad ogni calice.</p>
+            </div>
+
+
+                    <span style="display: flex; align-items: center; flex-direction: column;"data-aos="fade-left">
+                        <div id="imgCircle2"></div>
+                    </span>
+
+                      <p id="wineT"data-aos="fade-left">Sapori autentici</p> <hr data-aos="fade-left" style="width: 15vw; margin-bottom: 5%;border-color: rgba(255, 255, 255, 0.217);border-width: 1px;border-style: none;border-bottom-style: solid;">
+
+                      <div id="citazione2" data-aos="fade-left">
+                          <p id="p1">Piatti gustosi abbinati a una selezione di birre artigianali, per un’esperienza ricca di carattere e convivialit&agrave;.</p>
+                      </div>
+
+
+                              <span style="display: flex; align-items: center; flex-direction: column;"data-aos="fade-right">
+                                  <div id="imgCircle3"></div>
+                              </span>
+
+                                <p id="wineT"data-aos="fade-right">Dolci tentazioni</p> <hr data-aos="fade-right" style="width: 15vw; margin-bottom: 5%;border-color: rgba(255, 255, 255, 0.217);border-width: 1px;border-style: none;border-bottom-style: solid;">
+
+                                <div id="citazione" style="margin-bottom: 10%;" data-aos="fade-right">
+                                    <p id="p1">Dessert artigianali preparati con ingredienti genuini, perfetti per concludere il pasto con un tocco di dolcezza.</p>
+                                </div>
 </div>
 
+
 <div id="section3">
-    <h1 id="s3H1">EVENTI</i></h1> <hr id="s1hr3">
-    <p id="s3p">Dai compleanni alle lauree, ogni occasione merita di essere speciale. Scopri come possiamo trasformare il tuo evento in un'esperienza indimenticabile.</p>
-    <p style="text-align: center;text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.172);"><a href="mobile.schedules/contatti/contatti.html" style="all: unset;"><button id="prenotaB">PRENOTA ORA</button></a></p>
+  <div id="line-text-container" data-aos="flip-up">
+    <h1 id="locationT">LOCATION</h1>
+  </div>
+
+  <span id="dividor">
+  <div class="swiper my-carousel"data-aos="zoom-in-up">
+    <div class="swiper-wrapper">
+      <!-- Slide 1 -->
+      <div class="swiper-slide">
+        <img src="../css/img/location1.jpg" alt="Immagine 1" class="carousel-img">
+      </div>
+      <!-- Slide 2 -->
+      <div class="swiper-slide">
+        <img src="../css/img/location2.jpg" alt="Immagine 2" class="carousel-img">
+      </div>
+      <!-- Slide 3 -->
+      <div class="swiper-slide">
+        <img src="../css/img/location3.jpg" alt="Immagine 3" class="carousel-img">
+      </div>
+      <!-- Slide 4 -->
+      <div class="swiper-slide">
+        <img src="../css/img/location4.jpg" alt="Immagine 4" class="carousel-img">
+      </div>
+      <!-- Slide 5 -->
+      <div class="swiper-slide">
+        <img src="../css/img/location5.jpg" alt="Immagine 5" class="carousel-img">
+      </div>
+      <!-- Aggiungi più slide qui -->
     </div>
 
+    <!-- Pagination & Navigation -->
+    <div class="swiper-pagination"></div>
+  </div>
 
 
+<div class="location-info">
+  <div class="location-image" data-aos="fade-up-right"style="transform: perspective(600px) rotateY(20deg) rotateZ(2deg);">
+    <img src="../css/img/location3.jpg" alt="La nostra location">
+  </div>
+  <div class="location-caption"data-aos="fade-up-left">
+    <h3>La Nostra Location</h3>
+    <p>Atmosfera accogliente e raffinata per una serata indimenticabile.</p>
+  </div>
+</div>
+</span>
+
+<div class="location-info" style="  flex-direction: row-reverse; margin-bottom: 10%; margin-top: 10%;">
+  <div class="location-image" style="transform: perspective(600px) rotateY(-20deg) rotateZ(3deg);"data-aos="fade-up-left">
+    <img src="../css/img/location5.jpg" alt="La nostra location">
+  </div>
+  <div class="location-caption"data-aos="fade-up-right">
+    <h3>Accoglienza Calda</h3>
+    <p>Spazi intimi per momenti speciali.</p>
+  </div>
+</div>
+
+<div class="location-info">
+  <div class="location-image" data-aos="fade-up-right"style="transform: perspective(600px) rotateY(20deg) rotateZ(-2deg);">
+    <img src="../css/img/location4.jpg" alt="La nostra location">
+  </div>
+  <div class="location-caption"data-aos="fade-up-left">
+    <h3>Design Elegante</h3>
+    <p>Arredi moderni che valorizzano ogni dettaglio.</p>
+  </div>
+</div>
 
 
-<footer>
-    <!-- Final Texts -->
-    <p><a href="../css/qrContatto.html" class="contatti">Contatto</a> ∙ <a href="../css/qrContatto.html#containeritems3" class="contatti">E-mail</a> ∙ <a href="../css/qrContatto.html#containeritems2" class="contatti">Posizione</a> </p>
-    <p>&copy; 2025 Giuseppe Developer - Tutti i diritti riservati</p> 
+</div>
+
+<footer id="footer">
+  <div class="footer-container">
+    
+<!-- ORARI -->
+<div class="footer-section">
+  <h4 data-aos="fade-up">Orari</h4>
+  <div class="schedule-table">
+    <div class="schedule-row header">
+      <span data-aos="flip-up">Giorno</span>
+      <span data-aos="flip-up">Pranzo</span>
+      <span data-aos="flip-up">Cena</span>
+    </div>
+    <div class="schedule-row">
+      <span data-aos="flip-up">Lunedì</span>
+      <span data-aos="flip-up">12:00 – 15:00</span>
+      <span data-aos="flip-up">19:00 – 23:30</span>
+    </div>
+    <div class="schedule-row">
+      <span data-aos="flip-up">Martedì</span>
+      <span colspan="2" data-aos="flip-up">CHIUSO</span>
+    </div>
+    <div class="schedule-row">
+      <span data-aos="flip-up">Mercoledì</span>
+      <span data-aos="flip-up">12:00 – 15:00</span>
+      <span data-aos="flip-up">19:00 – 23:30</span>
+    </div>
+    <div class="schedule-row">
+      <span data-aos="flip-up">Giovedì</span>
+      <span data-aos="flip-up">12:00 – 15:00</span>
+      <span data-aos="flip-up">19:00 – 23:30</span>
+    </div>
+    <div class="schedule-row">
+      <span data-aos="flip-up">Venerdì</span>
+      <span data-aos="flip-up">12:00 – 15:00</span>
+      <span data-aos="flip-up">19:00 – 23:30</span>
+    </div>
+    <div class="schedule-row">
+      <span data-aos="flip-up">Sabato</span>
+      <span data-aos="flip-up">12:00 – 15:00</span>
+      <span data-aos="flip-up">19:00 – 23:30</span>
+    </div>
+    <div class="schedule-row">
+      <span data-aos="flip-up">Domenica</span>
+      <span data-aos="flip-up">12:00 – 15:00</span>
+      <span data-aos="flip-up">19:00 – 23:30</span>
+    </div>
+  </div>
+</div>
+
+
+    <!-- CONTATTI -->
+    <div class="footer-section">
+      <h4 data-aos="zoom-in-up">Contatti</h4>
+      <p data-aos="fade-in-up"><i class="fas fa-phone-alt"></i> <a href="tel:+391234567890" >+39 123 456 7890</a></p>
+      <p data-aos="fade-in-up"><i class="fab fa-whatsapp"></i> <a href="https://wa.me/391234567890" target="_blank">Chatta su WhatsApp</a></p>
+      <p data-aos="fade-in-up"><i class="fas fa-envelope"></i> <a href="mailto:info@ristorante.it">info@ristorante.it</a></p>
+    </div>
+
+    <!-- MAPPA -->
+    <div class="footer-section">
+      <h4 data-aos="fade-up">Dove siamo</h4>
+      <div class="map-container" data-aos="fade-up">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2889.575981083543!2d9.19049821549903!3d45.46421197910196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDXCsDI3JzUxLjIiTiA5wrAxMScyMy4wIkU!5e0!3m2!1sit!2sit!4v1616511055959!5m2!1sit!2sit"
+          width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </div>
+
+    <!-- COPYRIGHT -->
+    <div class="footer-copy" data-aos="fade-up" data-aos-anchor-placement="top-bottom" id="LAST">
+      <p>© 2025 Tutti i diritti riservati – Zerius Project</p>
+    </div>
+  </div>
 </footer>
-<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+
+
+
+
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="mobileScript/mobileScript.js"></script>
 </body>
 </html>
   
