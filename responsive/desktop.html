@@ -1,123 +1,153 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="stylesheet" href="deskCss/desk.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-  <title>Matese</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/homePage.css">
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Bowlby+One&family=Bowlby+One+SC&family=Cedarville+Cursive&family=Imperial+Script&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Ms+Madi&family=Outfit:wght@100..900&family=Playwrite+HR+Lijeva:wght@100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ruslan+Display&family=The+Nautigal:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Cedarville+Cursive&family=Imperial+Script&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Ms+Madi&family=Outfit:wght@100..900&family=Playwrite+HR+Lijeva:wght@100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=The+Nautigal:wght@400;700&display=swap" rel="stylesheet">
+
+    <title>Home</title>
 </head>
+
 <body>
-    <div id="SC0">
-        <div class="video-wrapper">
-    <video autoplay muted loop playsinline id="bgVideo"><source src="deskCss/vid/carneV.mp4" type="video/mp4"></video>
-
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        const video = document.getElementById("bgVideo");
-        video.playbackRate = 0.65; // Più basso = più lento. Valori tipici: 0.25 - 0.5 - 0.75 - 1
-      </script>
+        AOS.init();
+    </script>
+    <script>
+        AOS.init({
+        once: false,      // ripete animazioni (o true se vuoi solo una volta)
+        duration: 800,
+        });
+</script>
+    
 
-<h1 style="width: 0;height: 0;visibility: hidden;" id="section0H">homebutt</h1>
-  <header class="navbar">
-    <div class="logo" id="home">FONTANA BOSCO</div>
-    <button class="menu-btn" onclick="toggleMenu()">☰</button>
-    <div class="menu" id="dropdownMenu">
-      <a href="#section0H">Home</a>
-      <a href="#section1H">Chi siamo</a>
-      <a href="#section2H">Servizi</a>
-      <a href="#section3H">Contatti</a>
-    </div>
-  </header>
+    <video id="bgVideo" autoplay muted loop playsinline>
+    <source src="css/vid/YTDown.com_YouTube_Another-Cinematic-Restaurant-Video-Sony_Media_QdeMeNhgdtU_001_1080p.mp4" type="video/mp4">
+    </video>
 
-  <section class="hero">
-    <h1>"Il profumo del tartufo &egrave; <br> l'anima segreta della terra."</h1>
-  </section>
-  
-</div>
-</div>
-
-  <!-- HOME END -->
-
-  <div id="SC1">
-  <h1 id="section1H">Chi Siamo</h1>
-
-  <section id="hero1">
-
-    <div class="itemDiv" id="item1">
-    <article><img src="../css/img/antipasto.jpg" alt="#" width="200" height="200"><p id="Ap1">Con Matese Organization, ogni sentiero è una promessa di scoperta. Le nostre escursioni off-road sono pensate per chi ama la libertà, l’adrenalina e il contatto diretto con la natura. Che sia tra le montagne del Matese o lungo tracciati remoti, vivrai un'esperienza autentica, guidata da esperti e in totale sicurezza.</p></article>
+    <div id="navBarDiv"> 
+        <nav id="navbar"><!--  CAMBIARE IL TIMING DEI BUTTON NAVBAR, PRIMA SCRITTA VECCHI PLATANI POI NAVBAR -->
+            <a class="button" href="#">Home</a>
+            <a class="button" href="#" data-aos="fade-down" >Men&ugrave;</a>
+            <a class="button" href="#" data-aos="fade-left">Contatti</a>
+        </nav>
+        <p id="prenota"><a href="#" id="prenotaLink">PRENOTA ORA</a></p>
     </div>
 
-    <div class="itemDiv" id="item2">
-    <article><img src="../css/img/carbonara.jpg" alt="#" width="200" height="200"><p id="Ap1">I viaggi on the road diventano un modo per riscoprirsi e vivere il mondo con occhi nuovi. Che si tratti di tour panoramici, esplorazioni nei parchi naturali o attraversamenti di paesaggi mozzafiato, ogni tappa è studiata per lasciarti senza fiato e farti sentire davvero parte del viaggio. Sempre nel rispetto e nella norma della natura.</p></article>
-    </div> 
 
-    <div class="itemDiv" id="item3">
-    <article><img src="../css/img/meatImg.jpg" alt="#" width="200" height="200"><p id="Ap1">Incontra la natura nel suo stato più puro con Matese Organization. Offriamo esperienze immersive nei parchi naturali, osservazione della fauna selvatica, safari fotografici e trekking ecologici, nel massimo rispetto dell’ambiente e degli animali. Vivi l'emozione di un incontro ravvicinato con il mondo naturale, guidato da veri appassionati.</p></article> 
+    <div id="box1"> 
+        <p id="tLogo">Vecchi Platani</p>
+        <p id="vLogo">V</p>
     </div>
 
-  </section>
-</div>
+    <div id="box2">
+        <div class="aos-wrapper" data-aos="fade-right" data-aos-delay="400">
+            <p id="chefP">Chef</p> 
+        </div>
+        <div class="aos-wrapper" data-aos="fade-right" data-aos-delay="10">
+        <hr id="chefLine1">
+        </div>
+        <div class="aos-wrapper" data-aos="zoom-out-right" data-aos-delay="1000">
+            <p id="chefD" data-aos="fade-up">Lo chef &egrave; il cuore pulsante della nostra cucina, un artista che unisce passione,
+                esperienza e creativit&agrave; in ogni piatto. Con una profonda conoscenza degli ingredienti e delle tecniche culinarie,
+                trasforma materie prime selezionate in esperienze gastronomiche uniche, capaci di emozionare e sorprendere. La sua filosofia
+                si basa sull'equilibrio tra tradizione e innovazione: ogni ricetta racconta una storia, ogni sapore &egrave; curato nei
+                    minimi dettagli, per offrire ai nostri ospiti non solo un pasto, ma un viaggio sensoriale indimenticabile.
+                    La dedizione dello chef alla qualit&agrave; e alla perfezione rende ogni visita al ristorante un’esperienza speciale,
+                    dove gusto, estetica e passione si incontrano in armonia.</p>
+        </div>
 
-<!-- CHI SIAMO END -->
+    <div id="chefDiv"data-aos="fade-left">
+        <div class="aos-wrapper" data-aos="fade-left" data-aos-delay="700">
+        <img src="css/img/CHEF.png" alt="chefImg" id="chefI">
+        </div>
+        <div id="chefLine"></div>
+    </div>
+    </div>
 
-    <div id="SC2">
+    <div id="box3">
 
-  <h1 id="section2H">Servizi</h1>
+        <article class="art"data-aos="fade-up"><p class="tit">QUALIT&Agrave; <hr class="hr"></p><p class="did">Utilizziamo ingredienti freschi e selezionati, provenienti da fornitori di fiducia e da produzioni locali. Ogni piatto è preparato con cura artigianale, seguendo tecniche che esaltano i sapori autentici e garantiscono un’esperienza gastronomica di livello superiore.</p></article>
+        <article class="art"data-aos="fade-up"><p class="tit">CONSEGNA <hr class="hr"></p><p class="did">Portiamo le nostre specialità direttamente a casa tua, con un servizio rapido e sicuro che mantiene intatta la qualità del cibo. La consegna è studiata per preservare temperatura, bontà e presentazione, così da offrirti un’esperienza come al ristorante.</p></article>
+        <article class="art"data-aos="fade-up"><p class="tit">EVENTI <hr class="hr"></p><p class="did">Organizziamo eventi di ogni tipo, da cene private a celebrazioni speciali, con menu personalizzati e un servizio impeccabile. Ogni occasione viene curata nei dettagli per creare un’atmosfera unica, elegante e perfettamente su misura per i tuoi ospiti.</p></article>
 
-<section id="services" style="display: grid;text-align: center; grid-auto-flow: column; justify-content: center; padding-top: 3%; gap: 5%;">
-  <div class="itemDiv" style="width: 25vw;text-align: center;">
-    <img src="../css/img/pastaEvongole.jpg" alt="#" width="200" height="200" style=" width:25vw; height: 35vh; border-radius: 5%; border-bottom-left-radius: 1%; border-bottom-right-radius: 1%;">
-    <h2 style="padding-top: 5%; padding-bottom:3% ;color: #ddd;">Escursioni Guidate</h2>
-    <p style="padding-bottom: 7%;padding-left: 5%;padding-right: 5%;color: #ddd;">Organizziamo tour a piedi, in bici o in fuoristrada, accompagnati da guide esperte, per scoprire le bellezze del Matese e delle zone limitrofe in tutta sicurezza.</p>
-  </div>
-
-  <div class="itemDiv" style="width: 25vw;text-align: center;">
-    <img src="../css/img/piatto.png" alt="#" width="200" height="200" style=" width:25vw; height: 35vh; border-radius: 5%; border-bottom-left-radius: 1%; border-bottom-right-radius: 1%;">
-    <h2 style="padding-top: 5%; padding-bottom:3% ;color: #ddd;">Weekend Avventura</h2>
-    <p style="padding-bottom: 7%;padding-left: 5%;padding-right: 5%;color: #ddd;">Pacchetti weekend comprensivi di pernottamento, attività outdoor e momenti di relax, ideali per staccare la spina e vivere la natura.</p>
-  </div>
-
-  <div class="itemDiv" style="width: 25vw; text-align: center;">
-    <img src="../css/img/pastaEvongole.jpg" alt="#" width="200" height="200" style=" width:25vw; height: 35vh; border-radius: 5%; border-bottom-left-radius: 1%; border-bottom-right-radius: 1%;">
-    <h2 style="padding-top: 5%; padding-bottom:2% ;color: #ddd;">Safari e Trekking</h2>
-    <p style="padding-bottom: 7%;padding-left: 5%;padding-right: 5%;  color: #ddd;">Proponiamo esperienze immersive nella natura, safari fotografici e trekking naturalistici pensati per famiglie, gruppi o singoli avventurieri.</p>
-  </div>
-</section>
-
-</div>
-
-<!-- SERVIZI END -->
- 
-    <div id="SC3">
-
-<h1 id="section3H">Contatti</h1>
-
-<section id="contacts" style="padding: 4% 5%; text-align: center;padding-top: 1%;">
-  <p style="font-size: 1.1rem; max-width: 700px; margin: 0 auto 2rem auto;  color: #ddd;">
-    Per ricevere maggiori informazioni, prenotare un'escursione o parlare con il nostro staff, non esitare a contattarci. Siamo sempre disponibili per aiutarti a organizzare la tua prossima avventura.
-  </p>
-
-  <div style="display: flex; flex-direction: column; gap: 1rem; align-items: center; color: #ddd;">
-    <p><strong>Email:</strong> info@mateseorganization.it</p>
-    <p><strong>Telefono:</strong> +39 123 456 7890</p>
-    <p><strong>Sede:</strong> IPIA M. Bosco 81011 Alife (CE)</p>
-  </div>
-
-  <img src="../css/img/mappa.png" alt="Mappa della posizione Matese Organization" style="width: 100%; max-width: 800px; border-radius: 10px; margin-top: 1rem;">
-</section>
-</div>
-
-<footer style="text-align: center; padding: 2rem; background-color: #3d3d3db5; color: #ddd; font-size: 0.9rem;">
-  © 2025 Tutti i diritti riservati – Fontana Bosco 
-</footer>
-
-
-  <script>
-    function toggleMenu() {
-      const menu = document.getElementById('dropdownMenu');
-      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
-    }
-  </script>
+    </div>
 
 </body>
+
+<script>
+
+    
+const logo = document.getElementById("vLogo");
+
+// Serve per bloccare il movimento fino al primo scroll attivo
+let hasScrolled = false;
+
+function updateLogo() {
+    let scroll = window.scrollY;
+
+    const maxScroll = 600;
+    const progress = Math.min(scroll / maxScroll, 1);
+
+    const top = 50 - (progress * 45);
+    const left = 42 - (progress * 39);
+    const scale = 1 - (progress * 0.91);
+
+    logo.style.top = top + "%";
+    logo.style.left = left + "%";
+    logo.style.transform = `translate(-50%, -50%) scale(${scale})`;
+}
+
+// ✨ Quando la pagina si carica
+window.addEventListener("load", () => {
+    if (window.scrollY === 0) {
+        // Siamo in cima → logo al centro
+        updateLogo();
+    } else {
+        // Se la pagina si apre già scrollata, NON posizioniamo il logo dove non dovrebbe
+        // Prima forziamo un ritorno dolce alla posizione corretta
+        updateLogo();
+    }
+});
+
+// ✨ Animazione continua durante lo scroll
+window.addEventListener("scroll", () => {
+    hasScrolled = true;
+    updateLogo();
+});
+
+
+</script>
+
+
+<!--  DA LEVARE -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const target = document.getElementById("chefP");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        target.classList.add("animateLine");
+      }
+    });
+  });
+
+  observer.observe(target);
+});
+</script>
+
+
 </html>
