@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/homePage.css">
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
@@ -18,21 +20,15 @@
 
     <title>Home</title>
 </head>
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-N03WJWWCVS"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-N03WJWWCVS');
-</script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 
 <body>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+      window.history.scrollRestoration = "manual";
+      window.scrollTo(0, 0);
+      
         AOS.init();
     </script>
     <script>
@@ -40,6 +36,8 @@
         once: false,      // ripete animazioni (o true se vuoi solo una volta)
         duration: 800,
         });
+
+        
 </script>
     
 
@@ -48,19 +46,32 @@
     </video>
 
     <div id="navBarDiv"> 
-        <nav id="navbar"><!--  CAMBIARE IL TIMING DEI BUTTON NAVBAR, PRIMA SCRITTA VECCHI PLATANI POI NAVBAR -->
-            <a class="button" href="#">Home</a>
+        <nav id="navbar">
+            <a class="button" href="#" data-aos="fade-right">Home</a>
             <a class="button" href="#" data-aos="fade-down" >Men&ugrave;</a>
             <a class="button" href="#" data-aos="fade-left">Contatti</a>
         </nav>
-        <p id="prenota"><a href="#" id="prenotaLink">PRENOTA ORA</a></p>
-    </div>
+         <button id="button" class="prenota-btn" onclick="openModal()"><p id="prenota" data-aos="flip-up" data-aos-delay="400"><a href="#" id="prenotaLink">PRENOTA ORA</a></p></button>
+         <div id="myModal" class="modal">
+          <div class="modal-content">
+            <h3>Come vuoi prenotare?</h3>
+            <a href="tel:+391234567890">
+              <button class="option-btn call-btn">Chiama</button>
+            </a>
+            <br>
+            <a href="https://wa.me/391234567890?text=Ciao%2C+vorrei+prenotare+un+tavolo" target="_blank" style="all: unset;">
+              <button class="option-btn whatsapp-btn">WhatsApp</button>
+            </a>
+            <br />
+            <button class="option-btn close-btn" onclick="closeModal()">Annulla</button>
+          </div>
+         </div>
+    
+        </div>
 
 
-    <div id="box1"> 
-        <p id="tLogo">Vecchi Platani</p>
-        <p id="vLogo">V</p>
-    </div>
+    <div id="box1"data-aos="flip-down"> </div>
+    <img src="css/img/logoVecchiNoBg.png" alt="logo" id="logo1" >
 
     <div id="box2">
         <div class="aos-wrapper" data-aos="fade-right" data-aos-delay="400">
@@ -89,18 +100,185 @@
 
     <div id="box3">
 
-        <article class="art"data-aos="fade-up"><p class="tit">QUALIT&Agrave; <hr class="hr"></p><p class="did">Utilizziamo ingredienti freschi e selezionati, provenienti da fornitori di fiducia e da produzioni locali. Ogni piatto è preparato con cura artigianale, seguendo tecniche che esaltano i sapori autentici e garantiscono un’esperienza gastronomica di livello superiore.</p></article>
-        <article class="art"data-aos="fade-up"><p class="tit">CONSEGNA <hr class="hr"></p><p class="did">Portiamo le nostre specialità direttamente a casa tua, con un servizio rapido e sicuro che mantiene intatta la qualità del cibo. La consegna è studiata per preservare temperatura, bontà e presentazione, così da offrirti un’esperienza come al ristorante.</p></article>
-        <article class="art"data-aos="fade-up"><p class="tit">EVENTI <hr class="hr"></p><p class="did">Organizziamo eventi di ogni tipo, da cene private a celebrazioni speciali, con menu personalizzati e un servizio impeccabile. Ogni occasione viene curata nei dettagli per creare un’atmosfera unica, elegante e perfettamente su misura per i tuoi ospiti.</p></article>
+        <article class="art"data-aos="fade-up-right" data-aos-duration="2000"><p class="tit">QUALIT&Agrave; <hr class="hr"></p><p class="did">Utilizziamo ingredienti freschi e selezionati, provenienti da fornitori di fiducia e da produzioni locali. Ogni piatto è preparato con cura artigianale, seguendo tecniche che esaltano i sapori autentici e garantiscono un’esperienza gastronomica di livello superiore.</p></article>
+        <article class="art"data-aos="fade-up" data-aos-duration="1300" data-aos-delay="300" style="margin-top: 0;"><p class="tit">CONSEGNA <hr class="hr"></p><p class="did">Portiamo le nostre specialità direttamente a casa tua, con un servizio rapido e sicuro che mantiene intatta la qualità del cibo. La consegna è studiata per preservare temperatura, bontà e presentazione, così da offrirti un’esperienza come al ristorante.</p></article>
+        <article class="art"data-aos="fade-up-left" data-aos-duration="2000"><p class="tit">EVENTI <hr class="hr"></p><p class="did">Organizziamo eventi di ogni tipo, da cene private a celebrazioni speciali, con menu personalizzati e un servizio impeccabile. Ogni occasione viene curata nei dettagli per creare un’atmosfera unica, elegante e perfettamente su misura per i tuoi ospiti.</p></article>
 
     </div>
 
+    <div id="box4">
+          <div id="line-text-container" data-aos="flip-up">
+            <h1 id="locationT">LOCATION</h1> 
+          </div>
+
+        <span id="dividor"></span>
+
+  <div class="swiper my-carousel" data-aos="zoom-in-up">
+    <div class="swiper-wrapper">
+
+      <div class="swiper-slide">
+        <img src="css/img/location1.jpg" class="carousel-img">
+      </div>
+
+      <div class="swiper-slide">
+        <img src="css/img/location2.jpg" class="carousel-img">
+      </div>
+
+      <div class="swiper-slide">
+        <img src="css/img/location3.jpg" class="carousel-img">
+      </div>
+
+      <div class="swiper-slide">
+        <img src="css/img/location4.jpg" class="carousel-img">
+      </div>
+
+      <div class="swiper-slide">
+        <img src="css/img/location5.jpg" class="carousel-img">
+      </div>
+
+      <!-- duplico per loop infinito -->
+
+            <div class="swiper-slide">
+        <img src="css/img/location1.jpg" class="carousel-img">
+      </div>
+
+      <div class="swiper-slide">
+        <img src="css/img/location2.jpg" class="carousel-img">
+      </div>
+
+      <div class="swiper-slide">
+        <img src="css/img/location3.jpg" class="carousel-img">
+      </div>
+
+      <div class="swiper-slide">
+        <img src="css/img/location4.jpg" class="carousel-img">
+      </div>
+
+      <div class="swiper-slide">
+        <img src="css/img/location5.jpg" class="carousel-img">
+      </div>
+
+
+    </div>
+
+    <div class="swiper-pagination"></div>
+  </div>
+    </div>
+
+    <div class="location-info animated-border">
+        <div class="location-image" style="transform: perspective(600px) rotateY(15deg) rotateX(1deg);">
+        <img src="css/img/location1.jpg" alt="location1Img" style="padding-left: 10%;max-width: 40vw; height: 50vh;" data-aos="fade-up-right">
+        </div>
+        <div class="location-caption"data-aos="fade-up-left" data-aos-delay="500">
+            <h3>La Nostra Location</h3>
+            <p>Un angolo di charme nel cuore della città, dove eleganza e comfort si incontrano. Atmosfera calda,
+                 spazi raffinati e dettagli curati rendono ogni visita un’esperienza unica e indimenticabile.</p>
+        </div>
+    </div>
+
+    
+    <div class="location-info animated-border left-border">
+        <div class="location-caption locationCap2"data-aos="fade-up-left" data-aos-delay="500">
+            <h3>Accoglienza Calda</h3>
+            <p>Un abbraccio di benvenuto in ogni dettaglio: la nostra accoglienza calda e genuina fa sentire ogni ospite come a casa,
+                 con attenzione, sorriso e cura per ogni esigenza.</p>
+        </div>
+        <div class="location-image" style=" transform: perspective(600px) rotateY(-15deg) rotateX(1deg);">
+        <img src="css/img/location3.jpg" alt="location1Img" style="padding-right: 10%;max-width: 35vw; height: 50vh;"data-aos="fade-up-left">
+        </div>
+    </div>
+
+    
+    <div class="location-info animated-border">
+        <div class="location-image" style="transform: perspective(600px) rotateY(15deg) rotateX(1deg);">
+        <img src="css/img/location1.jpg" alt="location1Img" style="padding-left: 10%;max-width: 35vw; height: 50vh;"data-aos="fade-up-right">
+        </div>
+        <div class="location-caption"data-aos="fade-up-left" data-aos-delay="500">
+            <h3>Design Elegante</h3>
+            <p>Un equilibrio perfetto tra stile e funzionalità: ogni dettaglio è studiato per creare un ambiente raffinato,
+                 armonioso e di grande impatto visivo.</p>
+        </div>
+    </div>
+
+    <footer>
+
+    <div class="footer-container">
+    <div class="footer-section">
+  <h4 data-aos="fade-up" data-aos-delay="600">Orari</h4>
+  <div class="schedule-table">
+    <div class="schedule-row header">
+      <span data-aos="flip-up" data-aos-delay="600">Giorno</span>
+      <span data-aos="flip-up" data-aos-delay="600">Pranzo</span>
+      <span data-aos="flip-up" data-aos-delay="600">Cena</span>
+    </div>
+    <div class="schedule-row">
+      <span data-aos="flip-up" data-aos-delay="600">Lunedì</span>
+      <span data-aos="flip-up" data-aos-delay="600">12:00 – 15:00</span>
+      <span data-aos="flip-up" data-aos-delay="600">19:00 – 23:30</span>
+    </div>
+    <div class="schedule-row">
+      <span data-aos="flip-up" data-aos-delay="600">Martedì</span>
+      <span colspan="2" data-aos="flip-up" data-aos-delay="600">CHIUSO</span>
+    </div>
+    <div class="schedule-row">
+      <span data-aos="flip-up" data-aos-delay="600">Mercoledì</span>
+      <span data-aos="flip-up" data-aos-delay="600">12:00 – 15:00</span>
+      <span data-aos="flip-up" data-aos-delay="600">19:00 – 23:30</span>
+    </div>
+    <div class="schedule-row">
+      <span data-aos="flip-up" data-aos-delay="600">Giovedì</span>
+      <span data-aos="flip-up" data-aos-delay="600">12:00 – 15:00</span>
+      <span data-aos="flip-up" data-aos-delay="600">19:00 – 23:30</span>
+    </div>
+    <div class="schedule-row">
+      <span data-aos="flip-up" data-aos-delay="600">Venerdì</span>
+      <span data-aos="flip-up" data-aos-delay="600">12:00 – 15:00</span>
+      <span data-aos="flip-up" data-aos-delay="600">19:00 – 23:30</span>
+    </div>
+    <div class="schedule-row">
+      <span data-aos="flip-up" data-aos-delay="600">Sabato</span>
+      <span data-aos="flip-up" data-aos-delay="600">12:00 – 15:00</span>
+      <span data-aos="flip-up" data-aos-delay="600">19:00 – 23:30</span>
+    </div>
+    <div class="schedule-row">
+      <span data-aos="flip-up" data-aos-delay="600">Domenica</span>
+      <span data-aos="flip-up" data-aos-delay="600">12:00 – 15:00</span>
+      <span data-aos="flip-up" data-aos-delay="600">19:00 – 23:30</span>
+    </div>
+  </div>
+  </div>
+
+    <div class="footer-section-contact">
+      <h4 data-aos="zoom-in-up" data-aos-delay="600">Contatti</h4>
+      <p data-aos="fade-in-up" data-aos-delay="600"><i class="fas fa-phone-alt"></i> <a href="tel:+391234567890" >+39 123 456 7890</a></p>
+      <p data-aos="fade-in-up" data-aos-delay="600"><i class="fab fa-whatsapp"></i> <a href="https://wa.me/391234567890" target="_blank">Chatta su WhatsApp</a></p>
+      <p data-aos="fade-in-up" data-aos-delay="600"><i class="fas fa-envelope"></i> <a href="mailto:info@ristorante.it">info@ristorante.it</a></p>
+    </div>
+
+
+    <div class="footer-section" style="padding-top: 8vw;">
+      <h4 data-aos="fade-up" style="padding: 4%;" data-aos-delay="600">Dove siamo</h4>
+      <div class="map-container" data-aos="fade-up" data-aos-delay="600">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2889.575981083543!2d9.19049821549903!3d45.46421197910196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDXCsDI3JzUxLjIiTiA5wrAxMScyMy4wIkU!5e0!3m2!1sit!2sit!4v1616511055959!5m2!1sit!2sit"
+          width="100%" height="800" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </div>
+
+
+
+    </footer>
+    <!-- COPYRIGHT -->
+    <div class="footer-copy" data-aos-anchor-placement="top-bottom" id="LAST">
+      <p>© 2025 Tutti i diritti riservati – Zerius Project</p>
+    </div>
+  </div>
 </body>
 
 <script>
 
     
-const logo = document.getElementById("vLogo");
+const logo = document.getElementById("logo1");
 
 // Serve per bloccare il movimento fino al primo scroll attivo
 let hasScrolled = false;
@@ -108,12 +286,12 @@ let hasScrolled = false;
 function updateLogo() {
     let scroll = window.scrollY;
 
-    const maxScroll = 600;
+    const maxScroll = 500;
     const progress = Math.min(scroll / maxScroll, 1);
 
     const top = 50 - (progress * 45);
-    const left = 42 - (progress * 39);
-    const scale = 1 - (progress * 0.91);
+    const left = 50 - (progress * 46);
+    const scale = 1 - (progress * 0.90);
 
     logo.style.top = top + "%";
     logo.style.left = left + "%";
@@ -141,24 +319,87 @@ window.addEventListener("scroll", () => {
 
 </script>
 
-
-<!--  DA LEVARE -->
 <script>
-document.addEventListener("DOMContentLoaded", () => {
+const swiper = new Swiper('.my-carousel', {
+  slidesPerView: 1.5,
+  spaceBetween: 10,
+  centeredSlides: true,
+  loop: true,
+  loopedSlides: 20, // numero sufficiente di slide extra
+  grabCursor: true,
+  speed: 600,
+  autoplay: {
+    delay: 1700,
+    disableOnInteraction: false,
+  },
+  watchSlidesProgress: true,
+  watchSlidesVisibility: true,
 
-  const target = document.getElementById("chefP");
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        target.classList.add("animateLine");
-      }
-    });
-  });
+  breakpoints: {
+    768: { slidesPerView: 2.5, loopedSlides: 20 },
+    1024: { slidesPerView: 3.5, loopedSlides: 20 },
+  },
 
-  observer.observe(target);
+  on: {
+    setTranslate(swiper) {
+      swiper.slides.forEach(slide => {
+        const progress = slide.progress;
+        const scale = 1 - Math.min(Math.abs(progress) * 0.25, 0.6);
+        const opacity = 1 - Math.min(Math.abs(progress) * 0.6, 0.6);
+        slide.style.transform = `scale(${scale})`;
+        slide.style.opacity = opacity;
+      });
+    },
+    setTransition(swiper, duration) {
+      swiper.slides.forEach(slide => {
+        slide.style.transition = `${duration}ms`;
+      });
+    },
+  },
 });
+
+
 </script>
 
+<script>
+const elements = document.querySelectorAll('.animated-border');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      // aggiunge la classe "visible" e rimane finché l'elemento è visibile
+      entry.target.classList.add('visible');
+    } else {
+      // rimuove la classe quando l'elemento esce dalla viewport
+      entry.target.classList.remove('visible');
+    }
+  });
+}, { threshold: 0.5 });
+
+elements.forEach(el => observer.observe(el));
+
+</script>
+
+<script>
+  function openModal() {
+  document.getElementById("myModal").style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById("myModal").style.display = "none";
+}
+
+window.onclick = function(event) {
+  const modal = document.getElementById("myModal");
+  if (event.target === modal) {
+    closeModal();
+  }
+}
+</script>
 
 </html>
