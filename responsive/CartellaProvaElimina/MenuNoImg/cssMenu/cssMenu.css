@@ -1,0 +1,121 @@
+#bgVideo {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    transform: translate(-50%, -50%) scale(1.08);
+    z-index: -1; /* il video sta sotto tutto */
+    filter: brightness(60%) blur(8px);
+}
+
+#menuPage{
+    width: 100vw;
+    height: 100vh;
+}
+
+#articleDiv{
+    padding-left: 5%;
+    padding-right: 5%;
+    display: flex;
+    gap: 1%;
+    justify-content: center;
+    flex-wrap: wrap;
+    zoom: 110%;
+}
+
+#articleDiv article{
+    background-color: #B6A39E;
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 auto;
+    padding: 10px;
+    padding-top: 0;
+    width: 15vw;
+    height: fit-content;
+    margin: 1%;
+    padding-bottom: 3%;
+    border-radius: 20px;
+    transition: transform 400ms cubic-bezier(.4,0,.2,1);
+    transition: background-color 300ms ease, transform 300ms ease;
+    box-shadow: -8px 7px 3px rgba(0, 0, 0, 0.480);
+    cursor: pointer;
+}
+
+#articleDiv article:hover{
+    transform: translateY(-15px);
+    background-color: #DDE0BD;
+}
+
+.articleDiv > article:nth-child(3n)::after{
+  content:"";
+  flex-basis:100%;
+}
+
+.break{ flex-basis:100%; height:0; }
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+#articleDiv h1{
+    all: unset;
+    font-size: 2.5vw;
+    align-self: center;
+    font-family:"Poiret One", sans-serif;
+    font-weight: bolder;
+    padding-top: 20%;
+}
+
+#sectionTitle{
+    text-align: center !important;
+    width: 100% !important;
+    font-family:"Poiret One", sans-serif !important;
+    font-weight: 100 !important;
+    padding: 2% !important;
+    color: white !important;
+    font-size: 4vw !important;
+}
+
+#menuPage p{
+    all: unset;
+    font-size: 0.7vw;
+    color: rgb(45, 45, 45);
+    padding: 5%;
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-top: 2%;
+    text-align: center;
+    align-self: center;
+    font-family: system-ui, sans-serif;
+    font-weight: 400;
+}
+
+.itemNoCaption{
+    padding: 10% !important;
+    padding-bottom: 5% !important;
+    text-align: center !important;
+}
+
+#articleDiv button{
+    all: unset;
+    width: 50%;
+    text-align: center;
+    margin-top: 5%;
+    border-radius: 20px;
+    background-color: #000000d3;
+    padding: 3px;
+}
+
+#articleDiv span{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#articleDiv button p{
+    font-size: 1.1vw;
+    color: white;
+}
