@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Men&ugrave; - Vecchi Platani</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+<link rel="stylesheet" href="2.css">
+</head>
+
+<body>
+
+<video id="bgVideo" autoplay muted loop playsinline>
+    <source src="vid/YTDown.com_YouTube_Another-Cinematic-Restaurant-Video-Sony_Media_QdeMeNhgdtU_001_1080p.mp4" type="video/mp4">
+</video>
+
+<div class="overlay"></div>
+
+<header class="navbar-container">
+
+    <nav class="navbar">
+
+        <div class="nav-center">
+
+            <a href="../index.html" class="nav-link">
+                Home
+            </a>
+
+            <a href="#" class="nav-link active">
+                Menù
+            </a>
+
+            <a href="../contatti.html" class="nav-link">
+                Contatti
+            </a>
+
+        </div>
+
+        <button class="book-btn" onclick="openModal()">
+            PRENOTA ORA
+        </button>
+
+    </nav>
+
+</header>
+
+<section class="menu-container">
+
+    <div class="hero">
+
+        <span class="subtitle">MEN&Ugrave;</span>
+
+        <h1>Vecchi Platani</h1>
+
+        <div class="gold-line"></div>
+
+    </div>
+
+    <section class="menu-section">
+
+        <h2 data-aos="fade-up">Fritti</h2>
+
+        <div class="cards">
+
+            <article class="card" data-aos="fade-up">
+
+                <img src="img/4Formaggi.jpeg" alt="Patate Stick">
+
+                <div class="card-body">
+
+                    <div class="card-top">
+                        <h3>Patate Stick</h3>
+                        <span class="price">€ 5</span>
+                    </div>
+
+                    <p>
+                        Patate croccanti servite calde con salsa artigianale.
+                    </p>
+
+                </div>
+
+            </article>
+
+            <article class="card" data-aos="fade-up" data-aos-delay="100">
+
+                <img src="img/Americana.jpeg" alt="Patate Dippers">
+
+                <div class="card-body">
+
+                    <div class="card-top">
+                        <h3>Patate Dippers</h3>
+                        <span class="price">€ 6</span>
+                    </div>
+
+                    <p>
+                        Patate speziate dal taglio rustico e croccante.
+                    </p>
+
+                </div>
+
+            </article>
+
+            <article class="card" data-aos="fade-up" data-aos-delay="200">
+
+                <img src="img/Arrogante.jpeg" alt="Bandidos">
+
+                <div class="card-body">
+
+                    <div class="card-top">
+                        <h3>Bandidos (6pz)</h3>
+                        <span class="price">€ 7</span>
+                    </div>
+
+                    <p>
+                        Croccanti bocconcini di pollo leggermente piccanti.
+                    </p>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+    <section class="menu-section">
+
+        <h2 data-aos="fade-up">Montanarine</h2>
+
+        <div class="cards">
+
+            <article class="card" data-aos="fade-up">
+
+                <img src="img/BombetteConNutella.jpeg" alt="Montanarina">
+
+                <div class="card-body">
+
+                    <div class="card-top">
+                        <h3>Sugo e Grana</h3>
+                        <span class="price">€ 4</span>
+                    </div>
+
+                    <p>
+                        Tradizione napoletana con pomodoro e grana.
+                    </p>
+
+                </div>
+
+            </article>
+
+            <article class="card" data-aos="fade-up">
+
+                <img src="img/Boscaiola.jpeg" alt="Montanarina">
+
+                <div class="card-body">
+
+                    <div class="card-top">
+                        <h3>Mortadella e Pistacchio</h3>
+                        <span class="price">€ 6</span>
+                    </div>
+
+                    <p>
+                        Ricotta fresca, mortadella e granella di pistacchio.
+                    </p>
+
+                </div>
+
+            </article>
+
+            <article class="card" data-aos="fade-up">
+
+                <img src="img/Caminetto.jpeg" alt="Montanarina">
+
+                <div class="card-body">
+
+                    <div class="card-top">
+                        <h3>Porcini e Tartufo</h3>
+                        <span class="price">€ 7</span>
+                    </div>
+
+                    <p>
+                        Crema al tartufo e funghi porcini selezionati.
+                    </p>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+</section>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script>
+AOS.init({
+    duration: 800,
+    once: false
+});
+</script>
+
+</body>
+</html>

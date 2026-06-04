@@ -34,7 +34,7 @@ body {
   margin: 0;
   padding: 0;
   position: fixed;
-  width: 35%;
+  width: 30%;
   justify-content: center;
   transition: transform 0.2s linear, top 0.2s linear, left 0.2s linear;
   transform: translate(-50%, -50%);
@@ -42,135 +42,102 @@ body {
   left: 50%;
 }
 
-/* Navbar container
-#vLogo {
-    margin: 0;
-    padding: 0;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    text-align: center;
-    transform: translate(-50%, -50%);
-    font-size: 40vw;
-    transition: transform 0.2s linear, top 0.2s linear, left 0.2s linear;
-    pointer-events: none;
-    font-family: "Imperial Script", cursive;
-    color: rgb(165, 42, 42);
-    z-index: 4;
+.navbar-container{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:10;
 }
 
-#tLogo{
-    margin: 0;
-    width: 100%;
-    padding: 0;
-    top: 50%;
-    left: 49%;
-    transform: translate(-50%, -50%);
+.navbar{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    height:90px;
+    backdrop-filter:blur(12px);
+    background:rgba(0,0,0,.15);
+    border-bottom:1px solid rgba(199,168,106,.15);
+}
+
+.nav-center{
+    display:flex;
+    gap:70px;
+}
+
+.nav-link{
+    position:relative;
+    text-decoration:none;
+    color:white;
+    font-family:'Inter',sans-serif;
+    font-weight:300;
+    font-size:1rem;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    transition:.3s;
+}
+
+.nav-link:hover{
+    color:#c7a86a;
+}
+
+.nav-link::after{
+    content:"";
     position:absolute;
-    font-size: 14vw;
-    text-align: center;
-    color: rgb(232, 232, 232);
-    font-family: "Imperial Script", cursive;
-    z-index: 3;
-}
-*/
-
-/* Navbar container */
-#navBarDiv{
-  all: unset;
-  width: 100%;
-  margin-right: 10%;
-  position: fixed;
-  display: flex;
-  justify-content: center;
-  z-index: 20;
+    bottom:-8px;
+    left:50%;
+    width:0;
+    height:1px;
+    background:#c7a86a;
+    transform:translateX(-50%);
+    transition:.35s;
 }
 
-#navbar {
-  width: 100%;
-  padding: 15px 0;
-  padding-bottom: 2vw;
-  display: flex;
-  justify-content: center;
-  gap: 50px; /* distanza tra i bottoni */
-  background: transparent;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 20;
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-  border-bottom-color: rgba(128, 128, 128, 0.206);
+.nav-link:hover::after,
+.nav-link.active::after{
+    width:100%;
 }
 
-/* Bottoni base */
-#navbar .button {
-  color: white;
-  text-decoration: none;
-  padding-top: 15px;
-  font-size: 1.2vw;
-  text-transform: uppercase;
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  position: relative;
-  transition: transform 0.55s ease;
+.book-btn{
+    position:absolute;
+    right:60px;
+    background:transparent;
+    border:1px solid #c7a86a;
+    color:#c7a86a;
+    padding:12px 22px;
+    border-radius:50px;
+    cursor:pointer;
+    font-family:'Inter',sans-serif;
+    letter-spacing:1px;
+    transition:.35s;
 }
 
-/* Linea sotto il bottone (inizialmente invisibile) */
-#navbar .button::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 4px;
-  width: 0;
-  height: 0;
-  border-bottom: 0 solid transparent; /* niente border, niente puntini */
-  transform: translateX(-50%);
-  transition: width 0.45s ease, border-bottom-width 0.50s ease, border-color 0.50s ease;
+.book-btn:hover{
+    background:#c7a86a;
+    color:black;
 }
 
-#navbar .button:hover::after {
-  width: 40%;
-  height: 0;                                /* la linea è solo il border */
-  border-bottom-width: 0.1px;                /* super sottile */
-  border-color: rgb(255, 255, 255);                       /* ora visibile */
-}
+@media(max-width:768px){
 
-/* Hover: ingrandisce e mostra linea */
-#navbar .button:hover {
-  transform: scale(1.06);
-}
+    .navbar{
+        height:70px;
+    }
 
-#navbar .button:hover::after {
-  width:40%; /* lunghezza linea sotto */
-}
+    .nav-center{
+        gap:25px;
+    }
 
-#prenota{
-  z-index: 20;
-  position: relative;
-  display: inline-block;
-  color: rgb(255, 255, 255);
-  left: 43%;
-  top: 16px;
-  font-size: 1.1vw;
-  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  border-left-style: solid;
-  border-right-style: solid;
-  border-width: 1px;
-  font-weight: 100;
-  border-color: rgb(255, 0, 0);
-  letter-spacing: 0.2px;
-  padding-left: 10px;
-  padding-right: 10px;
-  cursor: pointer;
-}
+    .nav-link{
+        font-size:.85rem;
+    }
 
-#prenota:hover {
-  animation: textVibe 0.50s linear;
-}
+    .book-btn{
+        right:15px;
 
-#prenotaLink{
-  all: unset;
-  z-index: 8;
+        padding:8px 14px;
+
+        font-size:.75rem;
+    }
 }
 
 @keyframes textVibe {
@@ -179,6 +146,81 @@ body {
   50%  { transform: translateY(3px); }
   75%  { transform: translateY(4px); }
   100% { transform: translateY(0); }
+}
+
+.modal{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100vh;
+    background:rgba(0,0,0,.65);
+    backdrop-filter:blur(5px);
+    z-index:100;
+}
+
+.modal-content{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:350px;
+    background:rgba(20,20,20,.95);
+    border:1px solid rgba(199,168,106,.35);
+    border-radius:20px;
+    padding:80px;
+    text-align:center;
+    box-shadow:
+    0 20px 50px rgba(0,0,0,.5);
+}
+
+.modal-content h2{
+    color:white;
+    margin-bottom:25px;
+    font-family:'Inter',sans-serif;
+    font-weight:500;
+}
+
+.modal-btn{
+    width:100%;
+    margin:10px 0;
+    padding:14px;
+    border:none;
+    border-radius:12px;
+    cursor:pointer;
+    font-size:1rem;
+    transition:.3s;
+}
+
+.phone-btn{
+    background:#1e6fff;
+    color:white;
+    font-family:'Inter',sans-serif;
+}
+
+.phone-btn:hover{
+    transform:translateY(-2px);
+}
+
+.whatsapp-btn{
+    background:#25d366;
+    color:white;
+    font-family:'Inter',sans-serif;
+}
+
+.whatsapp-btn:hover{
+    transform:translateY(-2px);
+}
+
+.cancel-btn{
+    background:#444;
+    color:white;
+    font-family:'Inter',sans-serif;
+}
+
+.cancel-btn:hover{
+    background:#666;
 }
 
 #box2{
@@ -190,7 +232,7 @@ body {
   width:85%;
   height: 80%;
   background-color: rgba(0, 255, 255, 0);
-  position: absolute;
+  position: relative;
 }
 
 #chefP{
@@ -199,6 +241,7 @@ body {
   display: inline-block;
   padding: 1vh;
   padding-left: 10vh;
+  letter-spacing: 8px;
   font-size: 8vw;
   color: white;
   font-family: "Imperial Script", cursive;
@@ -231,7 +274,7 @@ body {
 #chefDiv {
     position: absolute;        /* assoluto rispetto a #box2 */
     left: 76%;                 /* distanza dal bordo sinistro, cambia se vuoi */
-    top: -10vh;                    /* allinea in alto con il testo */
+    top: 2vh;                    /* allinea in alto con il testo */
     width: 25%;              /* larghezza del contenitore immagine + linea */
     height: 90%;
     overflow: hidden;          /* taglia tutto ciò che supera la linea */
@@ -261,7 +304,7 @@ body {
 
 #box3{
   display: flex;
-  padding-top: 110vh;
+  margin-top: 150vh;
   width: 100vw;
   height: 55vh;
   z-index: 10;
@@ -298,7 +341,7 @@ body {
   border-style: none;
   border-top-style: solid;
   border-width: 1px;
-  border-color:  rgb(255, 80, 80);
+  border-color:  rgba(229, 142, 25);
 }
 
 .did{
@@ -531,7 +574,7 @@ body {
 .schedule-row.header{
   background-color: rgba(255, 255, 255, 0);
   font-weight: 400;
-  color: #7e9b00;
+  color: rgba(229, 142, 25);
 }
 
 .schedule-row:last-child {
@@ -573,7 +616,7 @@ body {
 
 .footer-section-contact a:hover {
   font-size: 1.6vw;
-  color: #610000;
+  color: rgba(229, 142, 25);
 }
 
 .map-container {
@@ -596,75 +639,4 @@ body {
   padding-bottom: 1%;
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 0.8vw;
-}
-
-/* Sfondo popup */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 2000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100vh;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.5);
-}
-
-    /* Contenuto popup */
-.modal-content {
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 2vw;
-    background-color: #d6d6d6;
-    margin: 15vw auto;
-    padding: 1vw;
-    border: 1px solid #000000;
-    width: 90%;
-    max-width: 400px;
-    border-radius: 10px;
-    text-align: center;
-}
-
-.option-btn {
-    padding: 12px 20px;
-    margin: 10px;
-    font-size: 18px;
-    border-radius: 6px;
-    border: none;
-    cursor: pointer;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-weight: bold;
-}
-
-.whatsapp-btn {
-    background-color: #25d365c3;
-    color: white;
-    box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.455);
-}
-
-.call-btn {
-    background-color: #007bffc3;
-    color: white;
-    box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.455);
-}
-
-.close-btn {
-    background-color: #dc3546de;
-    color: white;
-    box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.455);
-}
-
-
-#button{
-  all: unset;
-  z-index: 20;
-  position: relative;
-  display: inline-block;
-  color: rgb(255, 255, 255);
-  left: 38%;
-  top: 0vh;
-  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  padding-left: 10px;
-  padding-right: 10px;
-  cursor: pointer;
 }
