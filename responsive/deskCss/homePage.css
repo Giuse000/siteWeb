@@ -14,32 +14,33 @@ body {
     position: fixed;
     top: 50%;
     left: 50%;
-    width: 100vw;
-    height: 100vh;
+    width: calc(100vw + 20px);
+    height: calc(100vh + 20px);
     object-fit: cover;
-    transform: translate(-50%, -50%);
-    z-index: -1; /* il video sta sotto tutto */
-    filter: brightness(60%); /* opzionale: oscura un po' il video */
-}
-
-#box1{
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  z-index: 4;
+    transform: translate(-50%, -50%) scale(1.05);
+    z-index: -1;
+    filter: brightness(60%) blur(8px);
 }
 
 #logo1{
-  margin: 0;
-  padding: 0;
-  position: fixed;
-  width: 30%;
-  justify-content: center;
-  transition: transform 0.2s linear, top 0.2s linear, left 0.2s linear;
-  transform: translate(-50%, -50%);
-  top: 50%;
-  left: 50%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index:10;
+}
+
+#logo1.modal-open {
+    z-index: 9;
+}
+
+#logoTarget{
+    position:absolute;
+    left:55px;          /* dove vuoi il logo */
+    top:50%;
+    width:1px;
+    height:1px;
+    transform:translateY(-50%);
 }
 
 .navbar-container{
@@ -47,6 +48,7 @@ body {
     top:0;
     left:0;
     width:100%;
+    height: 90px;
     z-index:10;
 }
 
@@ -157,7 +159,7 @@ body {
     height:100vh;
     background:rgba(0,0,0,.65);
     backdrop-filter:blur(5px);
-    z-index:100;
+    z-index:110;
 }
 
 .modal-content{
@@ -228,7 +230,7 @@ body {
   display: block;
   left: 6%;
   z-index: 7;
-  top: 110vh;
+  margin-top:110vh ;
   width:85%;
   height: 80%;
   background-color: rgba(0, 255, 255, 0);
@@ -240,11 +242,12 @@ body {
   position: relative;
   display: inline-block;
   padding: 1vh;
-  padding-left: 10vh;
-  letter-spacing: 8px;
+  padding-bottom: 0;
+  padding-left: 14vh;
+  letter-spacing: 2px;
   font-size: 8vw;
   color: white;
-  font-family: "Imperial Script", cursive;
+  font-family: "Bonheur Royale", cursive;
 }
 
 #chefLine1 {
@@ -255,6 +258,7 @@ body {
   margin-left: 3vw;
   border-style: none;
   border-top-style: solid;
+  color: #c7a86a;
 }
 
 #chefD{
@@ -276,7 +280,7 @@ body {
     left: 76%;                 /* distanza dal bordo sinistro, cambia se vuoi */
     top: 2vh;                    /* allinea in alto con il testo */
     width: 25%;              /* larghezza del contenitore immagine + linea */
-    height: 90%;
+    height: 100%;
     overflow: hidden;          /* taglia tutto ciò che supera la linea */
     z-index: 1;
 }
@@ -284,10 +288,11 @@ body {
 /* Immagine */
 #chefI {
     display: block;
-    width: 120%;               /* più larga del contenitore per effetto taglio */
+    width: 149%;               /* più larga del contenitore per effetto taglio */
     height: auto;
     position: relative;
-    left: 1%;                /* sposta a sinistra per far tagliare la parte destra */
+    left: -17%;  
+    padding-top: 7%;            /* sposta a sinistra per far tagliare la parte destra */
     z-index: 1;
 }
 
@@ -304,7 +309,7 @@ body {
 
 #box3{
   display: flex;
-  margin-top: 150vh;
+  margin-top: 40vh;
   width: 100vw;
   height: 55vh;
   z-index: 10;
@@ -341,7 +346,7 @@ body {
   border-style: none;
   border-top-style: solid;
   border-width: 1px;
-  border-color:  rgba(229, 142, 25);
+  border-color:  #c7a86a;
 }
 
 .did{
@@ -407,7 +412,7 @@ body {
 }
 
 .carousel-img {
-  width: 17vw;
+  width: 16vw;
   height: 50vh;
   object-fit: cover;
   border-radius: 18px;
@@ -433,15 +438,16 @@ body {
   flex-direction: row;
   z-index: 5;
   height: 40vh;
-  margin-right: 5%;
+  margin-right: 15%;
+  margin-left: 15%;
 }
 
 .location-image {
   transform: perspective(600px) rotateY(20deg) rotateZ(1deg);
   border-radius: 5px;
   overflow: hidden;
-  width:35vw;
-  padding: 10%;
+  width:30vw;
+  padding: 3%;
   height: 60vh;
   height: auto;
 }
@@ -545,7 +551,7 @@ body {
 
 .footer-section a:hover {
   text-decoration: underline;
-  color: #ff3333;
+  color: #c7a86a;
 }
 
 .schedule-table {
@@ -574,7 +580,7 @@ body {
 .schedule-row.header{
   background-color: rgba(255, 255, 255, 0);
   font-weight: 400;
-  color: rgba(229, 142, 25);
+  color: #c7a86a;
 }
 
 .schedule-row:last-child {
@@ -616,7 +622,7 @@ body {
 
 .footer-section-contact a:hover {
   font-size: 1.6vw;
-  color: rgba(229, 142, 25);
+  color: #c7a86a;
 }
 
 .map-container {

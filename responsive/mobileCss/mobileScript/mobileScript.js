@@ -86,9 +86,11 @@ const section1 = document.getElementById("section1");
 const button = document.querySelector(".prenota-btn"); // CORRETTO: era "elemento" ma usavi "button"
 
 const initialLeft = 50;
-const finalLeft = 6;
+const finalLeft = 15;
+
 const initialTop = 9;
 const finalTop = 10;
+
 const maxScroll = 30;
 
 function updateLogo() {
@@ -120,8 +122,6 @@ function updateLogo() {
     section1.style.position = "static";
     button.style.marginTop = "80vh";
   }
-
-  title2.style.opacity = ratio >= 0.05 ? "0" : "1";
 }
 
 window.addEventListener("scroll", updateLogo);
@@ -137,10 +137,11 @@ function closeModal() {
 }
 
 window.onclick = function(event) {
-  const modal = document.getElementById("myModal");
-  if (event.target === modal) {
-    closeModal();
-  }
+    const modal = document.getElementById("myModal");
+
+    if (event.target === modal) {
+        closeModal();
+    }
 }
 
 
