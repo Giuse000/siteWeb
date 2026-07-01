@@ -19,10 +19,8 @@ function smoothScrollSlow(targetSelector, duration = 3000) {
     if (!startTime) startTime = timestamp;
     const elapsed = timestamp - startTime;
 
-    // progress in range 0-1
     const progress = Math.min(elapsed / duration, 1);
 
-    // posizione attuale: calcolo linear (puoi sostituire con easing se vuoi)
     const currentY = startY + distance * progress;
 
     window.scrollTo(0, currentY);
@@ -58,32 +56,29 @@ document.querySelectorAll('#sideMenu a').forEach(link => {
     document.getElementById('menuOverlay').classList.remove('active');
   }
 
-  // Chiudi anche cliccando su un link del menu
   document.querySelectorAll('#sideMenu a').forEach(link => {
     link.addEventListener('click', e => {
-      e.preventDefault(); // evita lo scroll immediato
+      e.preventDefault(); 
 
       const targetId = link.getAttribute('href');
       const targetElement = document.querySelector(targetId);
 
       closeMenu();
 
-      // Aspetta che il menu si chiuda, poi fai lo scroll
       setTimeout(() => {
         if (targetElement) {
           targetElement.scrollIntoView({ behavior: 'smooth' });
         }
-      }, 400); // 400ms = durata della transizione del menu
+      }, 400); 
     });
   });
 
 
 
 // Logo dinamico
-const logoContainer = document.getElementById("logo-container");
-const title2 = document.getElementById("title2");
-const section1 = document.getElementById("section1");
-const button = document.querySelector(".prenota-btn"); // CORRETTO: era "elemento" ma usavi "button"
+const logoContainer = document.getElementById("logoContainer");
+const section1 = document.getElementById("navbar");
+const button = document.querySelector(".prenota-btn"); 
 
 const initialLeft = 50;
 const finalLeft = 15;
@@ -150,13 +145,13 @@ new Swiper('.my-carousel', {
   slidesPerView: 1.5,
   spaceBetween: 10,
   loop: true,
-  loopedSlides: 3,            // importantissimo, almeno slidesPerView arrotondato
+  loopedSlides: 3,            
   centeredSlides: true,
   autoplay: {
     delay: 3000,
     disableOnInteraction: false
   },
-  watchSlidesProgress: true,  // aiuta con le slide parziali e scaling
+  watchSlidesProgress: true, 
   watchSlidesVisibility: true,
   pagination: {
     el: '.swiper-pagination',

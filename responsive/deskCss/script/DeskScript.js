@@ -14,7 +14,7 @@ AOS.init({
 // LOGO
 // ======================
 
-const logo = document.getElementById("logo1");
+const logo = document.getElementById("homeLogo");
 const target = document.getElementById("logoTarget");
 
 let startX, startY;
@@ -59,12 +59,12 @@ window.addEventListener("scroll", updateLogo);
 
 function openModal() {
     document.getElementById("bookingModal").style.display = "block";
-    document.getElementById("logo1").classList.add("modal-open");
+    document.getElementById("homeLogo").classList.add("modal-open");
 }
 
 function closeModal() {
     document.getElementById("bookingModal").style.display = "none";
-    document.getElementById("logo1").classList.remove("modal-open");
+    document.getElementById("homeLogo").classList.remove("modal-open");
 }
 
 window.addEventListener("click", function (e) {
