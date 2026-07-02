@@ -6,40 +6,27 @@ AOS.init({
 });
 
 //Scroll
-function smoothScrollSlow(targetSelector, duration = 3000) {
-  const target = document.querySelector(targetSelector);
-  if (!target) return;
-
-  const startY = window.pageYOffset;
-  const targetY = target.getBoundingClientRect().top + startY;
-  const distance = targetY - startY;
-  let startTime = null;
-
-  function step(timestamp) {
-    if (!startTime) startTime = timestamp;
-    const elapsed = timestamp - startTime;
-
-    const progress = Math.min(elapsed / duration, 1);
-
-    const currentY = startY + distance * progress;
-
-    window.scrollTo(0, currentY);
-
-    if (progress < 1) {
-      window.requestAnimationFrame(step);
-    }
-  }
-
-  window.requestAnimationFrame(step);
-}
-
 document.querySelectorAll('#sideMenu a').forEach(link => {
-  link.addEventListener('click', (e) => {
-    e.preventDefault();
-    closeMenu();
+  link.addEventListener('click', function(e) {
 
-    const href = link.getAttribute('href');
-    smoothScrollSlow(href, 1500);
+    const href = this.getAttribute('href');
+
+    if (href.startsWith('#')) {
+      e.preventDefault();
+
+      closeMenu();
+
+      setTimeout(() => {
+        const target = document.querySelector(href);
+
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      }, 100);
+    }
   });
 });
 
@@ -55,24 +42,6 @@ document.querySelectorAll('#sideMenu a').forEach(link => {
     document.getElementById('sideMenu').classList.remove('active');
     document.getElementById('menuOverlay').classList.remove('active');
   }
-
-  document.querySelectorAll('#sideMenu a').forEach(link => {
-    link.addEventListener('click', e => {
-      e.preventDefault(); 
-
-      const targetId = link.getAttribute('href');
-      const targetElement = document.querySelector(targetId);
-
-      closeMenu();
-
-      setTimeout(() => {
-        if (targetElement) {
-          targetElement.scrollIntoView({ behavior: 'smooth' });
-        }
-      }, 400); 
-    });
-  });
-
 
 
 // Logo dinamico

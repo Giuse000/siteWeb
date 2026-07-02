@@ -96,7 +96,7 @@ html {
 }
 
 #sideMenu.active ul li{
-  transition-delay: 0.2s;
+  transition-delay: 0s;
 }
 
 #sideMenu.active ul li:nth-child(1){
@@ -104,15 +104,15 @@ html {
 }
 
 #sideMenu.active ul li:nth-child(3){
-  transition-delay: 0.40s;
+  transition-delay: 0.30s;
 }
 
 #sideMenu.active ul li:nth-child(5){
-  transition-delay: 0.60s;
+  transition-delay: 0.40s;
 }
 
 #sideMenu.active ul li:nth-child(7){
-  transition-delay: 1.0s;
+  transition-delay: 0.50s;
 }
 
 #sideMenu ul li a{
@@ -127,22 +127,22 @@ html {
 #sideMenu.active ul .sideLine:nth-of-type(1){
   opacity: 1;
   transform: translateX(0);
-  transition-delay: 0.10s;
+  transition-delay: 0.07s;
 }
 #sideMenu.active ul .sideLine:nth-of-type(2){
   opacity: 1;
   transform: translateX(0);
-  transition-delay: 0.30s;
+  transition-delay: 0.08s;
 }
 #sideMenu.active ul .sideLine:nth-of-type(3){
   opacity: 1;
   transform: translateX(0);
-  transition-delay: 0.60s;
+  transition-delay: 0.09s;
 }
 #sideMenu.active ul .sideLine:nth-of-type(4){
   opacity: 1;
   transform: translateX(0);
-  transition-delay: 0.90s;
+  transition-delay: 0.10s;
 }
 
 #sideMenu ul li a:hover{
@@ -160,7 +160,7 @@ html {
 #sideMenu.active #sidePrenota{
   opacity: 1;
   transform: translateY(0);
-  transition-delay: 1.10s;
+  transition-delay: 0.7s;
 }
 
 .sideLine{

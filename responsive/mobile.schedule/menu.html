@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="menuStyle.css">
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!----------------------------->
+
+    <link rel="icon" href="img/logoNoBg.png" type="image.png">
+    <title>Men&ugrave; - Vecchi Platani</title>
+</head>
+<body>
+
+    <video id="bgVideo" autoplay muted loop playsinline>
+        <source src="vid/videoBg.mp4" type="video/mp4">
+    </video>
+
+    <div class="overlay"></div>
+
+    <header class="navbar-container">
+        <!-- menu hamburger -->
+        <div id="hamburger-button" onclick="toggleMenu()"> 
+            <div class="line" id="l1"></div>
+            <div class="line" id="l2"></div>
+            <div class="line" id="l3"></div>
+        </div>
+        <!----------------------------->
+
+        <!-- menu tendina -->
+        <div id="sideMenu"> 
+            <ul>
+            <li><a href="../mobile.html">HOME</a></li> 
+            <hr class="sideLine" style="width: 19vw;">
+            <li><a href="#">MEN&Ugrave;</a></li>
+            <hr class="sideLine"style="width: 24vw;">
+            <li><a href="../mobile.html#locationText">LOCATION</a></li>
+            <hr class="sideLine"style="width: 29vw;">
+            <li><a href="../mobile.html#contact">CONTATTI</a></li>
+            <hr class="sideLine"style="width: 31vw;">
+            </ul>
+            <div id="sidePrenota"  onclick="openModal()">PRENOTA ORA</div> 
+        </div>
+        <div id="menuOverlay" onclick="closeMenu()"></div>
+        <!----------------------------->
+
+        <div class="modal" id="myModal">
+            <div class="modal-content">
+                <h3 style="color: black;">Come vuoi prenotare?</h3>
+                <a href="tel:+391234567890">
+                <button class="option-btn call-btn">Chiama</button>
+                </a>
+                <br>
+                <a href="https://wa.me/391234567890?text=Ciao%2C+vorrei+prenotare+un+tavolo" target="_blank" style="all: unset;">
+                <button class="option-btn whatsapp-btn">WhatsApp</button>
+                </a>
+                <br/>
+                <button class="option-btn close-btn" onclick="closeModal()">Annulla</button>
+            </div>
+            </div>
+        </div>
+    </header>
+
+    <div id="navbar"> 
+      <div id="logoContainer">
+        <img src="img/logoNoBg.png" alt="logo" id="logoImg">
+      </div>
+    </div>
+
+    <section class="menu-container">
+        <div class="hero">
+            <span class="subtitle">MEN&Ugrave;</span>
+            <h1>Vecchi Platani</h1>
+            <div class="gold-line"></div>
+        </div>
+
+        <section class="menu-section">
+            <h2 data-aos="fade-up">Fritti</h2>
+            <div class="cards">
+                <article class="card" data-aos="fade-up">
+                    <img src="img/menuPhotos/4Formaggi.jpeg" alt="Patate Stick">
+                    <div class="card-body">
+                        <div class="card-top">
+                            <h3>Patate Stick</h3>
+                            <span class="price">&euro; 5</span>
+                        </div>
+                        <p>Patate croccanti servite calde con salsa artigianale.</p>
+                    </div>
+                </article>
+
+                <article class="card" data-aos="fade-up" data-aos-delay="100">
+                    <img src="img/menuPhotos/Bufalina.jpeg" alt="Patate Dippers">
+                    <div class="card-body">
+                        <div class="card-top">
+                            <h3>Patate Dippers</h3>
+                            <span class="price">€ 6</span>
+                        </div>
+                        <p>Patate speziate dal taglio rustico e croccante.</p>
+                    </div>
+                </article>
+
+                <article class="card" data-aos="fade-up" data-aos-delay="200">
+                    <img src="img/menuPhotos/Capricciosa.jpeg" alt="Bandidos">
+                    <div class="card-body">
+                        <div class="card-top">
+                            <h3>Bandidos (6pz)</h3>
+                            <span class="price">€ 7</span>
+                        </div>
+                        <p>Croccanti bocconcini di pollo leggermente piccanti.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="menu-section">
+            <h2 data-aos="fade-up">Montanarine</h2>
+            <div class="cards">
+                <article class="card" data-aos="fade-up">
+                    <img src="img/menuPhotos/Gioia.jpeg" alt="Montanarina">
+                    <div class="card-body">
+                        <div class="card-top">
+                            <h3>Sugo e Grana</h3>
+                            <span class="price">€ 4</span>
+                        </div>
+                        <p>Tradizione napoletana con pomodoro e grana.</p>
+                    </div>
+                </article>
+
+                <article class="card" data-aos="fade-up">
+                    <img src="img/menuPhotos/BaccalaFrittoConVellutataDiCeci.jpeg" alt="Montanarina">
+                    <div class="card-body">
+                        <div class="card-top">
+                            <h3>Mortadella e Pistacchio</h3>
+                            <span class="price">€ 6</span>
+                        </div>
+                        <p>Ricotta fresca, mortadella e granella di pistacchio.</p>
+                    </div>
+                </article>
+
+                <article class="card" data-aos="fade-up">
+                    <img src="img/menuPhotos/Bufalina.jpeg" alt="Montanarina">
+                    <div class="card-body">
+                        <div class="card-top">
+                            <h3>Porcini e Tartufo</h3>
+                            <span class="price">€ 7</span>
+                        </div>
+                        <p>Crema al tartufo e funghi porcini selezionati.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </section>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script/menuScript.js"></script>
+
+    <script>
+        AOS.init({
+            duration: 800,
+            once: false
+        });
+    </script>
+</body>
+</html>

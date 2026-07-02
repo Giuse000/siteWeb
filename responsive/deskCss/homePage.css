@@ -5,6 +5,10 @@ body{
   overflow-x: hidden;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .aos-wrapper{
   position: relative;
   display: block;
@@ -207,6 +211,9 @@ body{
   left: 50%;
   transform: translate(-50%,-50%);
   z-index:10;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 #homeLogo.modal-open{
