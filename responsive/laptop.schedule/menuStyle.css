@@ -176,7 +176,7 @@ body{
     display:grid;
     grid-template-columns:
     repeat(auto-fit,minmax(320px,1fr));
-    gap:35px;
+    gap:38px;
 }
 
 .card{
@@ -227,12 +227,82 @@ body{
     background:#c7a86a;
     padding:8px 14px;
     border-radius:50px;
+    white-space: nowrap;
     font-weight:700;
 }
 
 .card-body p{
     color:rgba(255,255,255,.75);
     line-height:1.7;
+}
+
+.image-container{
+    position:relative;
+}
+
+.info-btn{
+    position:absolute;
+    top:12px;
+    left:12px;
+    width:37px;
+    height:37px;
+    border-radius:50%;
+    border:1px solid #c7a86a;
+    background:rgba(0,0,0,.75);
+    color:#c7a86a;
+    font-size:20px;
+    font-weight:bold;
+    cursor:pointer;
+    z-index:10;
+    transition:.3s;
+}
+
+.info-btn:hover{
+    background:#c7a86a;
+    color:black;
+    transform:scale(1.1);
+}
+
+.allergen-popup{
+    position:absolute;
+    top:55px;
+    left:12px;
+    width:260px;
+    padding:15px;
+    border-radius:18px;
+    background:rgba(18,18,18,.97);
+    backdrop-filter:blur(12px);
+    border:1px solid rgba(199,168,106,.4);
+    box-shadow:0 20px 40px rgba(0,0,0,.5);
+    opacity:0;
+    visibility:hidden;
+    transform:translateY(-10px);
+    transition:.3s;
+    z-index:20;
+}
+
+.allergen-popup h4{
+    color:#d8b16a;
+    margin-bottom:15px;
+    font-size:1.2rem;
+}
+
+.allergen-popup ul{
+    list-style:none;
+    padding:0;
+    margin:0;
+}
+
+.allergen-popup li{
+    padding:8px 0;
+    color:white;
+    font-size:.9rem;
+}
+
+.allergen-popup.active{
+    opacity:1;
+    visibility:visible;
+    transform:translateY(0);
 }
 
 @media(max-width:768px){
@@ -255,9 +325,7 @@ body{
     position:fixed;
     top:0;
     left:0;
-
     width:100%;
-
     z-index:999;
 }
 
@@ -265,13 +333,9 @@ body{
     display:flex;
     align-items:center;
     justify-content:center;
-
     height:90px;
-
     backdrop-filter:blur(12px);
-
     background:rgba(0,0,0,.15);
-
     border-bottom:1px solid rgba(199,168,106,.15);
 }
 
@@ -282,21 +346,13 @@ body{
 
 .nav-link{
     position:relative;
-
     text-decoration:none;
-
     color:white;
-
     font-family:'Inter',sans-serif;
-
     font-weight:300;
-
     font-size:1rem;
-
     letter-spacing:2px;
-
     text-transform:uppercase;
-
     transition:.3s;
 }
 
@@ -306,19 +362,13 @@ body{
 
 .nav-link::after{
     content:"";
-
     position:absolute;
-
     bottom:-8px;
     left:50%;
-
     width:0;
     height:1px;
-
     background:#c7a86a;
-
     transform:translateX(-50%);
-
     transition:.35s;
 }
 
@@ -329,25 +379,15 @@ body{
 
 .book-btn{
     position:absolute;
-
     right:60px;
-
     background:transparent;
-
     border:1px solid #c7a86a;
-
     color:#c7a86a;
-
     padding:12px 22px;
-
     border-radius:50px;
-
     cursor:pointer;
-
     font-family:'Inter',sans-serif;
-
     letter-spacing:1px;
-
     transition:.35s;
 }
 
@@ -372,9 +412,7 @@ body{
 
     .book-btn{
         right:15px;
-
         padding:8px 14px;
-
         font-size:.75rem;
     }
 }
