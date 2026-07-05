@@ -453,3 +453,33 @@ body{
     color:black;
     transform:translateY(-2px);
 }
+
+#scrollTopBtn{
+    position:fixed;
+    bottom:35px;
+    right:35px;
+    width:55px;
+    height:55px;
+    border:none;
+    border-radius:50%;
+    background:#c7a86a;
+    color:black;
+    font-size:1.6rem;
+    font-weight:bold;
+    cursor:pointer;
+    box-shadow:0 8px 25px rgba(0,0,0,.4);
+    transition:.35s;
+    opacity:0;
+    visibility:hidden;
+    z-index:9999;
+}
+
+#scrollTopBtn:hover{
+    transform:translateY(-4px) scale(1.08);
+    background:#d8b16a;
+}
+
+#scrollTopBtn.show{
+    opacity:1;
+    visibility:visible;
+}

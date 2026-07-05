@@ -418,7 +418,7 @@ html {
   min-width: 175px;
   max-height: 183px;
   min-height: 183px;
-  background-image: url(../mobileCss/img/menu/TagliataRucolaGranaEPomodorini.jpeg);
+  background-image: url(img/menu/Carne.jpg);
   background-size: cover;
   border-style: solid;
   border-radius: 50%;
@@ -470,7 +470,7 @@ html {
   min-width: 175px;
   max-height: 183px;
   min-height: 183px;
-  background-image: url(../mobileCss/img/location/location8.jpeg);
+  background-image: url(img/location/location8.jpeg);
   background-size: cover;
   background-position: center;
   border-style: solid;
@@ -498,7 +498,7 @@ html {
   min-width: 175px;
   max-height: 183px;
   min-height: 183px;
-  background-image: url(../mobileCss/img/menu/BombetteConNutella.jpeg);
+  background-image: url(img/menu/BombetteNutella.jpg);
   background-size: cover;
   background-position: center;
   border-style: solid;
