@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="mobileCss/style.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+  <!-- fonts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Imperial+Script&family=Lora:ital,wght@0,400..700;1,400..700&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Ms+Madi&family=Outfit:wght@100..900&family=Playwrite+HR+Lijeva:wght@100..400&family=The+Nautigal:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Imperial+Script&family=Ms+Madi&family=Outfit:wght@100..900&family=Playwrite+HR+Lijeva:wght@100..400&family=The+Nautigal:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Imperial+Script&family=Ms+Madi&family=Playwrite+HR+Lijeva:wght@100..400&family=The+Nautigal:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Cedarville+Cursive&family=Imperial+Script&family=Lora:ital,wght@0,400..700;1,400..700&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Ms+Madi&family=Outfit:wght@100..900&family=Playwrite+HR+Lijeva:wght@100..400&family=The+Nautigal:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Cedarville+Cursive&family=Imperial+Script&family=Lora:ital,wght@0,400..700;1,400..700&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Ms+Madi&family=Outfit:wght@100..900&family=Playwrite+HR+Lijeva:wght@100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=The+Nautigal:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Cedarville+Cursive&family=Imperial+Script&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Ms+Madi&family=Outfit:wght@100..900&family=Playwrite+HR+Lijeva:wght@100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=The+Nautigal:wght@400;700&display=swap" rel="stylesheet">
+  <!----------------------------->
+    
+
+  <link rel="icon" href="mobileCss/img/logoNoBg.png" type="image.png">
+  <title>Home - Vecchi Platani</title>
+</head>
+<body>
+
+  <!-- menu hamburger -->
+  <div id="hamburger-button" onclick="toggleMenu()"> 
+    <div class="line" id="l1"></div>
+    <div class="line" id="l2"></div>
+    <div class="line" id="l3"></div>
+  </div>
+  <!----------------------------->
+
+  <!-- menu tendina -->
+  <div id="sideMenu"> 
+    <ul>
+      <li><a href="#">HOME</a></li> 
+      <hr class="sideLine" style="width: 19vw;">
+      <li><a href="mobile.schedule/menu.html">MEN&Ugrave;</a></li>
+      <hr class="sideLine"style="width: 24vw;">
+      <li><a href="#locationText">LOCATION</a></li>
+      <hr class="sideLine"style="width: 29vw;">
+      <li><a href="#contact">CONTATTI</a></li>
+      <hr class="sideLine"style="width: 31vw;">
+    </ul>
+    <div id="sidePrenota"  onclick="openModal()">PRENOTA ORA</div> 
+  </div>
+  <div id="menuOverlay" onclick="closeMenu()"></div>
+  <!----------------------------->
+
+  <!-- section 1 -->
+  <div id="section1"> 
+    <div id="navbar"> 
+      <div id="logoContainer">
+        <img src="deskCss/img/logoNoBg.png" alt="logo" id="logoImg">
+      </div>
+    </div>
+
+    <h1 id="modernText" data-aos="fade-up" data-aos-anchor-placement="top-bottom">MODERN <br> CUISINE</h1> 
+    
+    <button id="prenotaButton" class="prenota-btn" onclick="openModal()" data-aos="zoom-in-up" data-aos-anchor-placement="top-bottom">PRENOTA ORA</button>
+    <div class="modal" id="myModal">
+      <div class="modal-content">
+        <h3>Come vuoi prenotare?</h3>
+        <a href="tel:+393299738217">
+          <button class="option-btn call-btn">Chiama</button>
+        </a>
+        <br>
+        <a href="https://wa.me/393299738217?text=Ciao%2C+vorrei+prenotare+un+tavolo" target="_blank" style="all: unset;">
+          <button class="option-btn whatsapp-btn">WhatsApp</button>
+        </a>
+        <br/>
+        <button class="option-btn close-btn" onclick="closeModal()">Annulla</button>
+      </div>
+    </div>
+  </div>
+  <!----------------------------->
+
+  <!-- section 2 -->
+  <div id="section2">
+    <span data-aos="fade-right" style=" padding-top:10%;padding-left: 2%;">
+      <h1 id="filosofiaText" data-aos="fade-right">LA NOSTRA <br >FILOSOFIA</h1> 
+      <hr data-aos="fade-right" style="padding: 0; border-color: gray; margin: 0; width: 50vw; margin-top: 2%; border-top-right-radius: 25%; border-bottom-right-radius: 25%;">
+    </span>
+    
+    <span style="display: flex; align-items: center; flex-direction: column;"data-aos="fade-right">
+      <div id="imgCircle1"></div>
+    </span>
+    <p class="circleTitle"data-aos="fade-right">L'arte della cucina</p>
+    <hr data-aos="fade-right" style="width: 15vw; margin-bottom: 5%;border-color: rgba(255, 255, 255, 0.217);border-width: 1px;border-style: none;border-bottom-style: solid;">
+    <div id="circleDid1"data-aos="fade-right"> 
+    <p class="circleP">Materie prime di qualit&agrave;, lavorazioni accurate e presentazioni eleganti per valorizzare ogni ingrediente.</p>
+    </div>
+
+    <span style="display: flex; align-items: center; flex-direction: column;"data-aos="fade-left">
+      <div id="imgCircle2"></div>
+    </span>
+    <p class="circleTitle"data-aos="fade-left">Un ambiente esclusivo</p>
+    <hr data-aos="fade-left" style="width: 15vw; margin-bottom: 5%;border-color: rgba(255, 255, 255, 0.217);border-width: 1px;border-style: none;border-bottom-style: solid;">
+    <div id="circleDid2" data-aos="fade-left"> 
+    <p class="circleP">Design contemporaneo e comfort si fondono per creare uno spazio dove sentirsi sempre i benvenuti.</p>
+    </div>
+
+    <span style="display: flex; align-items: center; flex-direction: column;"data-aos="fade-right">
+      <div id="imgCircle3"></div>
+    </span>
+    <p class="circleTitle"data-aos="fade-right">Dolci tentazioni</p>
+    <hr data-aos="fade-right" style="width: 15vw; margin-bottom: 5%;border-color: rgba(255, 255, 255, 0.217);border-width: 1px;border-style: none;border-bottom-style: solid;">
+    <div id="circleDid1" style="margin-bottom: 10%;" data-aos="fade-right">
+      <p class="circleP">Dessert artigianali preparati con ingredienti genuini, perfetti per concludere il pasto con un tocco di dolcezza.</p>
+    </div>
+  </div>
+  <!----------------------------->
+
+  <!-- section 3 -->
+  <div id="section3">
+    <div id="locationLine" data-aos="flip-up"> 
+      <h1 id="locationText">LOCATION</h1> 
+    </div>
+
+    <span id="swiperDivider"> 
+      <div class="swiper my-carousel"data-aos="zoom-in-up">
+        <div class="swiper-wrapper">
+
+          <div class="swiper-slide">
+            <img src="mobileCss/img/location/location2.jpeg" alt="Immagine 1" class="carousel-img">
+          </div>
+          <div class="swiper-slide">
+            <img src="mobileCss/img/location/location4.jpeg" alt="Immagine 2" class="carousel-img">
+          </div>
+          <div class="swiper-slide">
+            <img src="mobileCss/img/location/location6.jpeg" alt="Immagine 3" class="carousel-img">
+          </div>
+          <div class="swiper-slide">
+            <img src="mobileCss/img/location/location8.jpeg" alt="Immagine 4" class="carousel-img">
+          </div>
+          <div class="swiper-slide">
+            <img src="mobileCss/img/location/location10.jpeg" alt="Immagine 5" class="carousel-img">
+          </div>
+
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+
+      <div class="location-info">
+        <div class="location-image" data-aos="fade-up-right"style="transform: perspective(600px) rotateY(20deg) rotateZ(2deg);">
+          <img src="mobileCss/img/location/location2.jpeg" alt="#">
+        </div>
+        <div class="location-caption"data-aos="fade-up-left">
+          <h3>La Nostra Location</h3>
+          <p>Atmosfera accogliente e raffinata per una serata indimenticabile.</p>
+        </div>
+      </div>
+    </span>
+
+    <div class="location-info" style="flex-direction: row-reverse; margin-bottom: 10%; margin-top: 10%;">
+      <div class="location-image" style="transform: perspective(600px) rotateY(-20deg) rotateZ(3deg);"data-aos="fade-up-left">
+        <img src="mobileCss/img/location/location4.jpeg" alt="La nostra location">
+      </div>
+      <div class="location-caption"data-aos="fade-up-right">
+        <h3>Accoglienza Calda</h3>
+        <p>Spazi intimi per momenti speciali.</p>
+      </div>
+    </div>
+
+    <div class="location-info">
+      <div class="location-image" data-aos="fade-up-right"style="transform: perspective(600px) rotateY(20deg) rotateZ(-2deg);">
+        <img src="mobileCss/img/location/location6.jpeg" alt="La nostra location">
+      </div>
+      <div class="location-caption"data-aos="fade-up-left">
+        <h3>Design Elegante</h3>
+        <p>Arredi moderni che valorizzano ogni dettaglio.</p>
+      </div>
+    </div>
+  </div>
+  <!----------------------------->
+
+  <!-- footer -->
+  <footer id="footer">
+    <div class="footer-container">
+
+      <div class="footer-section">
+        <h4 data-aos="fade-up">Orari</h4>
+        <div class="schedule-table">
+
+          <div class="schedule-row header">
+            <span data-aos="flip-up">Giorno</span>
+            <span data-aos="flip-up">Pranzo</span>
+            <span data-aos="flip-up">Cena</span>
+          </div>
+
+          <div class="schedule-row">
+            <span data-aos="flip-up">Luned&igrave;</span>
+            <span data-aos="flip-up">CHIUSO</span>
+            <span data-aos="flip-up">19:00 – 23:30</span>
+          </div>
+
+          <div class="schedule-row">
+            <span data-aos="flip-up">Marted&igrave;</span>
+            <span colspan="2" data-aos="flip-up">CHIUSO</span>
+            <span data-aos="flip-up">19:00 – 23:30</span>
+          </div>
+
+          <div class="schedule-row">
+            <span data-aos="flip-up">Mercoled&igrave;</span>
+            <span data-aos="flip-up">CHIUSO</span>
+            <span data-aos="flip-up">19:00 – 23:30</span>
+          </div>
+
+          <div class="schedule-row">
+            <span data-aos="flip-up">Gioved&igrave;</span>
+            <span data-aos="flip-up">CHIUSO</span>
+            <span data-aos="flip-up">19:00 – 23:30</span>
+          </div>
+
+          <div class="schedule-row">
+            <span data-aos="flip-up">Venerd&igrave;</span>
+            <span data-aos="flip-up">CHIUSO</span>
+            <span data-aos="flip-up">19:00 – 23:30</span>
+          </div>
+
+          <div class="schedule-row">
+            <span data-aos="flip-up">Sabato</span>
+            <span data-aos="flip-up">CHIUSO</span>
+            <span data-aos="flip-up">19:00 – 23:30</span>
+          </div>
+
+          <div class="schedule-row">
+            <span data-aos="flip-up">Domenica</span>
+            <span data-aos="flip-up">12:30 – 15:30</span>
+            <span data-aos="flip-up">19:00 – 23:30</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-section" id="contact">
+        <h4 data-aos="zoom-in-up">Contatti</h4>
+        <p data-aos="fade-in-up"><i class="fas fa-phone-alt"></i> <a href="tel:+393299738217" >+39 329 973 8217</a></p>
+        <p data-aos="fade-in-up"><i class="fab fa-whatsapp"></i> <a href="https://wa.me/393299738217" target="_blank">Chatta su WhatsApp</a></p>
+        <p data-aos="fade-in-up"><i class="fas fa-envelope"></i> <a href="mailto:vecchiplatani@icloud.com">vecchiplatani@icloud.com</a></p>
+      </div>
+
+      <div class="footer-section">
+        <h4 data-aos="fade-up">Dove siamo</h4>
+        <div class="map-container" data-aos="fade-up">
+          <iframe
+            src="https://www.google.com/maps?q=Pizzeria+Vecchi+Platani,+Alife&output=embed"
+            width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </div>
+
+      <div class="footer-copy" data-aos="fade-up" data-aos-anchor-placement="top-bottom" id="LAST">
+        <p>© 2026 Tutti i diritti riservati – Vecchi Platani</p>
+      </div>
+    </div>
+  </footer>
+  <!----------------------------->
+
+
+
+
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="mobileCss/mobileScript/mobileScript.js"></script>
+  <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+</body>
+</html>
+  
