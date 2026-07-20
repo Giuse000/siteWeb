@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>18 Giuseppe</title>
+<title>Vecchi Platani</title>
 <style>
     html, body, iframe {
         width: 100%;
@@ -17,9 +17,9 @@
     window.onload = function() {
         let iframe = document.createElement('iframe');
         if (window.innerWidth < 768) {
-            iframe.src = "homepage.html"; // Contenuto mobile
+            iframe.src = "#"; // Contenuto mobile
         } else {
-            iframe.src = "homepage.html"; // Contenuto desktop
+            iframe.src = "desktop.html"; // Contenuto desktop
         }
         document.body.appendChild(iframe);
     };
