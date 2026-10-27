@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#17251d">
+  <title>Fontana Bosco | Cucina, tartufi ed eventi</title>
+  <link rel="stylesheet" href="deskCss/desk.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="icon" href="deskCss/img/logoFontanabosco.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <!-- Google Analytics: ID mantenuto dal sito originale -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-N03WJWWCVS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-N03WJWWCVS');
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Fontana Bosco, pagina iniziale">
+      <span class="brand-mark" aria-hidden="true">FB</span>
+      <span class="brand-name">Fontana <em>Bosco</em><small>CUCINA · TERRITORIO · OSPITALITÀ</small></span>
+    </a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="dropdownMenu" aria-label="Apri il menu">
+      <span></span><span></span>
+    </button>
+    <nav class="menu" id="dropdownMenu" aria-label="Navigazione principale">
+      <a href="laptop.schedules/menu_desktop.html">Menù</a>
+      <a href="#chi-siamo">Chi siamo</a>
+      <a href="#contatti">Contatti</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <video class="hero-video" autoplay muted loop playsinline id="bgVideo" aria-hidden="true">
+        <source src="deskCss/vid/bgVideo.mp4" type="video/mp4">
+      </video>
+      <div class="hero-shade"></div>
+      <div class="hero-content">
+        <p class="eyebrow">Agriturismo · Fontana Bosco</p>
+        <h1 id="hero-title">Fontana Bosco</h1>
+        <p class="hero-quote">“Il profumo del tartufo è l'anima segreta della terra.”</p>
+        <a class="button button-light" href="#chi-siamo">Chi siamo</a>
+      </div>
+      <div class="hero-bottom"><span>PIANA DI CAIAZZO · CASERTA</span><span>OSPITALITÀ, NATURA E SAPORI</span></div>
+    </section>
+
+    <section class="intro section-wrap" id="chi-siamo" aria-labelledby="about-title">
+      <div class="section-heading">
+        <h2 id="about-title">Chi siamo</h2>
+      </div>
+      <div class="intro-grid">
+        <div class="gallery" aria-label="Galleria fotografica dei piatti">
+          <div class="carousel-container">
+            <div class="carousel-slide" id="carousel-slide">
+              <img src="deskCss/img/plateImg1.jpg" alt="Immagine del piatto 1">
+              <img src="deskCss/img/plateImg2.jpg" alt="Immagine del piatto 2">
+              <img src="deskCss/img/plateImg3.jpg" alt="Immagine del piatto 3">
+              <img src="deskCss/img/plateImg4.jpg" alt="Immagine del piatto 4">
+            </div>
+            <button class="carousel-button prev" type="button" aria-label="Mostra il piatto precedente">‹</button>
+            <button class="carousel-button next" type="button" aria-label="Mostra il piatto successivo">›</button>
+            <div class="gallery-caption"><span>01 — 04</span><span>Immagini dei piatti</span></div>
+          </div>
+        </div>
+        <div class="intro-copy">
+          <p>Da oltre 14 anni vado personalmente in cerca dei migliori tartufi, seguendo il ritmo delle stagioni. Sono io, Carmine Perfetto, tartufaio e proprietario, a selezionare con cura ogni tartufo: da quelli estivi a quelli autunnali e invernali, per offrirvi solo il meglio del nostro territorio.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="experiences" id="esperienze" aria-label="Tartufi, location ed eventi">
+      <div class="experience-intro">
+        <h2>I nostri servizi</h2>
+      </div>
+      <div class="experience-grid">
+        <article class="experience-card card-truffle">
+          <h3>Tartufi</h3>
+          <p>Da oltre 14 anni vado personalmente in cerca dei migliori tartufi, seguendo il ritmo delle stagioni. Sono io, Carmine Perfetto, tartufaio e proprietario, a selezionare con cura ogni tartufo: da quelli estivi a quelli autunnali e invernali, per offrirvi solo il meglio del nostro territorio.</p>
+        </article>
+        <article class="experience-card card-location">
+          <h3>Eventi e location</h3>
+          <p>Situata in una cornice suggestiva, la nostra location è pensata per farti sentire subito a casa: calda, curata nei dettagli e perfetta per ogni occasione. Che tu voglia rilassarti con un buon piatto o organizzare un momento speciale, qui troverai lo spazio ideale per viverlo al meglio.</p>
+        </article>
+        <article class="experience-card card-events">
+          <h3>Antipasti</h3>
+          <p>Dai compleanni alle feste di laurea, dalle cene private agli anniversari, mettiamo a disposizione tutta la nostra esperienza per creare l’atmosfera perfetta. Ogni dettaglio è curato con attenzione, per trasformare ogni ricorrenza in un ricordo prezioso. Tu immagina l’evento, al resto pensiamo noi.</p>
+        </article>
+      </div>
+      <div class="experience-cta"><a class="button button-gold" href="#contatti">Contatti</a></div>
+    </section>
+
+    <section class="contact-section" id="contatti" aria-labelledby="contact-title">
+      <div class="contact-heading">
+        <h2 id="contact-title">Contatti</h2>
+        <p>Per ricevere maggiori informazioni non esitate a contattarci.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-details">
+          <a class="contact-item" href="mailto:fontanabosco2013@libero.it"><span class="contact-label">Email</span><span>fontanabosco2013@libero.it</span><span aria-hidden="true">↗</span></a>
+          <a class="contact-item" href="tel:+393393613037"><span class="contact-label">Telefono</span><span>+39 339 361 3037</span><span aria-hidden="true">↗</span></a>
+          <a class="contact-item" href="https://www.google.it/maps/place/AGRITURISMO+FONTANA+BOSCO/@41.1887461,14.3248267,17z/data=!3m1!4b1!4m6!3m5!1s0x133a5957ee27680f:0x252c7bd9ff8a1bb0!8m2!3d41.1887421!4d14.3274016!16s%2Fg%2F11g0ss79k4?hl=it&entry=ttu&g_ep=EgoyMDI1MDYxNi4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer"><span class="contact-label">Sede</span><span>Via Villa Santa Croce, Piana di Caiazzo, Italy, 81013 | Fontana Bosco</span><span aria-hidden="true">↗</span></a>
+          <div class="opening-hours"><span class="contact-label">Orari</span><p><strong>SEMPRE APERTO</strong><br><small>(solo su prenotazione)</small></p></div>
+          <a class="button button-gold contact-button" href="tel:+393393613037">Contattaci per prenotare</a>
+        </div>
+        <div class="map-wrap">
+          <iframe title="Mappa per raggiungere Agriturismo Fontana Bosco" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3002.514925266548!2d14.324826676432048!3d41.18874610829243!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x133a5957ee27680f%3A0x252c7bd9ff8a1bb0!2sAGRITURISMO%20FONTANA%20BOSCO!5e0!3m2!1sit!2sit!4v1750347971118!5m2!1sit!2sit" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- Social network -->
+    <div class="social-links" aria-label="Seguici sui social">
+
+        <!-- Facebook -->
+        <a
+            href="https://www.facebook.com/agriturismofontanabosco/?locale=it_IT"
+            class="social-circle"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Seguici su Facebook"
+        >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.3-1.5 1.6-1.5h1.7V3.6c-.3 0-1.4-.1-2.6-.1-2.6 0-4.4 1.6-4.4 4.5v1.9H7V13h2.8v8h3.7z"/>
+            </svg>
+        </a>
+
+        <!-- Instagram -->
+        <a
+            href="https://www.instagram.com/fontanabosco/"
+            class="social-circle"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Seguici su Instagram"
+        >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="5"
+                      fill="none" stroke="currentColor" stroke-width="2"/>
+                <circle cx="12" cy="12" r="4"
+                        fill="none" stroke="currentColor" stroke-width="2"/>
+                <circle cx="17.5" cy="6.8" r="1.2"/>
+            </svg>
+        </a>
+    </div>
+  </main>
+
+  <footer class="site-footer"><span>© Fontana Bosco — 2025 Tutti i diritti riservati</span></footer>
+
+  <script>
+    (() => {
+      const video = document.getElementById('bgVideo');
+      if (video) video.playbackRate = 0.7;
+
+      const menuButton = document.querySelector('.menu-btn');
+      const menu = document.getElementById('dropdownMenu');
+      const closeMenu = () => {
+        menu.classList.remove('is-open');
+        menuButton.setAttribute('aria-expanded', 'false');
+        menuButton.setAttribute('aria-label', 'Apri il menu');
+      };
+      menuButton.addEventListener('click', (event) => {
+        event.stopPropagation();
+        const isOpen = menu.classList.toggle('is-open');
+        menuButton.setAttribute('aria-expanded', String(isOpen));
+        menuButton.setAttribute('aria-label', isOpen ? 'Chiudi il menu' : 'Apri il menu');
+      });
+      document.addEventListener('click', (event) => {
+        if (!menu.contains(event.target) && !menuButton.contains(event.target)) closeMenu();
+      });
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') closeMenu();
+      });
+      menu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+
+      const track = document.getElementById('carousel-slide');
+      const carousel = document.querySelector('.carousel-container');
+      if (track && carousel) {
+        const images = Array.from(track.querySelectorAll('img'));
+        let index = 0;
+        let timer;
+        const showSlide = (nextIndex) => {
+          index = (nextIndex + images.length) % images.length;
+          track.style.transform = `translateX(-${index * 100}%)`;
+          carousel.querySelector('.gallery-caption span').textContent =
+            `${String(index + 1).padStart(2, '0')} — ${String(images.length).padStart(2, '0')}`;
+        };
+        const restartTimer = () => {
+          window.clearInterval(timer);
+          if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            timer = window.setInterval(() => showSlide(index + 1), 5000);
+          }
+        };
+        carousel.querySelector('.prev').addEventListener('click', () => { showSlide(index - 1); restartTimer(); });
+        carousel.querySelector('.next').addEventListener('click', () => { showSlide(index + 1); restartTimer(); });
+        carousel.addEventListener('mouseenter', () => window.clearInterval(timer));
+        carousel.addEventListener('mouseleave', restartTimer);
+        showSlide(0);
+        restartTimer();
+      }
+    })();
+  </script>
+</body>
+</html>

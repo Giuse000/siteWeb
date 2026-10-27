@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#17251d">
+  <meta name="description" content="Fontana Bosco: tartufi, cucina, antipasti ed eventi a Piana di Caiazzo.">
+  <title>Fontana Bosco | Mobile</title>
+  <link rel="stylesheet" href="mobileCss/mobileStyle.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="mobileCss/img/logoFontanabosco.png" type="image/png">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-N03WJWWCVS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-N03WJWWCVS');
+  </script>
+</head>
+<body>
+  <header class="mobile-header">
+    <a class="brand" href="#home" aria-label="Fontana Bosco, inizio pagina">
+      <span class="brand-mark" aria-hidden="true">FB</span>
+      <span class="brand-name">Fontana Bosco</span>
+    </a>
+    <button class="menu-toggle" type="button" aria-label="Apri il menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="mobile-menu" id="mobile-menu" aria-label="Menu principale" hidden>
+      <a href="mobile.html">Home</a>
+      <a href="mobile.schedules/menu_mobile.html">Menù</a>
+      <a href="#contattiFound">Contatti</a>
+    </nav>
+  </header>
+
+  <main id="home">
+    <section class="hero" aria-label="Fontana Bosco">
+      <div class="hero-shade"></div>
+      <div class="hero-content">
+        <p class="eyebrow">Cucina · Territorio · Ospitalità</p>
+        <h1>Fontana<br><span>Bosco</span></h1>
+        <p class="hero-copy">Sapori autentici, tartufi e momenti da condividere.</p>
+        <a class="button button-light" href="#tartufo">Scopri di più</a>
+      </div>
+    </section>
+
+    <section class="intro section-pad" id="tartufo">
+      <p class="section-label">Il territorio</p>
+      <h2>Il tartufo</h2>
+      <p>Da oltre 14 anni vado personalmente in cerca dei migliori tartufi, seguendo il ritmo delle stagioni. Sono io, Carmine Perfetto, tartufaio e proprietario, a selezionare con cura ogni tartufo: da quelli estivi a quelli autunnali e invernali, per offrirvi solo il meglio del nostro territorio.</p>
+    </section>
+
+    <section class="gallery-section" aria-label="Galleria dei piatti">
+      <div class="section-pad gallery-heading">
+        <p class="section-label">La nostra cucina</p>
+        <h2>Uno sguardo ai piatti</h2>
+        <p>Scorri le immagini per vedere alcune delle nostre proposte.</p>
+      </div>
+      <div class="gallery" tabindex="0" aria-label="Galleria scorrevole dei piatti">
+        <figure><img src="mobileCss/img/plateImg1.jpg" alt="Immagine del piatto 1"><figcaption>Immagine del piatto</figcaption></figure>
+        <figure><img src="mobileCss/img/plateImg2.jpg" alt="Immagine del piatto 2"><figcaption>Immagine del piatto</figcaption></figure>
+        <figure><img src="mobileCss/img/plateImg3.jpg" alt="Immagine del piatto 3"><figcaption>Immagine del piatto</figcaption></figure>
+        <figure><img src="mobileCss/img/plateImg4.jpg" alt="Immagine del piatto 4"><figcaption>Immagine del piatto</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="feature section-pad" id="antipasti">
+      <p class="section-label">A tavola</p>
+      <h2>Antipasti</h2>
+      <p>I nostri antipasti sono un viaggio di sapori autentici, preparati con ingredienti freschi e di qualità.</p>
+      <!-- Immagine del piatto -->
+      <div class="image-placeholder"><img src="mobileCss/img/plateImg4.jpg" alt="antipastoImg"></div>
+    </section>
+
+    <section class="events section-pad" id="eventi">
+      <p class="section-label">Insieme</p>
+      <h2>Eventi</h2>
+      <p>Dai compleanni alle lauree, ogni occasione merita di essere speciale. Scopri come possiamo trasformare il tuo evento in un'esperienza indimenticabile.</p>
+      <!-- Immagine del locale -->
+      <div class="image-placeholder image-placeholder-dark"><img src="mobileCss/img/location1.jpg" alt="antipastoImg"></div>
+      <a class="button button-dark" href="tel:+393393613037">Prenota ora</a>
+    </section>
+
+    <section class="contact section-pad">
+      <p class="section-label">Ti aspettiamo</p>
+      <h2 id="contattiFound">Contatti</h2>
+      <p>Per informazioni e prenotazioni, contattaci direttamente.</p>
+      <a class="contact-link" href="tel:+393393613037">+39 339 361 3037</a>
+      <a class="contact-link" href="mailto:fontanabosco2013@libero.it">fontanabosco2013@libero.it</a>
+      <p class="address">Via Villa Santa Croce<br>Piana di Caiazzo</p>
+      <p class="opening">Sempre aperto<br><span>(solo su prenotazione)</span></p>
+    </section>
+
+    <!-- Social network -->
+    <div class="social-links" aria-label="Seguici sui social">
+
+        <!-- Facebook -->
+        <a
+            href="https://www.facebook.com/agriturismofontanabosco/?locale=it_IT"
+            class="social-circle"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Seguici su Facebook"
+        >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.3-1.5 1.6-1.5h1.7V3.6c-.3 0-1.4-.1-2.6-.1-2.6 0-4.4 1.6-4.4 4.5v1.9H7V13h2.8v8h3.7z"/>
+            </svg>
+        </a>
+
+        <!-- Instagram -->
+        <a
+            href="https://www.instagram.com/fontanabosco/"
+            class="social-circle"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Seguici su Instagram"
+        >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="5"
+                      fill="none" stroke="currentColor" stroke-width="2"/>
+                <circle cx="12" cy="12" r="4"
+                        fill="none" stroke="currentColor" stroke-width="2"/>
+                <circle cx="17.5" cy="6.8" r="1.2"/>
+            </svg>
+        </a>
+    </div>
+  </main>
+
+  <footer>
+    <span>Fontana Bosco</span>
+    <p>© Fontana Bosco — Tutti i diritti riservati</p>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const menu = document.querySelector('#mobile-menu');
+    toggle.addEventListener('click', () => {
+      const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!isOpen));
+      toggle.setAttribute('aria-label', isOpen ? 'Apri il menu' : 'Chiudi il menu');
+      menu.hidden = isOpen;
+    });
+    menu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      menu.hidden = true;
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.setAttribute('aria-label', 'Apri il menu');
+    }));
+  </script>
+</body>
+</html>

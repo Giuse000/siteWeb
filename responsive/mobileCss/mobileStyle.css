@@ -1,0 +1,150 @@
+/* Fontana Bosco — versione mobile dedicata */
+:root {
+  --forest: #17251d;
+  --forest-soft: #25392d;
+  --cream: #f5f1e8;
+  --paper: #fffdf8;
+  --gold: #c7a568;
+  --ink: #202820;
+  --muted: #687066;
+  --serif: "Playfair Display", Georgia, serif;
+  --sans: "DM Sans", Arial, sans-serif;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+body { margin: 0; background: var(--cream); color: var(--ink); font-family: var(--sans); font-size: 16px; line-height: 1.65; overflow-x: hidden; }
+a { color: inherit; }
+button { font: inherit; }
+img { display: block; max-width: 100%; }
+.mobile-header { height: 62px; position: sticky; top: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; padding: 0 18px; background: var(--forest); color: white; box-shadow: 0 2px 8px #0002; }
+.brand { display: inline-flex; align-items: center; gap: 9px; color: white; text-decoration: none; min-width: 0; }
+.brand-mark { display: grid; place-items: center; width: 34px; height: 34px; border: 1px solid var(--gold); border-radius: 50%; color: var(--gold); font: 15px var(--serif); flex: 0 0 auto; }
+.brand-name { font: 600 18px/1.1 var(--serif); letter-spacing: .01em; }
+.menu-toggle { width: 42px; height: 42px; border: 1px solid #ffffff55; border-radius: 4px; background: transparent; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 5px; cursor: pointer; }
+.menu-toggle span { width: 19px; height: 2px; background: white; display: block; }
+.mobile-menu { position: absolute; top: 62px; left: 0; right: 0; padding: 8px 18px 14px; background: var(--forest); border-top: 1px solid #ffffff22; box-shadow: 0 8px 12px #0002; }
+.mobile-menu[hidden] { display: none; }
+.mobile-menu a { display: block; padding: 13px 4px; color: white; text-decoration: none; border-bottom: 1px solid #ffffff24; font-size: 15px; }
+.mobile-menu a:last-child { border-bottom: 0; }
+.hero { min-height: 510px; min-height: min(76svh, 650px); position: relative; display: flex; align-items: center; padding: 50px 25px; color: white; background: #344438 url("../css/img/location.jpg") center/cover no-repeat; isolation: isolate; }
+.hero::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(13,25,17,.78), rgba(13,25,17,.38)), linear-gradient(0deg, rgba(13,25,17,.28), transparent 60%); }
+.hero-shade { display: none; }
+.hero-content { width: 100%; max-width: 470px; margin: 0 auto; }
+.eyebrow, .section-label { margin: 0 0 10px; color: var(--gold); text-transform: uppercase; letter-spacing: .15em; font-size: 10px; font-weight: 700; }
+.hero h1 { margin: 0; font: 600 clamp(48px, 14vw, 70px)/.98 var(--serif); letter-spacing: -.04em; }
+.hero h1 span { color: #e0c58f; }
+.hero-copy { max-width: 280px; margin: 20px 0 25px; color: #f6f3ec; font-size: 15px; line-height: 1.6; }
+.button { min-height: 45px; display: inline-flex; justify-content: center; align-items: center; padding: 11px 19px; border: 1px solid transparent; border-radius: 3px; text-decoration: none; text-transform: uppercase; letter-spacing: .08em; font-size: 11px; font-weight: 700; }
+.button-light { background: var(--cream); color: var(--forest); }
+.button-dark { background: var(--forest); color: white; border-color: var(--forest); }
+.section-pad { padding: 48px 23px; }
+h2 { margin: 0 0 17px; color: var(--forest); font: 600 clamp(30px, 8vw, 39px)/1.15 var(--serif); letter-spacing: -.025em; }
+section p:not(.section-label) { margin-top: 0; }
+.intro { background: var(--paper); }
+.intro > p:last-child, .feature > p:not(.section-label), .events > p:not(.section-label), .contact > p:not(.section-label) { font-size: 15px; color: #4f574f; line-height: 1.8; }
+.gallery-section { padding: 0 0 36px; background: var(--paper); }
+.gallery-heading { padding-bottom: 20px; }
+.gallery-heading > p:last-child { margin-bottom: 0; color: var(--muted); font-size: 13px; }
+.gallery { display: flex; gap: 13px; overflow-x: auto; padding: 0 23px 12px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: thin; scrollbar-color: #b6a17b #eee8dc; }
+.gallery figure { flex: 0 0 78%; max-width: 330px; margin: 0; scroll-snap-align: start; background: white; border: 1px solid #e6dfd2; }
+.gallery img { width: 100%; height: 225px; object-fit: cover; background: #ded8cc; }
+.gallery figcaption { padding: 8px 11px; font-size: 11px; color: var(--muted); }
+.feature { background: var(--cream); }
+.image-placeholder { display: grid; place-items: center; min-height: 165px; margin-top: 22px; padding: 20px; border: 1px dashed #b8ad98; background: #e9e2d4; color: #6d6b60; text-align: center; font-size: 12px; }
+.events { background: #e9e3d7; }
+.events h2 { color: var(--forest); }
+.image-placeholder-dark { background: #d7d0c1; margin-bottom: 23px; }
+.contact { background: var(--paper); }
+.contact-link { display: block; width: fit-content; max-width: 100%; margin: 13px 0; color: var(--forest); font-size: 15px; font-weight: 600; overflow-wrap: anywhere; text-decoration-color: var(--gold); text-underline-offset: 4px; }
+.address { margin: 24px 0 12px; font-size: 14px; }
+.opening { margin-bottom: 0; padding-top: 15px; border-top: 1px solid #ded8cc; color: var(--forest); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; }
+.opening span { color: var(--muted); font-weight: 400; text-transform: none; letter-spacing: 0; }
+footer { padding: 25px 20px; text-align: center; background: var(--forest); color: #f5f1e8; }
+footer > span { font: 600 19px var(--serif); }
+footer p { margin: 8px 0 0; color: #d3d8d0; font-size: 10px; }
+:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+@media (max-width: 360px) {
+  .mobile-header { padding: 0 13px; }
+  .brand-name { font-size: 16px; }
+  .hero { padding: 40px 20px; min-height: 470px; }
+  .section-pad { padding: 39px 19px; }
+  .gallery { padding-left: 19px; padding-right: 19px; }
+  .gallery figure { flex-basis: 86%; }
+  .gallery img { height: 205px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}
+
+/* ========================================
+   SOCIAL NETWORK - FONTANA BOSCO
+======================================== */
+
+.social-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin: 20px 0;
+}
+
+.social-circle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 44px;
+    height: 44px;
+
+    border: 1px solid #244735;
+    border-radius: 50%;
+
+    background-color: #244735;
+    color: #ffffff;
+
+    text-decoration: none;
+
+    transition:
+        background-color 0.25s ease,
+        border-color 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.social-circle svg {
+    display: block;
+    width: 21px;
+    height: 21px;
+    fill: currentColor;
+}
+
+.social-circle:hover {
+    background-color: #b59a5a;
+    border-color: #b59a5a;
+    color: #ffffff;
+    transform: translateY(-3px);
+}
+
+.social-circle:focus-visible {
+    outline: 2px solid #b59a5a;
+    outline-offset: 4px;
+}
+
+/* Dimensioni per smartphone */
+@media (max-width: 600px) {
+    .social-links {
+        gap: 12px;
+        margin: 16px 0;
+    }
+
+    .social-circle {
+        width: 40px;
+        height: 40px;
+    }
+
+    .social-circle svg {
+        width: 19px;
+        height: 19px;
+    }
+}

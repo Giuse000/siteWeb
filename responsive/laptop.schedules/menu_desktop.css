@@ -1,0 +1,154 @@
+/* FONTANA BOSCO — Menù desktop
+   Foglio di stile organizzato per aree: base, intestazione, menù, pacchetti e responsive. */
+:root{
+  --verde:#26372b;
+  --verde-scuro:#1c2a20;
+  --crema:#f7f4ec;
+  --carta:#fffdf8;
+  --testo:#302f29;
+  --secondario:#66665e;
+  --linea:#dfd6c2;
+  --oro:#b69a5b;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:125px}
+body{margin:0;background:var(--crema);color:var(--testo);font-family:Arial,Helvetica,sans-serif;line-height:1.6;overflow-x:hidden}
+a{color:inherit}
+.menu-header{
+  position:sticky;top:0;z-index:50;min-height:72px;padding:0 5%;
+  display:flex;align-items:center;justify-content:space-between;gap:24px;
+  background:var(--verde);color:#fffdf7;box-shadow:0 2px 9px rgba(0,0,0,.13)
+}
+.menu-brand{text-decoration:none;font-size:18px;font-weight:700;letter-spacing:.055em;white-space:nowrap}
+.menu-brand span{color:#d6c18d}
+.header-links{display:flex;align-items:center;gap:25px}
+.header-links a,.home-button{font-size:13px;text-decoration:none}
+.header-links a:hover,.menu-footer a:hover{text-decoration:underline}
+.home-button{border:1px solid #cdb77e;padding:8px 13px;white-space:nowrap;color:#fffdf7}
+.menu-hero{
+  padding:48px 20px 40px;text-align:center;
+  background:linear-gradient(180deg,#eee8d9 0%,var(--crema) 100%);
+  color:var(--verde);border-bottom:1px solid var(--linea)
+}
+.eyebrow{margin:0 0 8px;color:#7c7056;font-size:12px;text-transform:uppercase;letter-spacing:.15em}
+.menu-hero h1{font-family:Georgia,'Times New Roman',serif;font-size:42px;line-height:1.2;font-weight:500;margin:0 0 10px}
+.menu-hero>p:last-child{margin:0;font-size:14px;color:var(--secondario)}
+.quick-nav{
+  position:sticky;top:72px;z-index:30;display:flex;justify-content:center;flex-wrap:wrap;
+  padding:0 12px;background:#e9e2d2;border-bottom:1px solid #d8cdb4
+}
+.quick-nav a{padding:13px 17px;text-decoration:none;font-size:13px;color:var(--verde);white-space:nowrap}
+.quick-nav a:hover{background:#ded3ba}
+.menu-content{max-width:1060px;margin:0 auto;padding:34px 30px 60px}
+.menu-container{padding:0!important;z-index:auto!important}
+.menu-section,#item,.item,.package-menu{
+  display:block!important;width:100%!important;max-width:100%!important;
+  margin:0 auto 28px!important;padding:28px 32px!important;
+  background:var(--carta)!important;border:1px solid var(--linea)!important;
+  border-radius:7px!important;box-shadow:0 3px 12px rgba(45,43,32,.045)!important;
+  overflow:visible!important;vertical-align:initial!important
+}
+.menu-section>br,.item>br{display:none}
+.menu-content .plateTitle,.menu-content .item .plateTitle,.menu-content #item .plateTitle{
+  display:block!important;width:100%!important;float:none!important;clear:both!important;
+  text-align:center!important;font-family:Georgia,'Times New Roman',serif!important;
+  color:var(--verde)!important;font-size:23px!important;font-weight:600!important;
+  letter-spacing:.045em!important;line-height:1.35!important;
+  margin:0 auto 8px!important;padding:0!important;animation:none!important;
+  transform:none!important;position:static!important
+}
+.menu-content #title1,.menu-content .package-menu #title1,.menu-content .package-title{
+  display:block!important;width:100%!important;float:none!important;
+  font-family:Georgia,'Times New Roman',serif!important;font-size:31px!important;
+  font-weight:600!important;color:var(--verde)!important;text-align:center!important;
+  line-height:1.3!important;margin:0 auto 12px!important;padding:0!important;
+  transform:none!important;position:static!important
+}
+.menu-content #titleHr,.menu-content #hrAnti{
+  display:block;width:48px!important;margin:12px auto 22px!important;padding:0!important;
+  border:0!important;border-top:2px solid var(--oro)!important;animation:none!important;
+  float:none!important;clear:both!important
+}
+.menu-content p{
+  display:block!important;float:none!important;clear:both!important;
+  width:100%;max-width:780px;margin-left:auto!important;margin-right:auto!important;
+  text-align:center!important;line-height:1.6!important;
+  transform:none!important;position:static!important
+}
+.menu-content .plate{
+  display:block!important;width:100%!important;font-family:Arial,Helvetica,sans-serif!important;
+  font-size:16px!important;color:var(--testo)!important;
+  margin:16px auto 0!important;padding:0!important;line-height:1.45!important
+}
+.menu-content .plateD{
+  display:block!important;width:100%!important;max-width:720px!important;
+  font-size:14px!important;line-height:1.6!important;color:var(--secondario)!important;
+  margin:3px auto 8px!important;padding:0!important
+}
+.menu-content .plate2{
+  display:block!important;width:100%!important;font-family:Arial,Helvetica,sans-serif!important;
+  font-size:15px!important;color:var(--testo)!important;line-height:1.55!important;
+  padding:0!important;margin:15px auto 0!important
+}
+.menu-content .costT,.menu-content .costT2{
+  display:block!important;width:100%!important;float:none!important;text-align:center!important;
+  font-family:Arial,Helvetica,sans-serif!important;font-size:14px!important;font-weight:700!important;
+  color:var(--verde)!important;margin:3px auto 11px!important;line-height:1.5!important
+}
+.menu-content .costT{font-size:20px!important}
+.menu-content .persT{font-size:12px!important;color:var(--secondario)!important;margin:0 auto 10px!important}
+.menu-content span[style*="color: rgba(255, 166, 0"],.menu-content p[style*="color: orange"]{color:var(--oro)!important}
+.menu-content .package-menu{padding-top:28px!important}
+.menu-content .package-menu h1{border-bottom:1px solid var(--linea);padding-bottom:14px!important}
+.menu-content *{animation:none!important;text-shadow:none!important}
+.menu-content .item,.menu-content #item{break-inside:avoid}
+.menu-footer{
+  background:var(--verde);color:#eee9dd;display:flex;align-items:center;
+  justify-content:space-between;gap:20px;padding:25px 5%;font-size:12px
+}
+.menu-footer span:first-child{font-size:14px;font-weight:700;letter-spacing:.06em}
+.menu-footer a{color:#d6c18d;text-decoration:none}
+#backToTop{
+  position:fixed;right:20px;bottom:20px;z-index:60;width:40px;height:40px;
+  border:1px solid #cdb77e;border-radius:50%;background:var(--verde);color:#fff;
+  font-size:20px;cursor:pointer;opacity:0;visibility:hidden
+}
+#backToTop.visible{opacity:1;visibility:visible}
+@media(max-width:850px){
+ .menu-header{position:relative;padding:14px 20px;flex-wrap:wrap;gap:12px}
+ .header-links{order:3;flex-basis:100%;gap:18px;flex-wrap:wrap}
+ .home-button{margin-left:auto}.quick-nav{top:0}
+ .menu-content{padding:24px 18px 42px}
+ .menu-section,#item,.item,.package-menu{padding:23px 18px!important}
+ .menu-footer{flex-wrap:wrap}
+}
+@media(max-width:560px){
+ .menu-brand{font-size:15px}.header-links{gap:8px 15px}
+ .header-links a{font-size:12px}.home-button{font-size:12px;padding:7px 9px}
+ .menu-hero{padding:36px 16px 29px}.menu-hero h1{font-size:34px}
+ .quick-nav{position:relative;justify-content:flex-start;overflow-x:auto;flex-wrap:nowrap;padding:0 6px}
+ .quick-nav a{padding:11px 12px}
+ .menu-content{padding:18px 12px 30px}
+ .menu-section,#item,.item,.package-menu{padding:21px 12px!important}
+ .menu-content .plateTitle{font-size:20px!important}
+ .menu-content #title1,.menu-content .package-title{font-size:25px!important}
+ .menu-content .plate2{font-size:14px!important}
+ .menu-footer{display:block;padding:20px}
+ .menu-footer span{display:block;margin-bottom:8px}
+ #backToTop{right:12px;bottom:12px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+
+/* Sezioni del menù: gli ID servono per la navigazione interna. */
+#antipasti-carta, #primi-carta, #primi-tartufo, #secondi-carta,
+#secondi-tartufo, #contorni-carta, #sfizi, #dolci-carta,
+#dolci-tartufo, #frutta, #bevande, #menu40-section, #menu70-section {
+  scroll-margin-top: 145px;
+}
+
+/* Prezzi dei menù fissi, inclusa l'indicazione del costo a persona. */
+.package-menu .costT {
+  white-space: normal;
+  text-align: center;
+}
