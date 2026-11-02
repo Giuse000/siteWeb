@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Desert VR - Notte stellata</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; width: 100%; height: 100%; overflow: hidden; background: #050713; font-family: Arial, sans-serif; }
+    canvas { display: block; }
+    #instructions { position: fixed; z-index: 10; top: 50%; left: 50%; transform: translate(-50%, -50%); width: min(92vw, 440px); padding: 24px; color: white; text-align: center; background: rgba(8, 11, 24, .9); border: 1px solid rgba(255,255,255,.18); border-radius: 14px; cursor: pointer; }
+    #instructions h1 { margin: 0 0 12px; color: #e8e8ff; }
+    #instructions p { line-height: 1.5; margin: 8px 0; }
+    #hud { position: fixed; top: 12px; left: 12px; z-index: 5; color: white; text-shadow: 1px 1px 4px #000; pointer-events: none; font-size: 14px; }
+    #crosshair { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 5; color: white; font-size: 22px; text-shadow: 1px 1px 4px #000; pointer-events: none; }
+    #status { position: fixed; bottom: 12px; left: 12px; z-index: 5; color: white; text-shadow: 1px 1px 4px #000; font-size: 13px; pointer-events: none; }
+    #error { position: fixed; bottom: 12px; right: 12px; z-index: 20; max-width: min(90vw, 600px); color: #fff; background: rgba(120,20,20,.9); padding: 10px 12px; border-radius: 8px; display: none; white-space: pre-wrap; }
+  </style>
+  <script type="importmap">
+    { "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+    } }
+  </script>
+</head>
+<body>
+  <div id="instructions">
+    <h1>NOTTE STELLATA</h1>
+    <p>Esplora il terreno sotto la luna e visita la Natività.</p>
+    <p><b>W A S D</b> — Muoversi · <b>SPAZIO</b> — Saltare</p>
+    <p><b>Mouse</b> — Guardarsi intorno · <b>ESC</b> — Sbloccare il mouse</p>
+    <p>Nel visore: joystick per muoversi, trigger per teletrasportarsi.</p>
+    <p><b>Clicca per iniziare</b></p>
+  </div>
+  <div id="hud">NOTTE STELLATA | WASD · SPAZIO</div>
+  <div id="crosshair">+</div>
+  <div id="status">Modalità desktop</div>
+  <div id="error"></div>
+
+  <script type="module">
+    import * as THREE from 'three';
+    import { PointerLockControls } from 'three/addons/controls/PointerLockControls.js';
+    import { VRButton } from 'three/addons/webxr/VRButton.js';
+    import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+
+    const scene = new THREE.Scene();
+    const nightColor = new THREE.Color(0x050713);
+    scene.background = nightColor;
+    scene.fog = new THREE.Fog(nightColor, 180, 850);
+
+    const camera = new THREE.PerspectiveCamera(75, innerWidth / innerHeight, 0.1, 1500);
+    camera.position.set(0, 1.65, 0);
+    const player = new THREE.Group();
+    player.position.set(-8, 0, 95);
+    player.add(camera);
+    scene.add(player);
+
+    const renderer = new THREE.WebGLRenderer({ antialias: true });
+    renderer.setSize(innerWidth, innerHeight);
+    renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+    renderer.xr.enabled = true;
+    renderer.xr.setReferenceSpaceType('local-floor');
+    renderer.outputColorSpace = THREE.SRGBColorSpace;
+    renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    renderer.toneMappingExposure = 1.0;
+    document.body.appendChild(renderer.domElement);
+    document.body.appendChild(VRButton.createButton(renderer));
+
+    // Illuminazione notturna
+    scene.add(new THREE.HemisphereLight(0x9aaeff, 0x15131b, 0.8));
+    const moonLight = new THREE.DirectionalLight(0xbac8ff, 1.35);
+    moonLight.position.set(-80, 120, -100);
+    scene.add(moonLight);
+
+    // Luna luminosa con alone
+    const moon = new THREE.Mesh(
+      new THREE.SphereGeometry(10, 40, 32),
+      new THREE.MeshBasicMaterial({ color: 0xfff1cf })
+    );
+    moon.position.set(-115, 105, -260);
+    scene.add(moon);
+    const moonGlow = new THREE.Mesh(
+      new THREE.SphereGeometry(15, 32, 24),
+      new THREE.MeshBasicMaterial({ color: 0xcbd7ff, transparent: true, opacity: 0.12, depthWrite: false })
+    );
+    moonGlow.position.copy(moon.position);
+    scene.add(moonGlow);
+
+    // Cielo stellato: punti distribuiti su una grande volta
+    const starPositions = [];
+    const starSizes = [];
+    for (let i = 0; i < 1800; i++) {
+      const theta = Math.random() * Math.PI * 2;
+      const phi = Math.acos(2 * Math.random() - 1);
+      const radius = 650;
+      const x = radius * Math.sin(phi) * Math.cos(theta);
+      const y = Math.abs(radius * Math.cos(phi)) + 18;
+      const z = radius * Math.sin(phi) * Math.sin(theta);
+      starPositions.push(x, y, z);
+      starSizes.push(0.7 + Math.random() * 1.6);
+    }
+    const starsGeometry = new THREE.BufferGeometry();
+    starsGeometry.setAttribute('position', new THREE.Float32BufferAttribute(starPositions, 3));
+    const stars = new THREE.Points(starsGeometry, new THREE.PointsMaterial({ color: 0xffffff, size: 1.7, sizeAttenuation: false, transparent: true, opacity: 0.95 }));
+    scene.add(stars);
+
+    // Terreno scuro, leggermente ondulato
+    function terrainHeight(x, z) {
+      return Math.sin(x * 0.018) * 0.55 + Math.cos(z * 0.021) * 0.45 + Math.sin((x + z) * 0.012) * 0.35;
+    }
+    const groundGeometry = new THREE.PlaneGeometry(1400, 1400, 180, 180);
+    const positions = groundGeometry.attributes.position;
+    for (let i = 0; i < positions.count; i++) {
+      const x = positions.getX(i);
+      const z = -positions.getY(i);
+      positions.setZ(i, terrainHeight(x, z));
+    }
+    groundGeometry.computeVertexNormals();
+    const ground = new THREE.Mesh(
+      groundGeometry,
+      new THREE.MeshStandardMaterial({ color: 0x17151b, roughness: 1, metalness: 0 })
+    );
+    ground.rotation.x = -Math.PI / 2;
+    ground.receiveShadow = true;
+    scene.add(ground);
+
+    // Piccole dune scure per dare profondità al paesaggio
+    const duneMaterial = new THREE.MeshStandardMaterial({ color: 0x201b25, roughness: 1 });
+    for (let i = 0; i < 32; i++) {
+      const dune = new THREE.Mesh(new THREE.SphereGeometry(1, 24, 16), duneMaterial);
+      const x = (Math.random() - 0.5) * 520;
+      const z = -40 - Math.random() * 480;
+      const scaleX = 12 + Math.random() * 35;
+      const scaleY = 2 + Math.random() * 5;
+      const scaleZ = 18 + Math.random() * 45;
+      dune.scale.set(scaleX, scaleY, scaleZ);
+      dune.position.set(x, terrainHeight(x, z) - 1.2, z);
+      scene.add(dune);
+    }
+
+
+    // Sentiero sinuoso che attraversa il terreno e conduce alla Natività
+    const pathMaterial = new THREE.MeshStandardMaterial({
+      color: 0x39323a, roughness: 1, metalness: 0, side: THREE.DoubleSide
+    });
+    const pathCurve = new THREE.CatmullRomCurve3([
+      new THREE.Vector3(-8, 0, 95),
+      new THREE.Vector3(-4, 0, 65),
+      new THREE.Vector3(7, 0, 42),
+      new THREE.Vector3(5, 0, 22),
+      new THREE.Vector3(-3, 0, 5),
+      new THREE.Vector3(-1, 0, -14),
+      new THREE.Vector3(8, 0, -34),
+      new THREE.Vector3(4, 0, -58),
+      new THREE.Vector3(-5, 0, -82)
+    ]);
+    const pathVertices = [];
+    const pathIndices = [];
+    const pathSegments = 240;
+    const pathHalfWidth = 3.2;
+    for (let i = 0; i <= pathSegments; i++) {
+      const point = pathCurve.getPoint(i / pathSegments);
+      const tangent = pathCurve.getTangent(i / pathSegments).normalize();
+      const side = new THREE.Vector3(-tangent.z, 0, tangent.x).normalize();
+      for (const sign of [-1, 1]) {
+        const x = point.x + side.x * pathHalfWidth * sign;
+        const z = point.z + side.z * pathHalfWidth * sign;
+        pathVertices.push(x, terrainHeight(x, z) + 0.035, z);
+      }
+      if (i < pathSegments) {
+        const a = i * 2, b = a + 1, c = a + 2, d = a + 3;
+        pathIndices.push(a, c, b, b, c, d);
+      }
+    }
+    const pathGeometry = new THREE.BufferGeometry();
+    pathGeometry.setAttribute('position', new THREE.Float32BufferAttribute(pathVertices, 3));
+    pathGeometry.setIndex(pathIndices);
+    pathGeometry.computeVertexNormals();
+    const path = new THREE.Mesh(pathGeometry, pathMaterial);
+    path.receiveShadow = true;
+    scene.add(path);
+
+    // Alberi lungo i lati del sentiero (lasciando il passaggio centrale libero)
+    const trunkMaterial = new THREE.MeshStandardMaterial({ color: 0x30231d, roughness: 1 });
+    const foliageMaterials = [
+      new THREE.MeshStandardMaterial({ color: 0x14251e, roughness: 1, flatShading: true }),
+      new THREE.MeshStandardMaterial({ color: 0x1b3025, roughness: 1, flatShading: true }),
+      new THREE.MeshStandardMaterial({ color: 0x223729, roughness: 1, flatShading: true })
+    ];
+
+    function createNightTree(x, z, scale = 1) {
+      const tree = new THREE.Group();
+      const groundY = terrainHeight(x, z);
+
+      const trunk = new THREE.Mesh(
+        new THREE.CylinderGeometry(0.22 * scale, 0.34 * scale, 2.6 * scale, 7),
+        trunkMaterial
+      );
+      trunk.position.y = 1.3 * scale;
+      tree.add(trunk);
+
+      // Chioma a più livelli, silhouette da conifera
+      for (let layer = 0; layer < 3; layer++) {
+        const height = (2.7 - layer * 0.55) * scale;
+        const radius = (1.45 - layer * 0.28) * scale;
+        const crown = new THREE.Mesh(
+          new THREE.ConeGeometry(radius, height, 7, 1),
+          foliageMaterials[Math.floor(Math.random() * foliageMaterials.length)]
+        );
+        crown.position.y = (2.5 + layer * 1.05) * scale;
+        crown.rotation.y = Math.random() * Math.PI;
+        tree.add(crown);
+      }
+
+      tree.position.set(x, groundY, z);
+      tree.rotation.y = Math.random() * Math.PI * 2;
+      scene.add(tree);
+    }
+
+    // Foresta fitta ai lati del sentiero: più file irregolari, con corridoio centrale libero
+    for (let i = 0; i < 43; i++) {
+      const t = 0.035 + i * 0.022;
+      const point = pathCurve.getPoint(t);
+      const tangent = pathCurve.getTangent(t).normalize();
+      const side = new THREE.Vector3(-tangent.z, 0, tangent.x).normalize();
+
+      for (const sideSign of [-1, 1]) {
+        // Tre fasce di alberi per lato, più fitte verso l'esterno
+        for (const band of [0, 1, 2]) {
+          const offset = 7.2 + band * 5.0 + Math.random() * 3.2;
+          const along = (Math.random() - 0.5) * 5.5;
+          const x = point.x + side.x * offset * sideSign + tangent.x * along;
+          const z = point.z + side.z * offset * sideSign + tangent.z * along;
+          createNightTree(x, z, 0.78 + Math.random() * 0.72);
+        }
+        // Alberi aggiuntivi casuali tra le file per un effetto di bosco continuo
+        if (Math.random() < 0.78) {
+          const offset = 18 + Math.random() * 13;
+          const along = (Math.random() - 0.5) * 8;
+          const x = point.x + side.x * offset * sideSign + tangent.x * along;
+          const z = point.z + side.z * offset * sideSign + tangent.z * along;
+          createNightTree(x, z, 0.85 + Math.random() * 0.8);
+        }
+      }
+    }
+
+    // Riempimento del bosco con alberi sparsi più lontani dal sentiero
+    for (let i = 0; i < 150; i++) {
+      const x = (Math.random() - 0.5) * 115;
+      const z = -105 + Math.random() * 205;
+      // Mantiene una fascia libera attorno al sentiero e alla radura della Natività
+      const p = pathCurve.getPoint(Math.random());
+      if (Math.abs(x - p.x) < 7.5 && Math.abs(z - p.z) < 12) continue;
+      if (z < -68 && x > -18 && x < 18) continue;
+      createNightTree(x, z, 0.75 + Math.random() * 0.9);
+    }
+
+    // Piccolo gruppo di alberi ai margini della radura, lasciando spazio
+    // libero intorno all'asset della Natività e per futuri oggetti.
+    for (const [x, z, s] of [
+      [-24, -78, 1.0], [-19, -91, 0.9], [18, -76, 1.1],
+      [23, -90, 0.95], [-27, -99, 0.85], [29, -102, 0.9]
+    ]) {
+      createNightTree(x, z, s);
+    }
+
+    // Catena di montagne scure attorno all'orizzonte
+    const mountainMaterials = [
+      new THREE.MeshStandardMaterial({ color: 0x11131e, roughness: 1, flatShading: true }),
+      new THREE.MeshStandardMaterial({ color: 0x171824, roughness: 1, flatShading: true }),
+      new THREE.MeshStandardMaterial({ color: 0x20202b, roughness: 1, flatShading: true })
+    ];
+    const mountainCount = 44;
+    for (let i = 0; i < mountainCount; i++) {
+      const angle = (i / mountainCount) * Math.PI * 2;
+      const radius = 300 + Math.random() * 90;
+      const x = Math.cos(angle) * radius;
+      const z = Math.sin(angle) * radius - 35;
+      const baseRadius = 38 + Math.random() * 42;
+      const height = 38 + Math.random() * 82;
+      const mountain = new THREE.Mesh(
+        new THREE.ConeGeometry(baseRadius, height, 5 + Math.floor(Math.random() * 3), 1),
+        mountainMaterials[Math.floor(Math.random() * mountainMaterials.length)]
+      );
+      mountain.position.set(x, height * 0.48 + terrainHeight(x, z), z);
+      mountain.rotation.y = Math.random() * Math.PI;
+      mountain.scale.set(1.1 + Math.random() * 1.2, 0.8 + Math.random() * 0.7, 1.0 + Math.random() * 1.5);
+      scene.add(mountain);
+    }
+    // Colline basse davanti alle montagne per ammorbidire l'orizzonte
+    for (let i = 0; i < 18; i++) {
+      const angle = (i / 18) * Math.PI * 2 + 0.12;
+      const radius = 220 + Math.random() * 55;
+      const x = Math.cos(angle) * radius;
+      const z = Math.sin(angle) * radius - 35;
+      const hill = new THREE.Mesh(
+        new THREE.SphereGeometry(1, 10, 7),
+        mountainMaterials[i % mountainMaterials.length]
+      );
+      const sx = 35 + Math.random() * 45;
+      const sy = 16 + Math.random() * 24;
+      const sz = 45 + Math.random() * 55;
+      hill.scale.set(sx, sy, sz);
+      hill.position.set(x, terrainHeight(x, z) + sy * 0.25, z);
+      scene.add(hill);
+    }
+
+    // Carica solo l'asset della Natività fornito; nessuna mappa esterna.
+    const loader = new GLTFLoader();
+    const errorBox = document.getElementById('error');
+    function showError(message) { errorBox.style.display = 'block'; errorBox.textContent = message; }
+    loader.load('./assets/mary_joseph_and_child_jesus.glb', (gltf) => {
+      const model = gltf.scene;
+      model.updateMatrixWorld(true);
+      const box = new THREE.Box3().setFromObject(model);
+      const size = new THREE.Vector3();
+      box.getSize(size);
+      if (size.y > 0) model.scale.setScalar(3 / size.y);
+      model.updateMatrixWorld(true);
+      const scaledBox = new THREE.Box3().setFromObject(model);
+      const center = new THREE.Vector3();
+      scaledBox.getCenter(center);
+      model.position.x -= center.x;
+      model.position.y -= scaledBox.min.y;
+      model.position.z -= center.z;
+      // Posiziona l'asset alla fine del sentiero, nella radura.
+      // La zona circostante resta libera per aggiungere altri asset.
+      const nativityX = -5;
+      const nativityZ = -82;
+      model.position.x += nativityX;
+      model.position.z += nativityZ;
+      model.position.y += terrainHeight(nativityX, nativityZ);
+      model.rotation.y = Math.PI;
+      model.traverse((obj) => {
+        if (obj.isMesh) { obj.castShadow = true; obj.receiveShadow = true; obj.frustumCulled = false; }
+      });
+      scene.add(model);
+      console.log('Asset della Natività caricato.');
+    }, undefined, (err) => {
+      console.error(err);
+      showError('Non riesco a caricare assets/mary_joseph_and_child_jesus.glb. Controlla il percorso del file.');
+    });
+
+    const instructions = document.getElementById('instructions');
+    const status = document.getElementById('status');
+    const controls = new PointerLockControls(camera, renderer.domElement);
+    instructions.addEventListener('click', () => { if (!renderer.xr.isPresenting) controls.lock(); });
+    controls.addEventListener('lock', () => instructions.style.display = 'none');
+    controls.addEventListener('unlock', () => { if (!renderer.xr.isPresenting) instructions.style.display = 'block'; });
+
+    const keys = {};
+    let velocityY = 0;
+    let grounded = true;
+    const moveSpeed = 8;
+    const jumpForce = 6.5;
+    const gravity = 18;
+    document.addEventListener('keydown', (e) => {
+      keys[e.code] = true;
+      if (e.code === 'Space' && grounded && !renderer.xr.isPresenting) { velocityY = jumpForce; grounded = false; }
+    });
+    document.addEventListener('keyup', (e) => { keys[e.code] = false; });
+
+    // VR controllers: raggio visibile e teletrasporto sul terreno
+    const controller1 = renderer.xr.getController(0);
+    const controller2 = renderer.xr.getController(1);
+    scene.add(controller1, controller2);
+    function addRay(controller) {
+      const line = new THREE.Line(
+        new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(0, 0, 0), new THREE.Vector3(0, 0, -1)]),
+        new THREE.LineBasicMaterial({ color: 0xe4e8ff })
+      );
+      line.scale.z = 14;
+      controller.add(line);
+    }
+    addRay(controller1); addRay(controller2);
+    const raycaster = new THREE.Raycaster();
+    function teleport(controller) {
+      const origin = new THREE.Vector3();
+      const direction = new THREE.Vector3(0, 0, -1);
+      controller.getWorldPosition(origin);
+      direction.applyQuaternion(controller.getWorldQuaternion(new THREE.Quaternion())).normalize();
+      raycaster.set(origin, direction);
+      const hit = raycaster.intersectObject(ground, false)[0];
+      if (hit) {
+        player.position.x = hit.point.x;
+        player.position.z = hit.point.z;
+        player.position.y = terrainHeight(hit.point.x, hit.point.z);
+      }
+    }
+    controller1.addEventListener('select', () => teleport(controller1));
+    controller2.addEventListener('select', () => teleport(controller2));
+
+    function moveVR(delta) {
+      const session = renderer.xr.getSession();
+      if (!session) return;
+      const xrCamera = renderer.xr.getCamera(camera);
+      const forward = new THREE.Vector3();
+      xrCamera.getWorldDirection(forward); forward.y = 0; forward.normalize();
+      const right = new THREE.Vector3().crossVectors(forward, new THREE.Vector3(0, 1, 0)).normalize();
+      for (const source of session.inputSources) {
+        if (!source.gamepad) continue;
+        const axes = source.gamepad.axes;
+        let x = axes.length >= 4 ? axes[2] : (axes[0] || 0);
+        let y = axes.length >= 4 ? axes[3] : (axes[1] || 0);
+        if (Math.abs(x) < 0.18) x = 0;
+        if (Math.abs(y) < 0.18) y = 0;
+        player.position.addScaledVector(right, x * moveSpeed * delta);
+        player.position.addScaledVector(forward, -y * moveSpeed * delta);
+      }
+      player.position.y = terrainHeight(player.position.x, player.position.z);
+    }
+
+    const clock = new THREE.Clock();
+    renderer.setAnimationLoop(() => {
+      const delta = Math.min(clock.getDelta(), 0.05);
+      if (renderer.xr.isPresenting) {
+        moveVR(delta);
+      } else {
+        const forward = new THREE.Vector3();
+        camera.getWorldDirection(forward); forward.y = 0; forward.normalize();
+        const right = new THREE.Vector3().crossVectors(forward, camera.up).normalize();
+        if (keys.KeyW) player.position.addScaledVector(forward, moveSpeed * delta);
+        if (keys.KeyS) player.position.addScaledVector(forward, -moveSpeed * delta);
+        if (keys.KeyA) player.position.addScaledVector(right, -moveSpeed * delta);
+        if (keys.KeyD) player.position.addScaledVector(right, moveSpeed * delta);
+        velocityY -= gravity * delta;
+        player.position.y += velocityY * delta;
+        const floor = terrainHeight(player.position.x, player.position.z);
+        if (player.position.y <= floor) { player.position.y = floor; velocityY = 0; grounded = true; }
+      }
+      renderer.render(scene, camera);
+    });
+
+    renderer.xr.addEventListener('sessionstart', () => {
+      instructions.style.display = 'none';
+      status.textContent = 'Modalità VR attiva';
+      document.getElementById('crosshair').style.display = 'none';
+    });
+    renderer.xr.addEventListener('sessionend', () => {
+      status.textContent = 'Modalità desktop';
+      document.getElementById('crosshair').style.display = 'block';
+    });
+    window.addEventListener('resize', () => {
+      camera.aspect = innerWidth / innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(innerWidth, innerHeight);
+    });
+  </script>
+</body>
+</html>
